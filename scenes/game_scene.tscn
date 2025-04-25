@@ -1,14 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://tpl7k3xe4ht3"]
+[gd_scene load_steps=8 format=3 uid="uid://tpl7k3xe4ht3"]
 
-[ext_resource type="Material" uid="uid://dwke5g0bh37vu" path="res://materials/environment/floor/floor_material_3d.tres" id="1_onqr8"]
 [ext_resource type="Environment" uid="uid://cg3qp1n5ul5rf" path="res://resources/game_environment.tres" id="1_w5aja"]
+[ext_resource type="PackedScene" uid="uid://terr1jywx0ub" path="res://scenes/player/player.tscn" id="2_onqr8"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_lxttp"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_ycayy"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_bw6k5"]
-size = Vector3(2.2359, 0.402832, 2.14691)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y3j0m"]
 emission_shape_scale = Vector3(5, 5, 5)
@@ -49,22 +44,13 @@ shape = SubResource("WorldBoundaryShape3D_lxttp")
 
 [node name="Layout" type="Node" parent="."]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Layout"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Layout/StaticBody3D"]
-transform = Transform3D(4.95768, 0, 0, 0, 4.95768, 0, 0, 0, 4.95768, 0, 0, 0)
-material_override = ExtResource("1_onqr8")
-mesh = SubResource("PlaneMesh_ycayy")
-skeleton = NodePath("../../..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Layout/StaticBody3D"]
-transform = Transform3D(4.95768, 0, 0, 0, 4.95768, 0, 0, 0, 4.95768, -0.385654, -1.48028, -0.214689)
-shape = SubResource("BoxShape3D_bw6k5")
-
 [node name="Lighting" type="Node" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
 environment = ExtResource("1_w5aja")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(0.930048, 0.366877, -0.020288, -0.279335, 0.741838, 0.60963, 0.23871, -0.561319, 0.792426, 0, 3.45969, 0)
 
 [node name="VFX" type="Node" parent="."]
 
@@ -78,3 +64,8 @@ trail_enabled = true
 trail_lifetime = 0.1
 process_material = SubResource("ParticleProcessMaterial_y3j0m")
 draw_pass_1 = SubResource("RibbonTrailMesh_b5spy")
+
+[node name="Player" parent="." instance=ExtResource("2_onqr8")]
+
+[node name="Camera3D" type="Camera3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76837e-07, 2.15176, 3.99383)
