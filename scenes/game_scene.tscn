@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://tpl7k3xe4ht3"]
+
+[ext_resource type="Environment" uid="uid://cg3qp1n5ul5rf" path="res://resources/game_environment.tres" id="1_w5aja"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_lxttp"]
+
+[node name="GameScene" type="Node3D"]
+
+[node name="StaticBody3D (provisional floor)" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D (provisional floor)"]
+shape = SubResource("WorldBoundaryShape3D_lxttp")
+
+[node name="Layout" type="Node" parent="."]
+
+[node name="Lighting" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
+environment = ExtResource("1_w5aja")
