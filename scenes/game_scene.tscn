@@ -1,8 +1,44 @@
-[gd_scene load_steps=3 format=3 uid="uid://tpl7k3xe4ht3"]
+[gd_scene load_steps=10 format=3 uid="uid://tpl7k3xe4ht3"]
 
+[ext_resource type="Material" uid="uid://dwke5g0bh37vu" path="res://materials/environment/floor/floor_material_3d.tres" id="1_onqr8"]
 [ext_resource type="Environment" uid="uid://cg3qp1n5ul5rf" path="res://resources/game_environment.tres" id="1_w5aja"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_lxttp"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ycayy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bw6k5"]
+size = Vector3(2.2359, 0.402832, 2.14691)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y3j0m"]
+emission_shape_scale = Vector3(5, 5, 5)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+direction = Vector3(0, -1, 0)
+spread = 5.0
+initial_velocity_min = 15.0
+initial_velocity_max = 15.0
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[sub_resource type="Curve" id="Curve_rurhu"]
+_limits = [0.0, 0.1, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0754717, 0.0655738), 0.319896, 0.319896, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kk2rg"]
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.74902, 1, 1, 1)
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_b5spy"]
+material = SubResource("StandardMaterial3D_kk2rg")
+curve = SubResource("Curve_rurhu")
 
 [node name="GameScene" type="Node3D"]
 
@@ -13,7 +49,32 @@ shape = SubResource("WorldBoundaryShape3D_lxttp")
 
 [node name="Layout" type="Node" parent="."]
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Layout"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Layout/StaticBody3D"]
+transform = Transform3D(4.95768, 0, 0, 0, 4.95768, 0, 0, 0, 4.95768, 0, 0, 0)
+material_override = ExtResource("1_onqr8")
+mesh = SubResource("PlaneMesh_ycayy")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Layout/StaticBody3D"]
+transform = Transform3D(4.95768, 0, 0, 0, 4.95768, 0, 0, 0, 4.95768, -0.385654, -1.48028, -0.214689)
+shape = SubResource("BoxShape3D_bw6k5")
+
 [node name="Lighting" type="Node" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
 environment = ExtResource("1_w5aja")
+
+[node name="VFX" type="Node" parent="."]
+
+[node name="Rain_VFX" type="GPUParticles3D" parent="VFX"]
+transform = Transform3D(0.994338, 0, 0, 0, 0.994338, 0, 0, 0, 0.994338, 0.0128145, 4.82571, 0.022974)
+amount = 100
+lifetime = 2.0
+randomness = 0.89
+visibility_aabb = AABB(-7.35, 0, -5, 27.7, 8, 13.6)
+trail_enabled = true
+trail_lifetime = 0.1
+process_material = SubResource("ParticleProcessMaterial_y3j0m")
+draw_pass_1 = SubResource("RibbonTrailMesh_b5spy")
