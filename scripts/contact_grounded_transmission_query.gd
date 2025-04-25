@@ -15,7 +15,7 @@ func _on_contact_continuous_notification(colliding_objects : Array, contacts : P
 	if colliding_objects.size() > 0:
 		is_grounded = false
 		for contact in contacts:
-			print(to_local(contact).y)
+			# print(to_local(contact).y)
 			if to_local(contact).y < no_grounding_above_local_height:
 				is_grounded = true
 				break

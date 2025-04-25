@@ -27,6 +27,7 @@ metadata/_custom_type_script = "uid://dv8x7dkc51sjw"
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
+mass = 0.5
 physics_material_override = ExtResource("2_p47bc")
 script = ExtResource("2_dovo2")
 metadata/_custom_type_script = "uid://b71rjxmvdy38e"
@@ -44,6 +45,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00514, 0)
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
+mass = 0.5
 physics_material_override = ExtResource("5_75vfm")
 script = ExtResource("3_gmlin")
 grounded_query = NodePath("../PlayerFeet/Contact_Grounded_Transmission_Query")
@@ -56,6 +58,10 @@ shape = SubResource("CapsuleShape3D_p47bc")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0287628, 0)
 mesh = SubResource("CapsuleMesh_75vfm")
+
+[node name="PinJoint3D" type="PinJoint3D" parent="."]
+node_a = NodePath("../PlayerBody")
+node_b = NodePath("../PlayerFeet")
 
 [connection signal="movement_command_updated" from="PlayerLogic" to="PlayerBody" method="_on_movement_command"]
 [connection signal="contacts_continuous" from="PlayerFeet" to="PlayerBody" method="_on_contact_continuous_notification"]
