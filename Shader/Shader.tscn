@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://ckck10vm4phu1"]
+
+[ext_resource type="Shader" uid="uid://o4t4uu7bx0bh" path="res://Shader/water.gdshader" id="1_76i5k"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_76i5k"]
+subdivide_width = 200
+subdivide_depth = 200
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ri1uk"]
+frequency = 0.0415
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_oswww"]
+noise = SubResource("FastNoiseLite_ri1uk")
+
+[sub_resource type="Gradient" id="Gradient_76i5k"]
+offsets = PackedFloat32Array(0, 0.332569, 0.555046, 0.873853)
+colors = PackedColorArray(1, 1, 1, 1, 0.179389, 0.179389, 0.179389, 1, 0, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_oyfau"]
+noise_type = 2
+frequency = 0.0098
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ri1uk"]
+seamless = true
+seamless_blend_skirt = 0.152
+as_normal_map = true
+bump_strength = 40.6
+color_ramp = SubResource("Gradient_76i5k")
+noise = SubResource("FastNoiseLite_oyfau")
+
+[sub_resource type="Gradient" id="Gradient_oyfau"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3fofj"]
+noise_type = 2
+seed = 1
+frequency = 0.0045
+offset = Vector3(-30.1, -423.84, 0)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_s5vl4"]
+seamless = true
+seamless_blend_skirt = 0.041
+as_normal_map = true
+bump_strength = 26.8
+color_ramp = SubResource("Gradient_oyfau")
+noise = SubResource("FastNoiseLite_3fofj")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ri1uk"]
+render_priority = 0
+shader = ExtResource("1_76i5k")
+shader_parameter/albedo = Color(0, 0.688302, 0.819566, 1)
+shader_parameter/albedo_fresnel = Color(0, 0.222452, 0.285544, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/normalmap = SubResource("NoiseTexture2D_ri1uk")
+shader_parameter/wave_direction = Vector2(2, 0)
+shader_parameter/normalmap_2 = SubResource("NoiseTexture2D_s5vl4")
+shader_parameter/wave_direction_2 = Vector2(2, 0)
+shader_parameter/noiseMap = SubResource("NoiseTexture2D_oswww")
+shader_parameter/height_scale = 0.017
+shader_parameter/noise_scale = 11.0
+shader_parameter/time_scale = 0.0035
+shader_parameter/edge_scale = 0.085
+shader_parameter/near = 0.205
+shader_parameter/far = 13.54
+shader_parameter/edge_color = Color(1, 1, 1, 1)
+shader_parameter/color_deep = Color(0.662112, 0.73714, 0.7088, 1)
+shader_parameter/color_shallow = Color(0.125447, 0.39143, 0.795831, 1)
+shader_parameter/beers_law = 2.015
+shader_parameter/depth_offset = -0.625
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_76i5k"]
+
+[node name="Shader" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00893366, 1.19209e-07, -0.00075841)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(3.39838, 0, 0, 0, 3.39838, 0, 0, 0, 3.39838, -0.241527, -0.258387, -0.655253)
+cast_shadow = 0
+gi_mode = 0
+mesh = SubResource("PlaneMesh_76i5k")
+surface_material_override/0 = SubResource("ShaderMaterial_ri1uk")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.422056, -0.262288, -0.00671625)
+mesh = SubResource("CylinderMesh_76i5k")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.160532, 0)
