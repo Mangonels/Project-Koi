@@ -5,9 +5,39 @@ signal movement_command_updated
 
 var _grounded_previous_frame : bool = false
 
+#tiempo con el doble salto
+var canDoubleJump : bool = false;
+var number_jumps: int = 1;
+var jump_time: float = 10;
+
 @export var player_body : PlayerMovement
 @export var player_feet : RigidBody3D
 @export var grounded_query : Contact_Grounded_Transmission_Query
+
+func _number_jumps() -> void:
+	if (canDoubleJump):
+		number_jumps = 2;
+	else:
+		number_jumps = 1;
+		
+func _activate_double_jump() -> void:
+	canDoubleJump = true;
+	number_jumps = 2;
+	print("comenzo")
+	
+	var timer : Timer = Timer.new( )
+	add_child(timer)
+	timer.one_shot = true
+	timer.autostart = false
+	timer.wait_time = jump_time;
+	timer. timeout.connect(func(): canDoubleJump = false; number_jumps = 1; print("final"))
+	timer.start()
+	
+	
+#do something here
+
+
+
 
 func _physics_process(delta) -> void:
 	_on_grounded_ungrounded_checks()
@@ -19,7 +49,10 @@ func _physics_process(delta) -> void:
 	movement_command_updated.emit(move_direction)
 	
 	if Input.is_action_just_pressed("jump"):
-		player_body.ascend()
+		if(number_jumps > 0):
+			player_body.ascend();
+			print(number_jumps)
+			number_jumps =number_jumps - 1;
 	
 	if Input.is_action_just_released("jump"):
 		player_body.ascend_cut()
@@ -31,6 +64,7 @@ func _on_grounded_ungrounded_checks():
 		player_feet.physics_material_override.set_friction(0.0)
 	# Just landed check:
 	elif(not _grounded_previous_frame and grounded_query.is_grounded):
-		player_feet.physics_material_override.set_friction(0.7)
+		player_feet.physics_material_override.set_friction(0.7);
+		_number_jumps()
 		
 	_grounded_previous_frame = grounded_query.is_grounded

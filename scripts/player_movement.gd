@@ -2,6 +2,7 @@
 class_name PlayerMovement extends RigidBody3D
 
 @export var grounded_query : Contact_Grounded_Transmission_Query
+@export var player_logic: PlayerLogic
 # The max slope the final applied movement force can adapt to
 @export var max_slope_angle : float = 30.0
 
@@ -72,11 +73,11 @@ func _horizontal():
 	add_force_at_center(movement_force)
 
 ## Basically a jump command
-func ascend():
+func ascend() -> void:
+	print(player_logic.canDoubleJump);
 	if movement_locked:
 		return
-	
-	elif grounded_query.is_grounded:
+	elif grounded_query.is_grounded or (!grounded_query.is_grounded && player_logic.canDoubleJump):
 		#AudioPlayer.play_global_effect(ResourceLoader.load("res://Audio/Effects/jump.wav", "AudioStream"), 0.5)
 		add_force_at_center(Vector3.UP, jump_strength)
 
