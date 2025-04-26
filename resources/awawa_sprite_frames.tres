@@ -1,0 +1,86 @@
+[gd_resource type="SpriteFrames" load_steps=12 format=3 uid="uid://d3ijikj8cesfa"]
+
+[ext_resource type="Texture2D" uid="uid://rc87qs4ickfi" path="res://textures/awawa_spritesheet/character_femaleAdventurer_sheet.png" id="1_uhjvq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvy8d"]
+atlas = ExtResource("1_uhjvq")
+region = Rect2(0, 512, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d24k7"]
+atlas = ExtResource("1_uhjvq")
+region = Rect2(96, 512, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mo7k"]
+atlas = ExtResource("1_uhjvq")
+region = Rect2(192, 512, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iarl4"]
+atlas = ExtResource("1_uhjvq")
+region = Rect2(288, 512, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0513"]
+atlas = ExtResource("1_uhjvq")
+region = Rect2(384, 512, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6svfb"]
+atlas = ExtResource("1_uhjvq")
+region = Rect2(480, 512, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdwje"]
+atlas = ExtResource("1_uhjvq")
+region = Rect2(576, 512, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n06xa"]
+atlas = ExtResource("1_uhjvq")
+region = Rect2(672, 512, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhjvq"]
+atlas = ExtResource("1_uhjvq")
+region = Rect2(672, 0, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_se12g"]
+atlas = ExtResource("1_uhjvq")
+region = Rect2(768, 0, 96, 128)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvy8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d24k7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mo7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iarl4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0513")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6svfb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdwje")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n06xa")
+}],
+"loop": true,
+"name": &"1_movement",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uhjvq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_se12g")
+}],
+"loop": false,
+"name": &"2_jump",
+"speed": 5.0
+}]
