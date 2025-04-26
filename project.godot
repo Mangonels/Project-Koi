@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 GlobalInventory="*res://scripts/autoloads/global_inventory.gd"
 UiControl="*res://scripts/autoloads/ui_control.gd"
 AudioPlayer="*res://scripts/autoloads/audio_player.gd"
+Level="*res://scripts/level.gd"
 
 [input]
 
