@@ -15,6 +15,10 @@ run/main_scene="uid://tpl7k3xe4ht3"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+AudioPlayer="*res://scripts/autoloads/audio_player.gd"
+
 [input]
 
 move_forward={
