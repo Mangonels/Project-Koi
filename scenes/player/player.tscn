@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://terr1jywx0ub"]
+[gd_scene load_steps=10 format=3 uid="uid://terr1jywx0ub"]
 
 [ext_resource type="Script" uid="uid://dv8x7dkc51sjw" path="res://scripts/player_logic.gd" id="1_8afob"]
 [ext_resource type="Script" uid="uid://b71rjxmvdy38e" path="res://scripts/contact_notifier.gd" id="2_dovo2"]
@@ -11,9 +11,6 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_lvxji"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p47bc"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_75vfm"]
-height = 2.065
 
 [node name="Player" type="Node3D"]
 
@@ -57,10 +54,6 @@ metadata/_custom_type_script = "uid://s81joe7xlyqv"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.109891, 0)
 shape = SubResource("CapsuleShape3D_p47bc")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0287628, 0)
-mesh = SubResource("CapsuleMesh_75vfm")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="PlayerBody"]
 sprite_frames = ExtResource("7_0owmy")
