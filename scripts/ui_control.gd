@@ -16,8 +16,4 @@ func _ready():
 func chageText(value: int) -> void:
 	label_coins.set_text(str(value));
 	print(value);
-
-func PutImage() -> void:
-	
-	
 	
