@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://tpl7k3xe4ht3"]
+[gd_scene load_steps=17 format=3 uid="uid://xqcyrprsalfb"]
 
 [ext_resource type="Sky" uid="uid://dhi4nk2idpxe5" path="res://resources/game_sky.tres" id="1_ekxnf"]
 [ext_resource type="Script" uid="uid://dv7qcwhasnu3v" path="res://scripts/level.gd" id="1_oa1go"]
@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://dctyrqpjo11ni" path="res://Shader/water.gd" id="4_rtw2f"]
 [ext_resource type="PackedScene" uid="uid://ckck10vm4phu1" path="res://Shader/Water.tscn" id="4_wu84c"]
 [ext_resource type="PackedScene" uid="uid://terr1jywx0ub" path="res://scenes/player/player.tscn" id="6_rtw2f"]
-[ext_resource type="Script" uid="uid://13cw5cyt481b" path="res://scenes/camera_3d.gd" id="7_oa1go"]
+[ext_resource type="PackedScene" uid="uid://c1q2xr4ja57qs" path="res://scenes/camera/spring_arm_3d.tscn" id="7_oa1go"]
 
 [sub_resource type="Environment" id="Environment_bqqt6"]
 background_mode = 2
@@ -136,10 +136,7 @@ script = ExtResource("4_rtw2f")
 [node name="Player" parent="." instance=ExtResource("6_rtw2f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08677, 0.9977, 0)
 
-[node name="SpringArm3D" type="SpringArm3D" parent="."]
-script = ExtResource("7_oa1go")
-
-[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+[node name="SpringArm3D" parent="." instance=ExtResource("7_oa1go")]
 
 [connection signal="body_entered" from="MainMenuItem/Button/StartBtn" to="MainMenuItem/Button/StartBtn" method="_on_body_entered"]
 [connection signal="body_exited" from="MainMenuItem/Button/StartBtn" to="MainMenuItem/Button/StartBtn" method="_on_body_exited"]

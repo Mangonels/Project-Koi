@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1q2xr4ja57qs"]
+
+[ext_resource type="Script" uid="uid://13cw5cyt481b" path="res://scenes/camera_3d.gd" id="1_af17n"]
+
+[node name="SpringArm3D" type="SpringArm3D" groups=["main_camera_system"]]
+script = ExtResource("1_af17n")
+
+[node name="Camera3D" type="Camera3D" parent="."]
