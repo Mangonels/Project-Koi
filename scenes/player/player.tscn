@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://s81joe7xlyqv" path="res://scripts/player_movement.gd" id="3_gmlin"]
 [ext_resource type="Script" uid="uid://dxfmfd3uv2xlp" path="res://scripts/contact_grounded_transmission_query.gd" id="3_lvxji"]
 [ext_resource type="PhysicsMaterial" uid="uid://cyemguak0k6xh" path="res://resources/player_body.tres" id="5_75vfm"]
-[ext_resource type="SpriteFrames" uid="uid://d3ijikj8cesfa" path="res://resources/awawa_sprite_frames.tres" id="7_0owmy"]
+[ext_resource type="SpriteFrames" uid="uid://c002xn3i1grbf" path="res://resources/awawa_sprite_frames.tres" id="7_0owmy"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_lvxji"]
 
@@ -49,6 +49,8 @@ physics_material_override = ExtResource("5_75vfm")
 script = ExtResource("3_gmlin")
 grounded_query = NodePath("../PlayerFeet/Contact_Grounded_Transmission_Query")
 sprite_animations = NodePath("AnimatedSprite3D")
+ground_mobility = 13.0
+jump_strength = 1300.0
 metadata/_custom_type_script = "uid://s81joe7xlyqv"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody"]
@@ -58,6 +60,9 @@ shape = SubResource("CapsuleShape3D_p47bc")
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="PlayerBody"]
 sprite_frames = ExtResource("7_0owmy")
 animation = &"1_movement"
+
+[node name="Camera3D" type="Camera3D" parent="PlayerBody"]
+transform = Transform3D(1, 0, 0, 0, 0.735092, 0.677967, 0, -0.677967, 0.735092, 0, 2.28216, 3.00933)
 
 [node name="PinJoint3D" type="PinJoint3D" parent="."]
 node_a = NodePath("../PlayerBody")
