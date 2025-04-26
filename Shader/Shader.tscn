@@ -38,7 +38,7 @@ offset = Vector3(-30.1, -423.84, 0)
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_s5vl4"]
 seamless = true
-seamless_blend_skirt = 0.041
+seamless_blend_skirt = 0.069
 as_normal_map = true
 bump_strength = 26.8
 color_ramp = SubResource("Gradient_oyfau")
@@ -48,7 +48,7 @@ noise = SubResource("FastNoiseLite_3fofj")
 render_priority = 0
 shader = ExtResource("1_76i5k")
 shader_parameter/albedo = Color(0, 0.688302, 0.819566, 1)
-shader_parameter/albedo_fresnel = Color(0, 0.222452, 0.285544, 1)
+shader_parameter/albedo_fresnel = Color(0.374308, 0.612294, 1, 1)
 shader_parameter/metallic = 0.0
 shader_parameter/roughness = 0.0
 shader_parameter/normalmap = SubResource("NoiseTexture2D_ri1uk")
@@ -58,13 +58,13 @@ shader_parameter/wave_direction_2 = Vector2(2, 0)
 shader_parameter/noiseMap = SubResource("NoiseTexture2D_oswww")
 shader_parameter/height_scale = 0.017
 shader_parameter/noise_scale = 11.0
-shader_parameter/time_scale = 0.0035
+shader_parameter/time_scale = 0.051
 shader_parameter/edge_scale = 0.085
-shader_parameter/near = 0.205
-shader_parameter/far = 13.54
+shader_parameter/near = 0.48
+shader_parameter/far = 13.645
 shader_parameter/edge_color = Color(1, 1, 1, 1)
-shader_parameter/color_deep = Color(0.662112, 0.73714, 0.7088, 1)
-shader_parameter/color_shallow = Color(0.125447, 0.39143, 0.795831, 1)
+shader_parameter/color_deep = Color(0.531344, 0.476128, 0.461711, 1)
+shader_parameter/color_shallow = Color(0.84975, 0.918943, 0.890098, 1)
 shader_parameter/beers_law = 2.015
 shader_parameter/depth_offset = -0.625
 
@@ -74,14 +74,14 @@ shader_parameter/depth_offset = -0.625
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00893366, 1.19209e-07, -0.00075841)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(3.39838, 0, 0, 0, 3.39838, 0, 0, 0, 3.39838, -0.241527, -0.258387, -0.655253)
+transform = Transform3D(3.39838, 0, 0, 0, 3.39838, 0, 0, 0, 3.39838, -0.252598, -0.258387, -0.656339)
 cast_shadow = 0
 gi_mode = 0
 mesh = SubResource("PlaneMesh_76i5k")
 surface_material_override/0 = SubResource("ShaderMaterial_ri1uk")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.422056, -0.262288, -0.00671625)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.422056, -0.79544, -0.00671625)
 mesh = SubResource("CylinderMesh_76i5k")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
