@@ -39,7 +39,7 @@ metadata/_custom_type_script = "uid://dxfmfd3uv2xlp"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.503236, 0)
 shape = SubResource("SphereShape3D_lvxji")
 
-[node name="PlayerBody" type="RigidBody3D" parent="." node_paths=PackedStringArray("grounded_query", "sprite_animations") groups=["Player_Body"]]
+[node name="PlayerBody" type="RigidBody3D" parent="." node_paths=PackedStringArray("grounded_query", "player_logic", "sprite_animations") groups=["Player_Body"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00514, 0)
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -48,6 +48,7 @@ mass = 0.5
 physics_material_override = ExtResource("5_75vfm")
 script = ExtResource("3_gmlin")
 grounded_query = NodePath("../PlayerFeet/Contact_Grounded_Transmission_Query")
+player_logic = NodePath("../PlayerLogic")
 sprite_animations = NodePath("AnimatedSprite3D")
 metadata/_custom_type_script = "uid://s81joe7xlyqv"
 
