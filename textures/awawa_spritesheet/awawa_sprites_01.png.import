@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rc87qs4ickfi"
-path.s3tc="res://.godot/imported/character_femaleAdventurer_sheet.png-d61759ac9364d83f62525ab0c2a3ed50.s3tc.ctex"
+uid="uid://b1r76syukh2x5"
+path.s3tc="res://.godot/imported/awawa_sprites_01.png-763602a7fff7ff34416caa6e46ebdedf.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://textures/awawa_spritesheet/character_femaleAdventurer_sheet.png"
-dest_files=["res://.godot/imported/character_femaleAdventurer_sheet.png-d61759ac9364d83f62525ab0c2a3ed50.s3tc.ctex"]
+source_file="res://textures/awawa_spritesheet/awawa_sprites_01.png"
+dest_files=["res://.godot/imported/awawa_sprites_01.png-763602a7fff7ff34416caa6e46ebdedf.s3tc.ctex"]
 
 [params]
 

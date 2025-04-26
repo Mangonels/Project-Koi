@@ -1,13 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://bys165e2lbsqg"]
+[gd_scene load_steps=4 format=3 uid="uid://bys165e2lbsqg"]
 
 [ext_resource type="PackedScene" uid="uid://b6htlyeq6xwlk" path="res://modelos/blocking/Plataforma_2M.glb" id="1_4tkln"]
+[ext_resource type="PackedScene" uid="uid://ccnb3yj811tsn" path="res://modelos/plataforms/Plataforma_2M.glb" id="2_bl4uh"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bl4uh"]
 data = PackedVector3Array(-1, 0, -0.75, 1, 0.2, -0.75, -1, 0.2, -0.75, -1, 0, -0.75, 1, 0, -0.75, 1, 0.2, -0.75, 1, 0, -0.75, 1, 0.2, 0.75, 1, 0.2, -0.75, 1, 0, -0.75, 1, 0, 0.75, 1, 0.2, 0.75, 1, 0, 0.75, -1, 0.2, 0.75, 1, 0.2, 0.75, 1, 0, 0.75, -1, 0, 0.75, -1, 0.2, 0.75, -1, 0, 0.75, -1, 0.2, -0.75, -1, 0.2, 0.75, -1, 0, 0.75, -1, 0, -0.75, -1, 0.2, -0.75, 1, 0, -0.75, -1, 0, 0.75, 1, 0, 0.75, 1, 0, -0.75, -1, 0, -0.75, -1, 0, 0.75, 1, 0.2, 0.75, -1, 0.2, -0.75, 1, 0.2, -0.75, 1, 0.2, 0.75, -1, 0.2, 0.75, -1, 0.2, -0.75)
 
 [node name="Plataforma_2M2" instance=ExtResource("1_4tkln")]
 
+[node name="Plataforma_2M" parent="." index="0"]
+visible = false
+
 [node name="StaticBody3D" type="StaticBody3D" parent="Plataforma_2M" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plataforma_2M/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_bl4uh")
+
+[node name="Plataforma_2M2" parent="." index="1" instance=ExtResource("2_bl4uh")]

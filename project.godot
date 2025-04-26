@@ -11,15 +11,15 @@ config_version=5
 [application]
 
 config/name="Project_Koy"
-run/main_scene="uid://tpl7k3xe4ht3"
+run/main_scene="uid://xqcyrprsalfb"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
+AudioPlayer="*res://scripts/autoloads/audio_player.gd"
 GlobalInventory="*res://scripts/autoloads/global_inventory.gd"
 UiControl="*res://scripts/autoloads/ui_control.gd"
-AudioPlayer="*res://scripts/autoloads/audio_player.gd"
 Level="*res://scripts/level.gd"
 
 [input]

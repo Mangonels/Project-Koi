@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cdu6cwy8vg6x6"
-path="res://.godot/imported/rampa_1.5Mx1M.glb-d5ab77dbaa51668d9853f2d70f412a2b.scn"
+uid="uid://c2irtl4fus2km"
+path="res://.godot/imported/Plataforma_0.5M.glb-6f9bcde5faaa6d7483238b5e4e361412.scn"
 
 [deps]
 
-source_file="res://modelos/rampa_1.5Mx1M.glb"
-dest_files=["res://.godot/imported/rampa_1.5Mx1M.glb-d5ab77dbaa51668d9853f2d70f412a2b.scn"]
+source_file="res://modelos/plataforms/Plataforma_0.5M.glb"
+dest_files=["res://.godot/imported/Plataforma_0.5M.glb-6f9bcde5faaa6d7483238b5e4e361412.scn"]
 
 [params]
 

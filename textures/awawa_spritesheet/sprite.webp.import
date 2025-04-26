@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw5sd5xeuybn4"
-path="res://.godot/imported/character_femaleAdventurer_sheet.png-dbfaab50000781c217d2f44c1c86f763.ctex"
+uid="uid://myj35kdyjuv4"
+path="res://.godot/imported/sprite.webp-d5a168964a392e93b94dbe50fac05ad8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://character_femaleAdventurer_sheet.png"
-dest_files=["res://.godot/imported/character_femaleAdventurer_sheet.png-dbfaab50000781c217d2f44c1c86f763.ctex"]
+source_file="res://textures/awawa_spritesheet/sprite.webp"
+dest_files=["res://.godot/imported/sprite.webp-d5a168964a392e93b94dbe50fac05ad8.ctex"]
 
 [params]
 

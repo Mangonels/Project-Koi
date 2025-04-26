@@ -11,6 +11,10 @@ class_name PlayerMovement extends RigidBody3D
 # True: Locks all movement,
 # False: Unlocks all movement
 @export var movement_locked : bool = false
+# True: Makes the movement relative to the main camera,
+# False: Makes the movement aligned with the world axis
+@export var camera_relative : bool = true
+var _camera : SpringArm3D
 
 @export var ground_mobility : float = 15.0
 @export var air_mobility : float = 12.0
@@ -38,6 +42,9 @@ func _physics_process(delta):
 func add_force_at_center(direction : Vector3, magnitude : float = 1.0):
 	apply_central_force(direction * magnitude)
 
+func _ready():
+	_camera = get_tree().get_first_node_in_group("main_camera_system")
+
 ## Moves the protagonist horizontally according to direction, factoring
 ## in it's ground/air mobility and if it's relative to camera or world axis.
 func _horizontal():
@@ -45,6 +52,11 @@ func _horizontal():
 		sprite_animations.stop()
 		return
 	
+	if _horizontal_movement.x > 0.0:
+		sprite_animations.scale.x = -1.0
+	elif _horizontal_movement.x < 0.0:
+		sprite_animations.scale.x = 1.0
+		
 	# The velocity the protagonist's rigidbody will try to achieve,
 	# depends on grounded or airbourne status
 	var target_velocity : Vector2
@@ -84,14 +96,14 @@ func _horizontal():
 
 ## Basically a jump command
 func ascend() -> void:
-	print(player_logic.canDoubleJump);
+	#print(player_logic.canDoubleJump);
 	if movement_locked:
 		return
 	elif grounded_query.is_grounded or (!grounded_query.is_grounded && player_logic.canDoubleJump):
 		#AudioPlayer.play_global_effect(ResourceLoader.load("res://Audio/Effects/jump.wav", "AudioStream"), 0.5)
 		add_force_at_center(Vector3.UP, jump_strength)
 		
-		sprite_animations.play("2_jump")
+		#sprite_animations.play("2_jump")
 
 func ascend_cut():
 	if movement_locked:

@@ -16,3 +16,11 @@ func _input(event: InputEvent) -> void:
 
 func _process(delta: float) -> void:
 	global_position = player.global_position + Vector3(0, pivot_height, 0)  
+
+## Returns the normalized forward vector of the main camera in a horizontal 2D plane
+func get_camera_forward_vector_horizontal() -> Vector2:
+	return Vector2($Camera3D.global_basis.x.z, $Camera3D.global_basis.z.z).normalized()
+
+## Returns the normalized right vector of the main camera in a horizontal 2D plane
+func get_camera_right_vector_horizontal() -> Vector2:
+	return Vector2($Camera3D.global_basis.x.x, $Camera3D.global_basis.z.x).normalized()
