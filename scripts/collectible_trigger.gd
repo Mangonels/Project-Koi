@@ -5,11 +5,10 @@ class_name collectible_trigger extends Node
 
 
 var enter: bool = false;
-
 #Definimos que objeto es y que jemos de hacer con el
-
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 		if(body.is_in_group("Player_Body")): 	
 			GlobalInventory.getObject(type_consumible);
+			#queue_free();
 	 # Replace with function body.
