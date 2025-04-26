@@ -101,6 +101,7 @@ func ascend() -> void:
 		return
 	elif grounded_query.is_grounded or (!grounded_query.is_grounded && player_logic.canDoubleJump):
 		#AudioPlayer.play_global_effect(ResourceLoader.load("res://Audio/Effects/jump.wav", "AudioStream"), 0.5)
+		
 		add_force_at_center(Vector3.UP, jump_strength)
 		
 		#sprite_animations.play("2_jump")
