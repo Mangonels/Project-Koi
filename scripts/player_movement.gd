@@ -8,9 +8,6 @@ class_name PlayerMovement extends RigidBody3D
 # True: Locks all movement,
 # False: Unlocks all movement
 @export var movement_locked : bool = false
-# True: Makes the movement relative to the main camera,
-# False: Makes the movement aligned with the world axis
-@export var camera_relative : bool = true
 
 @export var ground_mobility : float = 15.0
 @export var air_mobility : float = 12.0
@@ -90,17 +87,13 @@ func ascend_cut():
 	if self.linear_velocity.y > 0 && !grounded_query.is_grounded:
 		add_force_at_center(Vector3.DOWN, jump_strength * jump_cut_proportion)
 
-func crouch():
-	if movement_locked:
-		return
-
 ## Callback (mandatory for proper functionality) by a movement input signal 
 ## sending the horizontal movement direction
 func _on_movement_command(move_direction : Vector2):
 	_horizontal_movement = move_direction
 
 ## Meant to be called back by subscription to the feet's
-## RigidBody3D_Contact_Notifier contacts_continuous signal.
+## Contact_Notifier contacts_continuous signal.
 func _on_contact_continuous_notification(colliding_objects : Array, contacts : PackedVector3Array, normals : PackedVector3Array):
 	if colliding_objects.size() > 0:
 		# Obtain the lowest collision (best ground rep) and save it's normal

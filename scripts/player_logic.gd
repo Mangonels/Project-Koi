@@ -18,14 +18,13 @@ func _physics_process(delta) -> void:
 
 	movement_command_updated.emit(move_direction)
 	
-	var move_magnitude = move_direction.length()
-	
 	if Input.is_action_just_pressed("jump"):
 		player_body.ascend()
 	
 	if Input.is_action_just_released("jump"):
 		player_body.ascend_cut()
 
+# Disable friction during airbourne status
 func _on_grounded_ungrounded_checks():
 	# Just detached from ground check:
 	if(_grounded_previous_frame and not grounded_query.is_grounded):

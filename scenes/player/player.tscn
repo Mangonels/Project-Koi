@@ -64,5 +64,5 @@ node_a = NodePath("../PlayerBody")
 node_b = NodePath("../PlayerFeet")
 
 [connection signal="movement_command_updated" from="PlayerLogic" to="PlayerBody" method="_on_movement_command"]
-[connection signal="contacts_continuous" from="PlayerFeet" to="PlayerBody" method="_on_contact_continuous_notification"]
 [connection signal="contacts_continuous" from="PlayerFeet" to="PlayerFeet/Contact_Grounded_Transmission_Query" method="_on_contact_continuous_notification"]
+[connection signal="contacts_continuous" from="PlayerFeet" to="PlayerBody" method="_on_contact_continuous_notification"]

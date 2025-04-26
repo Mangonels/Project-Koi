@@ -4,13 +4,8 @@ class_name Contact_Notifier extends RigidBody3D
 
 # Reports contacts with this rigidbody even if preexisting
 signal contacts_continuous
-# Reports contacts that just entered with this rigidbody
-signal contacts_entered
 
 @export var max_processable_contacts : int = 3
-
-# Stores the ID's from "get_instance_id" from each contact, every end of frame.
-var _prev_frame_colliding_ids = []
 
 func _ready():
 	set_contact_monitor(true)
@@ -26,10 +21,6 @@ func _integrate_forces(state):
 	var all_collision_points : PackedVector3Array = []
 	var all_collision_normals : PackedVector3Array = []
 	if current_contact_count > 0:
-		# Entering contacting/colliding objects this update
-		var entering_objects = []
-		var entering_collider_ids = []
-		var entering_collision_points : PackedVector3Array = []
 		for i in current_contact_count:
 			# NOTE: colliding objects could be StaticBody3D's or RigidBody3D's
 			# which inherit CollisionObject3D
@@ -40,23 +31,8 @@ func _integrate_forces(state):
 			all_colliding_objects.append(colliding_object)
 			all_collision_points.append(colliding_position)
 			all_collision_normals.append(colliding_normal)
-			if _prev_frame_colliding_ids.has(colliding_id): continue
-			else:
-				entering_objects.append(colliding_object)
-				entering_collider_ids.append(colliding_id)
-				entering_collision_points.append(colliding_position)
-		
-		# Entering signals only emitted if any enters
-		if entering_objects.size() > 0:
-			contacts_entered.emit(
-				entering_objects, 
-				entering_collision_points
-				)
-		
-		_prev_frame_colliding_ids = entering_collider_ids
-	
-	# Continuous contacts signal emitted every physics update, 
-	# even if no contacts this update.
+
+	# Continuous contacts signal emitted every physics update
 	contacts_continuous.emit(
 		all_colliding_objects, 
 		all_collision_points, 
