@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://tpl7k3xe4ht3"]
 
 [ext_resource type="Environment" uid="uid://cg3qp1n5ul5rf" path="res://resources/game_environment.tres" id="1_w5aja"]
-[ext_resource type="PackedScene" uid="uid://bgjldd76ht2gk" path="res://scenes/player/player.tscn" id="2_onqr8"]
+[ext_resource type="PackedScene" uid="uid://terr1jywx0ub" path="res://scenes/player/player.tscn" id="2_onqr8"]
 [ext_resource type="PackedScene" uid="uid://fakdbfckpi4c" path="res://scenes/prefab/rampa_2x0,5.tscn" id="3_bw6k5"]
 [ext_resource type="PackedScene" uid="uid://ds61mgbyupgc3" path="res://scenes/prefab/rampa_1.5x1.tscn" id="3_ycayy"]
 
