@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk6238nqycrt8"]
+
+[ext_resource type="PackedScene" uid="uid://ctds2u6ro67t5" path="res://modelos/blocking/Plataforma_cubo.glb" id="1_2u3qt"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_svv3q"]
+data = PackedVector3Array(-1, 0, 1, -1, 2, -1, -1, 2, 1, -1, 0, 1, -1, 0, -1, -1, 2, -1, -1, 0, -1, 1, 2, -1, -1, 2, -1, -1, 0, -1, 1, 0, -1, 1, 2, -1, 1, 0, -1, 1, 2, 1, 1, 2, -1, 1, 0, -1, 1, 0, 1, 1, 2, 1, 1, 0, 1, -1, 2, 1, 1, 2, 1, 1, 0, 1, -1, 0, 1, -1, 2, 1, -1, 0, -1, 1, 0, 1, 1, 0, -1, -1, 0, -1, -1, 0, 1, 1, 0, 1, 1, 2, -1, -1, 2, 1, -1, 2, -1, 1, 2, -1, 1, 2, 1, -1, 2, 1)
+
+[node name="Plataforma_cubo" instance=ExtResource("1_2u3qt")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="plataformaCubo" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="plataformaCubo/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_svv3q")

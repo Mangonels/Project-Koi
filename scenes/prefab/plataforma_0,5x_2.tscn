@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bot1cqoewjth3"]
+
+[ext_resource type="PackedScene" uid="uid://ix8dso5870n8" path="res://modelos/blocking/Plataforma_0.5M.glb" id="1_8bydw"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_scoi2"]
+data = PackedVector3Array(-0.25, 0, 0.75, -0.25, 0.2, -0.75, -0.25, 0.2, 0.75, -0.25, 0, 0.75, -0.25, 0, -0.75, -0.25, 0.2, -0.75, -0.25, 0, -0.75, 0.25, 0.2, -0.75, -0.25, 0.2, -0.75, -0.25, 0, -0.75, 0.25, 0, -0.75, 0.25, 0.2, -0.75, 0.25, 0, -0.75, 0.25, 0.2, 0.75, 0.25, 0.2, -0.75, 0.25, 0, -0.75, 0.25, 0, 0.75, 0.25, 0.2, 0.75, 0.25, 0, 0.75, -0.25, 0.2, 0.75, 0.25, 0.2, 0.75, 0.25, 0, 0.75, -0.25, 0, 0.75, -0.25, 0.2, 0.75, -0.25, 0, -0.75, 0.25, 0, 0.75, 0.25, 0, -0.75, -0.25, 0, -0.75, -0.25, 0, 0.75, 0.25, 0, 0.75, 0.25, 0.2, -0.75, -0.25, 0.2, 0.75, -0.25, 0.2, -0.75, 0.25, 0.2, -0.75, 0.25, 0.2, 0.75, -0.25, 0.2, 0.75)
+
+[node name="Plataforma_0_5M2" instance=ExtResource("1_8bydw")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Plataforma_0_5M" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plataforma_0_5M/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_scoi2")

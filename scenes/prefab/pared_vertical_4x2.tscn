@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://u0qmlght5l1"]
+
+[ext_resource type="PackedScene" uid="uid://dmiliafjn6lfp" path="res://modelos/blocking/pared_Vertical4M.glb" id="1_eetsi"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_fjqyh"]
+data = PackedVector3Array(-0.075, 0, 0.75, -0.075, 4, -0.75, -0.075, 4, 0.75, -0.075, 0, 0.75, -0.075, 0, -0.75, -0.075, 4, -0.75, -0.075, 0, -0.75, 0.075, 4, -0.75, -0.075, 4, -0.75, -0.075, 0, -0.75, 0.075, 0, -0.75, 0.075, 4, -0.75, 0.075, 0, -0.75, 0.075, 4, 0.75, 0.075, 4, -0.75, 0.075, 0, -0.75, 0.075, 0, 0.75, 0.075, 4, 0.75, 0.075, 0, 0.75, -0.075, 4, 0.75, 0.075, 4, 0.75, 0.075, 0, 0.75, -0.075, 0, 0.75, -0.075, 4, 0.75, -0.075, 0, -0.75, 0.075, 0, 0.75, 0.075, 0, -0.75, -0.075, 0, -0.75, -0.075, 0, 0.75, 0.075, 0, 0.75, 0.075, 4, -0.75, -0.075, 4, 0.75, -0.075, 4, -0.75, 0.075, 4, -0.75, 0.075, 4, 0.75, -0.075, 4, 0.75)
+
+[node name="pared_Vertical4M2" instance=ExtResource("1_eetsi")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="pared_Vertical4M" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pared_Vertical4M/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_fjqyh")

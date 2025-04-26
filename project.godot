@@ -17,8 +17,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+
 GlobalInventory="*res://scripts/global_inventory.gd"
 UiControl="*res://scripts/ui_control.gd"
+AudioPlayer="*res://scripts/autoloads/audio_player.gd"
+
 
 [input]
 
