@@ -2,6 +2,8 @@
 class_name PlayerMovement extends RigidBody3D
 
 @export var grounded_query : Contact_Grounded_Transmission_Query
+@export var sprite_animations : AnimatedSprite3D
+
 # The max slope the final applied movement force can adapt to
 @export var max_slope_angle : float = 30.0
 
@@ -34,6 +36,7 @@ func add_force_at_center(direction : Vector3, magnitude : float = 1.0):
 ## in it's ground/air mobility and if it's relative to camera or world axis.
 func _horizontal():
 	if _horizontal_movement == Vector2.ZERO || movement_locked:
+		sprite_animations.stop()
 		return
 	
 	# The velocity the protagonist's rigidbody will try to achieve,
@@ -70,6 +73,8 @@ func _horizontal():
 	# Apply the right precalculated amount of horizontal movement force
 	# to the protagonist entity	
 	add_force_at_center(movement_force)
+	
+	sprite_animations.play("1_movement")
 
 ## Basically a jump command
 func ascend():
@@ -79,6 +84,8 @@ func ascend():
 	elif grounded_query.is_grounded:
 		#AudioPlayer.play_global_effect(ResourceLoader.load("res://Audio/Effects/jump.wav", "AudioStream"), 0.5)
 		add_force_at_center(Vector3.UP, jump_strength)
+		
+		sprite_animations.play("2_jump")
 
 func ascend_cut():
 	if movement_locked:
