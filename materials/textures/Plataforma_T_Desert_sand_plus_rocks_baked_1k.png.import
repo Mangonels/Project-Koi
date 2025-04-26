@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://gwckqeumlg12"
+path.s3tc="res://.godot/imported/Plataforma_T_Desert_sand_plus_rocks_baked_1k.png-69219512478b713cf3953bc51b597e53.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "327e8853e7e886fcc84e2aa6e094baa8"
+}
+
+[deps]
+
+source_file="res://materials/textures/Plataforma_T_Desert_sand_plus_rocks_baked_1k.png"
+dest_files=["res://.godot/imported/Plataforma_T_Desert_sand_plus_rocks_baked_1k.png-69219512478b713cf3953bc51b597e53.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://modelos/blocking/Plataforma_T_Desert_sand_plus_rocks_baked_1k.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

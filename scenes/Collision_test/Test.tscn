@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bihjdhcscyl84"]
+
+[ext_resource type="PackedScene" uid="uid://tpl7k3xe4ht3" path="res://scenes/game_scene.tscn" id="1_e6alc"]
+[ext_resource type="Script" uid="uid://b6a5k1conkenn" path="res://scripts/collectible_trigger.gd" id="2_spf0k"]
+[ext_resource type="PackedScene" uid="uid://cq30mjdqixaoh" path="res://scenes/UI BASE/general_ui.tscn" id="3_1vai0"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_e6alc"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_spf0k"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="GameScene" parent="." instance=ExtResource("1_e6alc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.815063, 0.0737977, 0.0446107)
+
+[node name="Collectable" type="Node3D" parent="."]
+script = ExtResource("2_spf0k")
+
+[node name="Area3D" type="Area3D" parent="Collectable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5763, 0.520329, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Collectable/Area3D"]
+shape = SubResource("SphereShape3D_e6alc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Collectable/Area3D"]
+mesh = SubResource("SphereMesh_spf0k")
+
+[node name="GeneralUi" parent="." instance=ExtResource("3_1vai0")]
+
+[connection signal="body_entered" from="Collectable/Area3D" to="Collectable" method="_on_area_3d_body_entered"]
