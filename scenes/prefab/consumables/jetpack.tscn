@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://byebw4gil1ut4"]
+
+[ext_resource type="Script" uid="uid://b6a5k1conkenn" path="res://scripts/collectible_trigger.gd" id="1_38ju5"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_eyfe7"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_usr5w"]
+
+[node name="Jetpack" type="Node3D"]
+script = ExtResource("1_38ju5")
+type_consumible = "jetpack"
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+mesh = SubResource("SphereMesh_eyfe7")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_usr5w")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

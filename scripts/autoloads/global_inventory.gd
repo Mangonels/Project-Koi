@@ -16,7 +16,7 @@ func getObject(type_consumible: String) -> void:
 func add_coins(value: int) -> void:
 	coins = coins + value;
 	print(coins);
-	UiControl.chageText(coins);
+	#UiControl.chageText(coins);
 	
 func add_seeds(value: int) -> void:
 	seeds = seeds + value;

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhgkpogi76bjt"]
+
+[ext_resource type="Script" uid="uid://dqpri1orpd3xx" path="res://scripts/auto_move.gd" id="1_bkml4"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_lurvv"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_e6u0u"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bkml4"]
+
+[node name="AutoMove" type="Node3D" node_paths=PackedStringArray("rb")]
+script = ExtResource("1_bkml4")
+rb = NodePath("Area3D/RigidBody3D")
+velocity = 1.0
+is_x = false
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.736664, 0.676259, 0, -0.676259, 0.736664, 0.216275, 2.67152, 4.29479)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_lurvv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+mesh = SubResource("CylinderMesh_e6u0u")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Area3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D/RigidBody3D"]
+shape = SubResource("CylinderShape3D_bkml4")

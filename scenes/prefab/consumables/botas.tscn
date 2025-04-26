@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://by1um5wdmn624"]
+
+[ext_resource type="Script" uid="uid://b6a5k1conkenn" path="res://scripts/collectible_trigger.gd" id="1_n6oau"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ob5su"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_sftb5"]
+
+[node name="Botas" type="Node3D"]
+script = ExtResource("1_n6oau")
+type_consumible = "boots"
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+mesh = SubResource("SphereMesh_ob5su")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_sftb5")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
