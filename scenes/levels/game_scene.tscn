@@ -48,6 +48,7 @@ material = SubResource("StandardMaterial3D_kk2rg")
 curve = SubResource("Curve_rurhu")
 
 [node name="GameScene" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.225956)
 
 [node name="StaticBody3D (provisional floor)" type="StaticBody3D" parent="."]
 

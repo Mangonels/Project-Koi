@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qa20voo4u6g7"
-path="res://.godot/imported/botas.jpg-7038bad4d584b2dbd7b196ff6df48d3b.ctex"
+uid="uid://dwb16aa3hfhba"
+path="res://.godot/imported/semilla.png-bd14cb14640b127a6d4defa410b855ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/UI BASE/imagenesPrueba/botas.jpg"
-dest_files=["res://.godot/imported/botas.jpg-7038bad4d584b2dbd7b196ff6df48d3b.ctex"]
+source_file="res://scenes/ui_base/imagenes_prueba/semilla.png"
+dest_files=["res://.godot/imported/semilla.png-bd14cb14640b127a6d4defa410b855ee.ctex"]
 
 [params]
 
