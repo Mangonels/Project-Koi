@@ -6,21 +6,20 @@
 [ext_resource type="Script" uid="uid://s81joe7xlyqv" path="res://scripts/player_movement.gd" id="3_gmlin"]
 [ext_resource type="Script" uid="uid://dxfmfd3uv2xlp" path="res://scripts/contact_grounded_transmission_query.gd" id="3_lvxji"]
 [ext_resource type="PhysicsMaterial" uid="uid://cyemguak0k6xh" path="res://resources/player_body.tres" id="5_75vfm"]
+[ext_resource type="SpriteFrames" uid="uid://d3ijikj8cesfa" path="res://resources/awawa_sprite_frames.tres" id="7_0owmy"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_lvxji"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p47bc"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_75vfm"]
-height = 2.065
-
 [node name="Player" type="Node3D"]
 
-[node name="PlayerLogic" type="Node" parent="." node_paths=PackedStringArray("player_body", "player_feet", "grounded_query")]
+[node name="PlayerLogic" type="Node" parent="." node_paths=PackedStringArray("player_body", "player_feet", "grounded_query", "sprite_animations")]
 script = ExtResource("1_8afob")
 player_body = NodePath("../PlayerBody")
 player_feet = NodePath("../PlayerFeet")
 grounded_query = NodePath("../PlayerFeet/Contact_Grounded_Transmission_Query")
+sprite_animations = NodePath("../PlayerBody/AnimatedSprite3D")
 metadata/_custom_type_script = "uid://dv8x7dkc51sjw"
 
 [node name="PlayerFeet" type="RigidBody3D" parent="."]
@@ -40,7 +39,7 @@ metadata/_custom_type_script = "uid://dxfmfd3uv2xlp"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.503236, 0)
 shape = SubResource("SphereShape3D_lvxji")
 
-[node name="PlayerBody" type="RigidBody3D" parent="." node_paths=PackedStringArray("grounded_query", "player_logic") groups=["Player_Body"]]
+[node name="PlayerBody" type="RigidBody3D" parent="." node_paths=PackedStringArray("grounded_query", "sprite_animations, player_logic") groups=["Player_Body"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00514, 0)
 axis_lock_angular_x = true
 axis_lock_angular_y = true
@@ -50,15 +49,16 @@ physics_material_override = ExtResource("5_75vfm")
 script = ExtResource("3_gmlin")
 grounded_query = NodePath("../PlayerFeet/Contact_Grounded_Transmission_Query")
 player_logic = NodePath("../PlayerLogic")
+sprite_animations = NodePath("AnimatedSprite3D")
 metadata/_custom_type_script = "uid://s81joe7xlyqv"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.109891, 0)
 shape = SubResource("CapsuleShape3D_p47bc")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PlayerBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0287628, 0)
-mesh = SubResource("CapsuleMesh_75vfm")
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="PlayerBody"]
+sprite_frames = ExtResource("7_0owmy")
+animation = &"1_movement"
 
 [node name="PinJoint3D" type="PinJoint3D" parent="."]
 node_a = NodePath("../PlayerBody")

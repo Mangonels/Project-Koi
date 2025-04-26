@@ -3,5 +3,4 @@
 [ext_resource type="Sky" uid="uid://dhi4nk2idpxe5" path="res://resources/game_sky.tres" id="1_ub2fw"]
 
 [resource]
-background_mode = 2
 sky = ExtResource("1_ub2fw")

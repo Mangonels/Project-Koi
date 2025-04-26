@@ -13,6 +13,7 @@ var jump_time: float = 10;
 @export var player_body : PlayerMovement
 @export var player_feet : RigidBody3D
 @export var grounded_query : Contact_Grounded_Transmission_Query
+@export var sprite_animations : AnimatedSprite3D
 
 func _number_jumps() -> void:
 	if (canDoubleJump):
@@ -64,7 +65,11 @@ func _on_grounded_ungrounded_checks():
 		player_feet.physics_material_override.set_friction(0.0)
 	# Just landed check:
 	elif(not _grounded_previous_frame and grounded_query.is_grounded):
-		player_feet.physics_material_override.set_friction(0.7);
+
+		player_feet.physics_material_override.set_friction(0.7)
 		_number_jumps()
+		sprite_animations.play("1_movement")
+		sprite_animations.set_frame(0)
+		sprite_animations.pause()
 		
 	_grounded_previous_frame = grounded_query.is_grounded
