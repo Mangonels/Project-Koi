@@ -1,14 +1,14 @@
 [gd_scene load_steps=17 format=3 uid="uid://tpl7k3xe4ht3"]
 
-[ext_resource type="Environment" uid="uid://cg3qp1n5ul5rf" path="res://resources/game_environment.tres" id="1_w5aja"]
-[ext_resource type="PackedScene" uid="uid://terr1jywx0ub" path="res://scenes/player/player.tscn" id="2_onqr8"]
-[ext_resource type="PackedScene" uid="uid://fakdbfckpi4c" path="res://scenes/prefab/rampa_2x0,5.tscn" id="3_bw6k5"]
-[ext_resource type="PackedScene" uid="uid://ch4emonvtqsb7" path="res://scenes/prefab/podio.tscn" id="3_y3j0m"]
-[ext_resource type="PackedScene" uid="uid://ds61mgbyupgc3" path="res://scenes/prefab/rampa_1.5x1.tscn" id="3_ycayy"]
-[ext_resource type="PackedScene" uid="uid://dk6238nqycrt8" path="res://scenes/prefab/plataforma_cubo.tscn" id="4_bw6k5"]
-[ext_resource type="PackedScene" uid="uid://bot1cqoewjth3" path="res://scenes/prefab/plataforma_0,5x_2.tscn" id="4_kk2rg"]
-[ext_resource type="PackedScene" uid="uid://dcii87dr1e6e0" path="res://scenes/prefab/platform_4m.tscn" id="7_kk2rg"]
-[ext_resource type="PackedScene" uid="uid://f22ka045f7tn" path="res://scenes/prefab/bridge_2.tscn" id="8_b5spy"]
+[ext_resource type="PackedScene" uid="uid://dcii87dr1e6e0" path="res://scenes/prefab/platform_4m.tscn" id="1_jstec"]
+[ext_resource type="PackedScene" uid="uid://ds61mgbyupgc3" path="res://scenes/prefab/rampa_1.5x1.tscn" id="2_301yp"]
+[ext_resource type="PackedScene" uid="uid://ch4emonvtqsb7" path="res://scenes/prefab/podio.tscn" id="3_dsjjn"]
+[ext_resource type="PackedScene" uid="uid://bot1cqoewjth3" path="res://scenes/prefab/plataforma_0,5x_2.tscn" id="4_euv8e"]
+[ext_resource type="PackedScene" uid="uid://f22ka045f7tn" path="res://scenes/prefab/bridge_2.tscn" id="5_5fmco"]
+[ext_resource type="PackedScene" uid="uid://dk6238nqycrt8" path="res://scenes/prefab/plataforma_cubo.tscn" id="6_43jhk"]
+[ext_resource type="PackedScene" uid="uid://fakdbfckpi4c" path="res://scenes/prefab/rampa_2x0,5.tscn" id="7_4t5r3"]
+[ext_resource type="Environment" uid="uid://cg3qp1n5ul5rf" path="res://resources/game_environment.tres" id="8_yk7ho"]
+[ext_resource type="PackedScene" uid="uid://terr1jywx0ub" path="res://scenes/player/player.tscn" id="9_kg0xf"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_lxttp"]
 
@@ -82,112 +82,112 @@ shape = SubResource("ConcavePolygonShape3D_bw6k5")
 
 [node name="Props" type="Node" parent="Level_0000"]
 
-[node name="platform_4M" parent="Level_0000/Props" instance=ExtResource("7_kk2rg")]
+[node name="platform_4M" parent="Level_0000/Props" instance=ExtResource("1_jstec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0168, 5.38369, 0.0188904)
 
-[node name="platform_4M2" parent="Level_0000/Props" instance=ExtResource("7_kk2rg")]
+[node name="platform_4M2" parent="Level_0000/Props" instance=ExtResource("1_jstec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0168, 5.38369, -7.28604)
 
-[node name="rampa_1_5Mx1M" parent="Level_0000/Props" instance=ExtResource("3_ycayy")]
+[node name="rampa_1_5Mx1M" parent="Level_0000/Props" instance=ExtResource("2_301yp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.009, 3.998, 0.00297976)
 
-[node name="podio" parent="Level_0000/Props" instance=ExtResource("3_y3j0m")]
+[node name="podio" parent="Level_0000/Props" instance=ExtResource("3_dsjjn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.46351, -0.00610371, -0.0765145)
 
-[node name="Plataforma_0_5M2" parent="Level_0000/Props" instance=ExtResource("4_kk2rg")]
+[node name="Plataforma_0_5M2" parent="Level_0000/Props" instance=ExtResource("4_euv8e")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.1399, 4.97694, -0.253933)
 
-[node name="Plataforma_0_5M4" parent="Level_0000/Props" instance=ExtResource("4_kk2rg")]
+[node name="Plataforma_0_5M4" parent="Level_0000/Props" instance=ExtResource("4_euv8e")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15.6368, 4.97694, -0.253933)
 
-[node name="Plataforma_0_5M5" parent="Level_0000/Props" instance=ExtResource("4_kk2rg")]
+[node name="Plataforma_0_5M5" parent="Level_0000/Props" instance=ExtResource("4_euv8e")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.1262, 4.97694, -0.253933)
 
-[node name="Plataforma_0_5M3" parent="Level_0000/Props" instance=ExtResource("4_kk2rg")]
+[node name="Plataforma_0_5M3" parent="Level_0000/Props" instance=ExtResource("4_euv8e")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -14.1399, 4.97694, 0.239262)
 
-[node name="Plataforma_0_5M6" parent="Level_0000/Props" instance=ExtResource("4_kk2rg")]
+[node name="Plataforma_0_5M6" parent="Level_0000/Props" instance=ExtResource("4_euv8e")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15.6368, 4.97694, 0.239262)
 
-[node name="Plataforma_0_5M7" parent="Level_0000/Props" instance=ExtResource("4_kk2rg")]
+[node name="Plataforma_0_5M7" parent="Level_0000/Props" instance=ExtResource("4_euv8e")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -17.1262, 4.97694, 0.239262)
 
-[node name="Plataforma_0_5M8" parent="Level_0000/Props" instance=ExtResource("4_kk2rg")]
+[node name="Plataforma_0_5M8" parent="Level_0000/Props" instance=ExtResource("4_euv8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.1763, 5.63159, -5.15089)
 
-[node name="Plataforma_0_5M9" parent="Level_0000/Props" instance=ExtResource("4_kk2rg")]
+[node name="Plataforma_0_5M9" parent="Level_0000/Props" instance=ExtResource("4_euv8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.1763, 5.63159, -3.65404)
 
-[node name="Plataforma_0_5M10" parent="Level_0000/Props" instance=ExtResource("4_kk2rg")]
+[node name="Plataforma_0_5M10" parent="Level_0000/Props" instance=ExtResource("4_euv8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.1763, 5.63159, -2.16461)
 
-[node name="Plataforma_0_5M11" parent="Level_0000/Props" instance=ExtResource("4_kk2rg")]
+[node name="Plataforma_0_5M11" parent="Level_0000/Props" instance=ExtResource("4_euv8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6831, 5.63159, -5.15089)
 
-[node name="Plataforma_0_5M12" parent="Level_0000/Props" instance=ExtResource("4_kk2rg")]
+[node name="Plataforma_0_5M12" parent="Level_0000/Props" instance=ExtResource("4_euv8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6831, 5.63159, -3.65404)
 
-[node name="Plataforma_0_5M13" parent="Level_0000/Props" instance=ExtResource("4_kk2rg")]
+[node name="Plataforma_0_5M13" parent="Level_0000/Props" instance=ExtResource("4_euv8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6831, 5.63159, -2.16461)
 
-[node name="platform_4M3" parent="Level_0000/Props" instance=ExtResource("7_kk2rg")]
+[node name="platform_4M3" parent="Level_0000/Props" instance=ExtResource("1_jstec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.984549, 9.58579, -7.50994)
 
-[node name="platform_4M4" parent="Level_0000/Props" instance=ExtResource("7_kk2rg")]
+[node name="platform_4M4" parent="Level_0000/Props" instance=ExtResource("1_jstec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.984549, 9.58579, -14.8149)
 
-[node name="platform_4M5" parent="Level_0000/Props" instance=ExtResource("7_kk2rg")]
+[node name="platform_4M5" parent="Level_0000/Props" instance=ExtResource("1_jstec")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0487, 11.23, -14.8149)
 
-[node name="Plataforma_0_5M14" parent="Level_0000/Props" instance=ExtResource("4_kk2rg")]
+[node name="Plataforma_0_5M14" parent="Level_0000/Props" instance=ExtResource("4_euv8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.144, 9.83369, -12.6797)
 
-[node name="Plataforma_0_5M15" parent="Level_0000/Props" instance=ExtResource("4_kk2rg")]
+[node name="Plataforma_0_5M15" parent="Level_0000/Props" instance=ExtResource("4_euv8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.144, 9.83369, -11.1829)
 
-[node name="Plataforma_0_5M16" parent="Level_0000/Props" instance=ExtResource("4_kk2rg")]
+[node name="Plataforma_0_5M16" parent="Level_0000/Props" instance=ExtResource("4_euv8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.144, 9.83369, -9.69344)
 
-[node name="Plataforma_0_5M17" parent="Level_0000/Props" instance=ExtResource("4_kk2rg")]
+[node name="Plataforma_0_5M17" parent="Level_0000/Props" instance=ExtResource("4_euv8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650807, 9.83369, -12.6797)
 
-[node name="Plataforma_0_5M18" parent="Level_0000/Props" instance=ExtResource("4_kk2rg")]
+[node name="Plataforma_0_5M18" parent="Level_0000/Props" instance=ExtResource("4_euv8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650807, 9.83369, -11.1829)
 
-[node name="Plataforma_0_5M19" parent="Level_0000/Props" instance=ExtResource("4_kk2rg")]
+[node name="Plataforma_0_5M19" parent="Level_0000/Props" instance=ExtResource("4_euv8e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.650807, 9.83369, -9.69344)
 
-[node name="bridge2" parent="Level_0000/Props" instance=ExtResource("8_b5spy")]
+[node name="bridge2" parent="Level_0000/Props" instance=ExtResource("5_5fmco")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9583, 7.9762, -7.31757)
 
-[node name="Plataforma_cubo" parent="Level_0000/Props" instance=ExtResource("4_bw6k5")]
+[node name="Plataforma_cubo" parent="Level_0000/Props" instance=ExtResource("6_43jhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6137, 4.99623, -7.30576)
 
-[node name="rampa_2Mx0_5M2" parent="Level_0000/Props" instance=ExtResource("3_bw6k5")]
+[node name="rampa_2Mx0_5M2" parent="Level_0000/Props" instance=ExtResource("7_4t5r3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.92469, 10.0148, -7.27518)
 
-[node name="rampa_2Mx0_5M3" parent="Level_0000/Props" instance=ExtResource("3_bw6k5")]
+[node name="rampa_2Mx0_5M3" parent="Level_0000/Props" instance=ExtResource("7_4t5r3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.3798, 11.6775, -14.5907)
 
-[node name="rampa_2Mx0_5M4" parent="Level_0000/Props" instance=ExtResource("3_bw6k5")]
+[node name="rampa_2Mx0_5M4" parent="Level_0000/Props" instance=ExtResource("7_4t5r3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.3518, 12.1709, -14.5907)
 
-[node name="Plataforma_cubo2" parent="Level_0000/Props" instance=ExtResource("4_bw6k5")]
+[node name="Plataforma_cubo2" parent="Level_0000/Props" instance=ExtResource("6_43jhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.99939, 9.65798, -14.7231)
 
-[node name="Plataforma_cubo3" parent="Level_0000/Props" instance=ExtResource("4_bw6k5")]
+[node name="Plataforma_cubo3" parent="Level_0000/Props" instance=ExtResource("6_43jhk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0159, 10.6621, -14.7231)
 
-[node name="Plataforma_cubo4" parent="Level_0000/Props" instance=ExtResource("4_bw6k5")]
+[node name="Plataforma_cubo4" parent="Level_0000/Props" instance=ExtResource("6_43jhk")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -18.0328, 9.65798, -14.7231)
 
-[node name="Plataforma_cubo5" parent="Level_0000/Props" instance=ExtResource("4_bw6k5")]
+[node name="Plataforma_cubo5" parent="Level_0000/Props" instance=ExtResource("6_43jhk")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -14.0163, 10.6621, -14.7231)
 
 [node name="Lighting" type="Node" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
-environment = ExtResource("1_w5aja")
+environment = ExtResource("8_yk7ho")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
 transform = Transform3D(0.930048, 0.366877, -0.020288, -0.279335, 0.741838, 0.60963, 0.23871, -0.561319, 0.792426, 0, 3.45969, 0)
@@ -208,4 +208,4 @@ draw_pass_1 = SubResource("RibbonTrailMesh_b5spy")
 
 [node name="Character" type="Node" parent="."]
 
-[node name="Player" parent="Character" instance=ExtResource("2_onqr8")]
+[node name="Player" parent="Character" instance=ExtResource("9_kg0xf")]
