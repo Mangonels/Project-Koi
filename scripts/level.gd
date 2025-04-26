@@ -1,15 +1,47 @@
 extends Node
 
-signal level_change 
+var current_number = 0
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
-func _level_change(main_level: bool) -> void:
-	print("We're here")
-	emit_signal("level_change", main_level)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	pass
+
+func _load_new_level(first_run: bool) -> void:
+	var current_level: Node3D
+
+	if first_run:
+		current_level = get_node("/root/MainScene/MainMenuItem")
+		
+		if current_level:
+			var water_node = get_node("/root/MainScene/Water")
+
+			if !water_node:
+				print("Failed to find Water Item?")
+				return
+				
+			water_node.show()
+
+			print("Found MainMenuItem")
+		else:
+			print("Didn't find MainMenuItem")
+			return
+
+	remove_child(current_level)
+	current_level.call_deferred("free")
+
+	var level_str: String = "res://scenes/levels/level_" + str(current_number) + ".tscn"
+	
+	var next_level_resource = load(level_str)
+
+	if next_level_resource:
+		var e = next_level_resource.instantiate()
+		e.name = "Level" + str(current_number)
+		add_child(e)
+		print("Loaded new level: ", e.name)
+	else:
+		print("Couldn't load new scene!")
+		return
+
 	pass

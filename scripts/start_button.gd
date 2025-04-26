@@ -10,11 +10,12 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_body_entered(body: Node3D) -> void: 
-	if body.name == "Player":
-		Level._level_change(true)
+	if body.name == "PlayerFeet":
+		Level._load_new_level(true)
 	pass
 
 func _on_body_exited(body: Node3D) -> void:
-	if body.name == "Player":
+	print(body.name)
+	if body.name == "PlayerFeet":
 		print("Player left top")
 	pass
