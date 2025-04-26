@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dv7qcwhasnu3v" path="res://scripts/level.gd" id="1_oa1go"]
 [ext_resource type="Script" uid="uid://y14ikj3svbq" path="res://scripts/start_button.gd" id="2_bqqt6"]
 [ext_resource type="Script" uid="uid://dctyrqpjo11ni" path="res://Shader/water.gd" id="4_rtw2f"]
-[ext_resource type="PackedScene" uid="uid://ckck10vm4phu1" path="res://Shader/Water.tscn" id="4_wu84c"]
+[ext_resource type="PackedScene" uid="uid://crgimabarlgt7" path="res://Shader/Water.tscn" id="4_wu84c"]
 [ext_resource type="PackedScene" uid="uid://terr1jywx0ub" path="res://scenes/player/player.tscn" id="6_rtw2f"]
 [ext_resource type="PackedScene" uid="uid://c1q2xr4ja57qs" path="res://scenes/camera/spring_arm_3d.tscn" id="7_oa1go"]
 

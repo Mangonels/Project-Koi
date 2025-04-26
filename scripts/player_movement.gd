@@ -93,7 +93,7 @@ func ascend() -> void:
 		#AudioPlayer.play_global_effect(ResourceLoader.load("res://Audio/Effects/jump.wav", "AudioStream"), 0.5)
 		add_force_at_center(Vector3.UP, jump_strength)
 		
-		sprite_animations.play("2_jump")
+		#sprite_animations.play("2_jump")
 
 func ascend_cut():
 	if movement_locked:

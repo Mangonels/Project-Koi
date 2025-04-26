@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://xqbtud4ish4o"]
+[gd_scene load_steps=16 format=3 uid="uid://fyvbjeur0o5p"]
 
 [ext_resource type="PackedScene" uid="uid://dcii87dr1e6e0" path="res://scenes/prefab/platform_4m.tscn" id="1_jstec"]
 [ext_resource type="PackedScene" uid="uid://ds61mgbyupgc3" path="res://scenes/prefab/rampa_1.5x1.tscn" id="2_301yp"]
