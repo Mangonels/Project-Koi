@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://tpl7k3xe4ht3"]
+[gd_scene load_steps=16 format=3 uid="uid://tpl7k3xe4ht3"]
 
 [ext_resource type="PackedScene" uid="uid://dcii87dr1e6e0" path="res://scenes/prefab/platform_4m.tscn" id="1_jstec"]
 [ext_resource type="PackedScene" uid="uid://ds61mgbyupgc3" path="res://scenes/prefab/rampa_1.5x1.tscn" id="2_301yp"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dk6238nqycrt8" path="res://scenes/prefab/plataforma_cubo.tscn" id="6_43jhk"]
 [ext_resource type="PackedScene" uid="uid://fakdbfckpi4c" path="res://scenes/prefab/rampa_2x0,5.tscn" id="7_4t5r3"]
 [ext_resource type="Environment" uid="uid://cg3qp1n5ul5rf" path="res://resources/game_environment.tres" id="8_yk7ho"]
-[ext_resource type="PackedScene" uid="uid://terr1jywx0ub" path="res://scenes/player/player.tscn" id="9_kg0xf"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_lxttp"]
 
@@ -205,7 +204,3 @@ trail_enabled = true
 trail_lifetime = 0.1
 process_material = SubResource("ParticleProcessMaterial_y3j0m")
 draw_pass_1 = SubResource("RibbonTrailMesh_b5spy")
-
-[node name="Character" type="Node" parent="."]
-
-[node name="Player" parent="Character" instance=ExtResource("9_kg0xf")]
