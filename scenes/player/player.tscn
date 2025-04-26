@@ -11,7 +11,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_lvxji"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p47bc"]
-height = 2.4
+height = 2.2
 
 [node name="Player" type="Node3D"]
 
@@ -41,7 +41,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.503236, 0)
 shape = SubResource("SphereShape3D_lvxji")
 
 [node name="PlayerBody" type="RigidBody3D" parent="." node_paths=PackedStringArray("grounded_query", "player_logic", "sprite_animations") groups=["Player_Body"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00514, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02406, 0)
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
@@ -56,14 +56,14 @@ jump_strength = 1300.0
 metadata/_custom_type_script = "uid://s81joe7xlyqv"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275512, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20974, 0)
 shape = SubResource("CapsuleShape3D_p47bc")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="PlayerBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.381229, 0)
 sprite_frames = ExtResource("7_0owmy")
 animation = &"1_movement"
-frame_progress = 0.929185
+frame_progress = 0.513215
 
 [node name="Camera3D" type="Camera3D" parent="PlayerBody"]
 transform = Transform3D(1, 0, 0, 0, 0.735092, 0.677967, 0, -0.677967, 0.735092, 0, 2.28216, 3.00933)

@@ -47,6 +47,11 @@ func _horizontal():
 		sprite_animations.stop()
 		return
 	
+	if _horizontal_movement.x > 0.0:
+		sprite_animations.scale.x = -1.0
+	elif _horizontal_movement.x < 0.0:
+		sprite_animations.scale.x = 1.0
+		
 	# The velocity the protagonist's rigidbody will try to achieve,
 	# depends on grounded or airbourne status
 	var target_velocity : Vector2
