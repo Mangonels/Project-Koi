@@ -2,11 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-<<<<<<< HEAD
-uid="uid://slj4porlnuop"
-=======
-uid="uid://fsdvi0x1p7tk"
->>>>>>> main
+uid="uid://byfrgts6uhu8k"
 path="res://.godot/imported/fx_salida_burbuja_texto.wav-7c7f02e2f4253b6995a9bdda382571c1.sample"
 
 [deps]
