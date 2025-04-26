@@ -47,12 +47,6 @@ func _horizontal():
 		sprite_animations.stop()
 		return
 	
-	if camera_relative:
-		# The 2 angles work as horizontal movement coordinates		_horizontal_movement = Vector2(
-			_camera.get_camera_right_vector_horizontal().dot(_horizontal_movement),
-			_camera.get_camera_forward_vector_horizontal().dot(_horizontal_movement)
-		)
-	
 	# The velocity the protagonist's rigidbody will try to achieve,
 	# depends on grounded or airbourne status
 	var target_velocity : Vector2
