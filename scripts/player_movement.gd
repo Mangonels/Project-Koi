@@ -6,7 +6,7 @@ class_name PlayerMovement extends RigidBody3D
 @export var sprite_animations : AnimatedSprite3D
 
 # The max slope the final applied movement force can adapt to
-@export var max_slope_angle : float = 30.0
+@export var max_slope_angle : float = 50.0
 
 # True: Locks all movement,
 # False: Unlocks all movement
@@ -18,10 +18,15 @@ var _camera : SpringArm3D
 
 @export var ground_mobility : float = 15.0
 @export var air_mobility : float = 12.0
-@export var jump_strength : float = 1500.0
-@export var jump_cut_proportion : float = 0.3
+
 @export var full_speed_rate_grounded : float = 10.0
 @export var full_speed_rate_airbourne : float = 10.0
+
+@export var jump_strength : float = 1500.0
+@export var jump_cut_proportion : float = 0.3
+
+@export var propulsion_strength : float = 85
+
 
 # The horizontal movement direction vector. Should always be set normalized.
 var _horizontal_movement : Vector2 = Vector2.ZERO
@@ -107,6 +112,12 @@ func ascend_cut():
 	if self.linear_velocity.y > 0 && !grounded_query.is_grounded:
 		add_force_at_center(Vector3.DOWN, jump_strength * jump_cut_proportion)
 
+func propulsion():	 
+	#pply_central_force(Vector3.UP * upward_force)
+		apply_central_force(Vector3.UP * propulsion_strength)
+		print(Time.get_ticks_usec())		
+		
+	
 ## Callback (mandatory for proper functionality) by a movement input signal 
 ## sending the horizontal movement direction
 func _on_movement_command(move_direction : Vector2):

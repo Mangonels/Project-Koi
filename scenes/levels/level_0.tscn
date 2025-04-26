@@ -46,6 +46,7 @@ material = SubResource("StandardMaterial3D_301yp")
 curve = SubResource("Curve_jstec")
 
 [node name="GameScene" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.225956)
 
 [node name="Level_0000" type="Node" parent="."]
 

@@ -25,10 +25,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.136847, 0, 0.272984)
 mesh = SubResource("SphereMesh_spf0k")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12888, 25.2008)
-fov = 93.6
-near = 0.032
-far = 4002.3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12888, 4.16272)
 
 [node name="Player" parent="." instance=ExtResource("3_8v52k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.883082, 1.30872, 2.39053)

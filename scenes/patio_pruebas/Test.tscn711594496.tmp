@@ -12,10 +12,10 @@
 
 [node name="Mesh" type="Node3D" parent="."]
 script = ExtResource("2_spf0k")
-type_consumible = "jetpack"
+type_consumible = "boots"
 
 [node name="Area3D" type="Area3D" parent="Mesh"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.165261, 0.520329, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5763, 0.520329, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Mesh/Area3D"]
 shape = SubResource("SphereShape3D_e6alc")
@@ -25,10 +25,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.136847, 0, 0.272984)
 mesh = SubResource("SphereMesh_spf0k")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12888, 25.2008)
-fov = 93.6
-near = 0.032
-far = 4002.3
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.12888, 4.16272)
 
 [node name="Player" parent="." instance=ExtResource("3_8v52k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.883082, 1.30872, 2.39053)

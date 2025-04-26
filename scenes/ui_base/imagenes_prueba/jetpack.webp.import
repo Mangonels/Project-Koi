@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwb16aa3hfhba"
-path="res://.godot/imported/semilla.png-da921e625d3978223f8864b10a3406f2.ctex"
+uid="uid://bn581ffqs3jad"
+path="res://.godot/imported/jetpack.webp-62e60162bd5fa3a2cec6f16de342758d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/UI BASE/imagenesPrueba/semilla.png"
-dest_files=["res://.godot/imported/semilla.png-da921e625d3978223f8864b10a3406f2.ctex"]
+source_file="res://scenes/ui_base/imagenes_prueba/jetpack.webp"
+dest_files=["res://.godot/imported/jetpack.webp-62e60162bd5fa3a2cec6f16de342758d.ctex"]
 
 [params]
 
