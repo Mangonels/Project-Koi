@@ -16,12 +16,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			GlobalInventory.getObject(type_consumible);
 			if(type_consumible == "boots"):
 				_player_logic._activate_double_jump();
-<<<<<<< Updated upstream
-				if(type_consumible == "seed"):
-					GlobalInventory
-=======
 			if(type_consumible == "jetpack"):
 				_player_logic._activate_propulse();
->>>>>>> Stashed changes
 			queue_free();
 	 # Replace with function body.
