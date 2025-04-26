@@ -1,0 +1,34 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+<<<<<<< HEAD:resources/music/fx/fx_movimiento/zzz_props_movimiento_extras/fx_frenar_caminar.wav.import
+uid="uid://clu1obwdafv48"
+path="res://.godot/imported/fx_frenar_caminar.wav-0e58347b51cc15bcfa481adac8aa6ae3.sample"
+
+[deps]
+
+source_file="res://resources/music/fx/fx_movimiento/zzz_props_movimiento_extras/fx_frenar_caminar.wav"
+dest_files=["res://.godot/imported/fx_frenar_caminar.wav-0e58347b51cc15bcfa481adac8aa6ae3.sample"]
+=======
+uid="uid://bt15161yydstx"
+path="res://.godot/imported/fx_frenar_caminar.wav-48d7f6d8d051db8032ee7cd81ffed276.sample"
+
+[deps]
+
+source_file="res://resources/music/fx/fx_movimiento/movimiento_extras/fx_frenar_caminar.wav"
+dest_files=["res://.godot/imported/fx_frenar_caminar.wav-48d7f6d8d051db8032ee7cd81ffed276.sample"]
+>>>>>>> main:resources/music/fx/fx_movimiento/movimiento_extras/fx_frenar_caminar.wav.import
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

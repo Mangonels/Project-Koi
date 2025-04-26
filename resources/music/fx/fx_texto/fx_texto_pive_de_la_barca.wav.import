@@ -2,7 +2,11 @@
 
 importer="wav"
 type="AudioStreamWAV"
+<<<<<<< HEAD
 uid="uid://cdv1p8gplpcrs"
+=======
+uid="uid://dtyi7h2ralib0"
+>>>>>>> main
 path="res://.godot/imported/fx_texto_pive_de_la_barca.wav-0eb065d6ae639b0d62f66f6f2e8c5aef.sample"
 
 [deps]

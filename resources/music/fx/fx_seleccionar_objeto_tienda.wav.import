@@ -2,7 +2,11 @@
 
 importer="wav"
 type="AudioStreamWAV"
+<<<<<<< HEAD
 uid="uid://cjlne1h7jst13"
+=======
+uid="uid://dkg1l2r2o8y8x"
+>>>>>>> main
 path="res://.godot/imported/fx_seleccionar_objeto_tienda.wav-1c1e295d8d301e16f94411351c1f3a75.sample"
 
 [deps]

@@ -2,7 +2,11 @@
 
 importer="wav"
 type="AudioStreamWAV"
+<<<<<<< HEAD
 uid="uid://bdjpfbyawqlkf"
+=======
+uid="uid://t2jelo6dvyfk"
+>>>>>>> main
 path="res://.godot/imported/fx_te_toca_el_agua.wav-ecaf64d1e5f9853a815215c190b400e1.sample"
 
 [deps]

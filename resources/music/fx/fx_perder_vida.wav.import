@@ -2,7 +2,11 @@
 
 importer="wav"
 type="AudioStreamWAV"
+<<<<<<< HEAD
 uid="uid://cgx016arx3k78"
+=======
+uid="uid://sru6w7inrrb7"
+>>>>>>> main
 path="res://.godot/imported/fx_perder_vida.wav-053beeaec2f2ca41a6a7a887003e94bb.sample"
 
 [deps]

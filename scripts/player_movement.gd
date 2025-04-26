@@ -2,6 +2,7 @@
 class_name PlayerMovement extends RigidBody3D
 
 @export var grounded_query : Contact_Grounded_Transmission_Query
+@export var player_logic: PlayerLogic
 @export var sprite_animations : AnimatedSprite3D
 
 # The max slope the final applied movement force can adapt to
@@ -10,6 +11,10 @@ class_name PlayerMovement extends RigidBody3D
 # True: Locks all movement,
 # False: Unlocks all movement
 @export var movement_locked : bool = false
+# True: Makes the movement relative to the main camera,
+# False: Makes the movement aligned with the world axis
+@export var camera_relative : bool = true
+var _camera : SpringArm3D
 
 @export var ground_mobility : float = 15.0
 @export var air_mobility : float = 12.0
@@ -32,12 +37,22 @@ func _physics_process(delta):
 func add_force_at_center(direction : Vector3, magnitude : float = 1.0):
 	apply_central_force(direction * magnitude)
 
+func _ready():
+	_camera = get_tree().get_first_node_in_group("main_camera_system")
+
 ## Moves the protagonist horizontally according to direction, factoring
 ## in it's ground/air mobility and if it's relative to camera or world axis.
 func _horizontal():
 	if _horizontal_movement == Vector2.ZERO || movement_locked:
 		sprite_animations.stop()
 		return
+	
+	if camera_relative:
+		# The 2 angles work as horizontal movement coordinates
+		_horizontal_movement = Vector2(
+			_camera.get_camera_right_vector_horizontal().dot(_horizontal_movement),
+			_camera.get_camera_forward_vector_horizontal().dot(_horizontal_movement)
+		)
 	
 	# The velocity the protagonist's rigidbody will try to achieve,
 	# depends on grounded or airbourne status
@@ -77,11 +92,11 @@ func _horizontal():
 	sprite_animations.play("1_movement")
 
 ## Basically a jump command
-func ascend():
+func ascend() -> void:
+	#print(player_logic.canDoubleJump);
 	if movement_locked:
 		return
-	
-	elif grounded_query.is_grounded:
+	elif grounded_query.is_grounded or (!grounded_query.is_grounded && player_logic.canDoubleJump):
 		#AudioPlayer.play_global_effect(ResourceLoader.load("res://Audio/Effects/jump.wav", "AudioStream"), 0.5)
 		add_force_at_center(Vector3.UP, jump_strength)
 		
