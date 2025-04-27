@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b0eg010kp0ac"]
+[gd_scene load_steps=15 format=3 uid="uid://xqcyrprsalfb"]
 
 [ext_resource type="Script" uid="uid://dv7qcwhasnu3v" path="res://scripts/level.gd" id="1_c16ls"]
 [ext_resource type="Sky" uid="uid://dhi4nk2idpxe5" path="res://resources/game_sky.tres" id="2_18nlu"]
