@@ -38,6 +38,9 @@ func _load_new_level(first_run: bool) -> void:
 		else:
 			print("Didn't find MainMenuItem")
 			return
+	else:
+		var current_level_node: String = "/root/MainScene/level_" + str(current_number)
+		current_level = get_node(current_level_node)
 
 	remove_child(current_level)
 	current_level.call_deferred("free")
