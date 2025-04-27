@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://sg7qd8p84y3m" path="res://scenes/prefab/grifo/grifo.tscn" id="8_3p04p"]
 [ext_resource type="PackedScene" uid="uid://cr8sukwj5y534" path="res://scenes/prefab/barco/barco_prefab.tscn" id="8_8qukl"]
 [ext_resource type="Script" uid="uid://b7upn7gkjbe7y" path="res://scenes/levels/trigger_escenafinal.gd" id="10_qsp8v"]
-[ext_resource type="Texture2D" uid="uid://bq500ld65yadd" path="res://materials/textures/IMG_5771.jpg" id="11_nt80m"]
+[ext_resource type="Texture2D" uid="uid://e0micpmfpffa" path="res://materials/textures/IMG_5771.jpg" id="11_nt80m"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_c6ba3"]
 
@@ -33,17 +33,6 @@ albedo_color = Color(1, 0.733333, 0.113725, 1)
 [node name="level_0002" type="Node" parent="."]
 
 [node name="entorno" type="Node" parent="level_0002"]
-
-[node name="floor" type="MeshInstance3D" parent="level_0002/entorno"]
-transform = Transform3D(70, 0, 0, 0, 0.3, 0, 0, 0, 70, 0.226578, -0.0692085, -28.0224)
-mesh = SubResource("BoxMesh_c6ba3")
-skeleton = NodePath("../../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="level_0002/entorno/floor"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="level_0002/entorno/floor/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
-shape = SubResource("ConcavePolygonShape3D_qo38u")
 
 [node name="wall" type="MeshInstance3D" parent="level_0002/entorno"]
 transform = Transform3D(69.9997, -0.000397411, -0.171253, 0.1713, 0.000150779, 69.9998, -0.0926428, -0.3, 0.0354084, 0.635224, 35.087, -16.9954)
@@ -138,14 +127,18 @@ transform = Transform3D(1.60541, 0, 0, 0, 1, 0, 0, 0, 1.35526, -23.5583, 20.0147
 transform = Transform3D(1.64503, 0, 0, 0, 1, 0, 0, 0, 1.33501, -23.5583, 20.0147, 3.94873)
 
 [node name="Plataforma_cubo3" parent="level_0002/props" instance=ExtResource("6_8qukl")]
-transform = Transform3D(1.64503, 0, 0, 0, 1, 0, 0, 0, 1.33501, -17.8759, 23.9316, 4.00194)
+transform = Transform3D(1.64503, 0, 0, 0, 1, 0, 0, 0, 1.33501, -14.0637, 23.9316, 4.00194)
+
+[node name="Plataforma_cubo5" parent="level_0002/props" instance=ExtResource("6_8qukl")]
+transform = Transform3D(1.64503, 0, 0, 0, 1, 0, 0, 0, 1.33501, -18.5187, 21.6561, 4.00194)
 
 [node name="Plataforma_cubo4" parent="level_0002/props" instance=ExtResource("6_8qukl")]
 transform = Transform3D(1.64503, 0, 0, 0, 1, 0, 0, 0, 1.66627, -17.7281, 27.4763, -2.12291)
 
 [node name="Botas" parent="level_0002/props" instance=ExtResource("6_3p04p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5716, 22.5147, 3.52428)
-ruta = "/root/Level0002/Player/PlayerLogic"
+type_consumible = "jetpack"
+ruta = "/root/MainScene/Player/PlayerLogic"
 
 [node name="platform_4M" parent="level_0002/props" instance=ExtResource("1_ibugp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6316, 29.1351, -13.5523)

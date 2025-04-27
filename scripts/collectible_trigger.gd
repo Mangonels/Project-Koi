@@ -2,7 +2,7 @@ class_name collectible_trigger extends Node
 
 #definimos el tipo de objeto
 @export var type_consumible = "coin";
-@export var _player_logic: PlayerLogic;
+var _player_logic: PlayerLogic;
 @export var ruta: String;
 
 var enter: bool = false;
