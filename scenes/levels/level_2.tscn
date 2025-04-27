@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bhqurev87diy4"]
+[gd_scene load_steps=10 format=3 uid="uid://bhqurev87diy4"]
 
 [ext_resource type="PackedScene" uid="uid://dcii87dr1e6e0" path="res://scenes/prefab/platform_4m.tscn" id="1_ibugp"]
 [ext_resource type="PackedScene" uid="uid://bot1cqoewjth3" path="res://scenes/prefab/plataforma_0,5x_2.tscn" id="2_8qukl"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bys165e2lbsqg" path="res://scenes/prefab/plataforma_2x2.tscn" id="4_qsp8v"]
 [ext_resource type="PackedScene" uid="uid://by1um5wdmn624" path="res://scenes/prefab/consumables/botas.tscn" id="6_3p04p"]
 [ext_resource type="PackedScene" uid="uid://dk6238nqycrt8" path="res://scenes/prefab/plataforma_cubo.tscn" id="6_8qukl"]
+[ext_resource type="PackedScene" uid="uid://cr8sukwj5y534" path="res://scenes/prefab/barco/barco_prefab.tscn" id="8_8qukl"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_c6ba3"]
 
@@ -30,7 +31,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
 shape = SubResource("ConcavePolygonShape3D_qo38u")
 
 [node name="wall" type="MeshInstance3D" parent="level_0002/entorno"]
-transform = Transform3D(70, 0, 0, 0, -1.31134e-08, 70, 0, -0.3, -3.0598e-06, 0.226578, 34.9839, -16.5238)
+transform = Transform3D(69.9997, -0.000397411, -0.171253, 0.1713, 0.000150779, 69.9998, -0.0926428, -0.3, 0.0354084, 0.635224, 35.087, -16.9954)
+visible = false
 mesh = SubResource("BoxMesh_c6ba3")
 skeleton = NodePath("../../..")
 
@@ -132,3 +134,6 @@ ruta = "/root/Level0002/Character/Player/PlayerLogic"
 
 [node name="platform_4M" parent="level_0002/props" instance=ExtResource("1_ibugp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6316, 29.1351, -13.5523)
+
+[node name="BarcoPrefab" parent="level_0002" instance=ExtResource("8_8qukl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1813, 27.4151, -17.9461)

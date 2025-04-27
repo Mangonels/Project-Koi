@@ -30,7 +30,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
 shape = SubResource("ConcavePolygonShape3D_of648")
 
 [node name="wall" type="MeshInstance3D" parent="level_0001/entorno"]
-transform = Transform3D(70, 0, 0, 0, -1.31134e-08, 70, 0, -0.3, -3.0598e-06, 0.226578, 34.9839, -16.5238)
+transform = Transform3D(70, 0, 0, 0, -1.31134e-08, 70, 0, -0.3, -3.0598e-06, 1.95611, 34.7652, -16.5342)
+visible = false
 mesh = SubResource("BoxMesh_yor45")
 skeleton = NodePath("../../..")
 
