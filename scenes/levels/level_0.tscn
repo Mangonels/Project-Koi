@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://fyvbjeur0o5p"]
+[gd_scene load_steps=10 format=3 uid="uid://fyvbjeur0o5p"]
 
 [ext_resource type="PackedScene" uid="uid://dcii87dr1e6e0" path="res://scenes/prefab/platform_4m.tscn" id="1_jstec"]
 [ext_resource type="PackedScene" uid="uid://ds61mgbyupgc3" path="res://scenes/prefab/rampa_1.5x1.tscn" id="2_301yp"]
@@ -6,9 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://f22ka045f7tn" path="res://scenes/prefab/bridge_2.tscn" id="5_5fmco"]
 [ext_resource type="PackedScene" uid="uid://dk6238nqycrt8" path="res://scenes/prefab/plataforma_cubo.tscn" id="6_43jhk"]
 [ext_resource type="PackedScene" uid="uid://fakdbfckpi4c" path="res://scenes/prefab/rampa_2x0,5.tscn" id="7_4t5r3"]
-[ext_resource type="PackedScene" uid="uid://terr1jywx0ub" path="res://scenes/player/player.tscn" id="7_65guy"]
-[ext_resource type="Environment" uid="uid://cg3qp1n5ul5rf" path="res://resources/game_environment.tres" id="8_yk7ho"]
-[ext_resource type="AudioStream" uid="uid://di7q2r6yj671g" path="res://resources/music/music/playa/musica_playa.wav" id="9_p6rmu"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ycayy"]
 
@@ -16,36 +13,6 @@
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_lxttp"]
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y3j0m"]
-emission_shape_scale = Vector3(5, 5, 5)
-emission_shape = 3
-emission_box_extents = Vector3(1, 1, 1)
-angle_min = 1.07288e-05
-angle_max = 1.07288e-05
-direction = Vector3(0, -1, 0)
-spread = 5.0
-initial_velocity_min = 15.0
-initial_velocity_max = 15.0
-collision_mode = 1
-collision_friction = 0.0
-collision_bounce = 0.0
-
-[sub_resource type="Curve" id="Curve_jstec"]
-_limits = [0.0, 0.1, 0.0, 1.0]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0754717, 0.0655738), 0.319896, 0.319896, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_301yp"]
-cull_mode = 2
-shading_mode = 0
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.74902, 1, 1, 1)
-use_particle_trails = true
-
-[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_b5spy"]
-material = SubResource("StandardMaterial3D_301yp")
-curve = SubResource("Curve_jstec")
 
 [node name="GameScene" type="Node3D"]
 
@@ -147,33 +114,3 @@ transform = Transform3D(-1.14714, 0, 1.00286e-07, 0, 1.14714, 0, -1.00286e-07, 0
 
 [node name="Plataforma_cubo6" parent="Level_0000/Props" instance=ExtResource("6_43jhk")]
 transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -4.88015, -0.731874, 0)
-
-[node name="Character" type="Node" parent="."]
-
-[node name="Player" parent="Character" instance=ExtResource("7_65guy")]
-
-[node name="Lighting" type="Node" parent="."]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
-environment = ExtResource("8_yk7ho")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
-transform = Transform3D(0.930048, 0.366877, -0.020288, -0.279335, 0.741838, 0.60963, 0.23871, -0.561319, 0.792426, 0, 3.45969, 0)
-
-[node name="VFX" type="Node" parent="."]
-
-[node name="Rain_VFX" type="GPUParticles3D" parent="VFX"]
-transform = Transform3D(4.65988, 0, 0, 0, 0.994338, 0, 0, 0, 4.88862, 0.0128145, 4.82571, 0.022974)
-visible = false
-amount = 100
-lifetime = 2.0
-randomness = 0.89
-visibility_aabb = AABB(-7.35, 0, -5, 27.7, 8, 13.6)
-trail_enabled = true
-trail_lifetime = 0.1
-process_material = SubResource("ParticleProcessMaterial_y3j0m")
-draw_pass_1 = SubResource("RibbonTrailMesh_b5spy")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_p6rmu")
-autoplay = true
