@@ -1,3 +1,15 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://cklwdaqfechoj"]
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://cklwdaqfechoj"]
+
+[ext_resource type="Texture2D" uid="uid://dcoqpbhdpyg1m" path="res://textures/environment/grifo/grifo_BaseColor.DefaultMaterial.png" id="1_gmn4n"]
+[ext_resource type="Texture2D" uid="uid://24bnkarc4iuj" path="res://textures/environment/grifo/grifo_Metallic.DefaultMaterial.png" id="2_t01th"]
+[ext_resource type="Texture2D" uid="uid://o0odkf4ty2mu" path="res://textures/environment/grifo/grifo_Normal.DefaultMaterial.png" id="3_0nha0"]
+[ext_resource type="Texture2D" uid="uid://s2g3bi5jkbjf" path="res://textures/environment/grifo/grifo_Roughness.DefaultMaterial.png" id="4_p4div"]
 
 [resource]
+albedo_texture = ExtResource("1_gmn4n")
+metallic = 1.0
+metallic_specular = 0.79
+metallic_texture = ExtResource("2_t01th")
+roughness_texture = ExtResource("4_p4div")
+normal_enabled = true
+normal_texture = ExtResource("3_0nha0")
