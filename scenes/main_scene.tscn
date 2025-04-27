@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dv7qcwhasnu3v" path="res://scripts/level.gd" id="1_c16ls"]
 [ext_resource type="Script" uid="uid://y14ikj3svbq" path="res://scripts/start_button.gd" id="3_c1pb6"]
-[ext_resource type="FontFile" uid="uid://df5174x2ptxcu" path="res://fonts/Gloomie Saturday.otf" id="3_r6p65"]
+[ext_resource type="FontFile" uid="uid://ko360gs0mkhe" path="res://fonts/Gloomie Saturday.otf" id="3_r6p65"]
 [ext_resource type="PackedScene" uid="uid://terr1jywx0ub" path="res://scenes/player/player.tscn" id="6_mngbo"]
 [ext_resource type="Script" uid="uid://c1g5qylx5tfc5" path="res://scripts/ui/fade.gd" id="6_rt2n2"]
 [ext_resource type="PackedScene" uid="uid://c1q2xr4ja57qs" path="res://scenes/camera/spring_arm_3d.tscn" id="7_4w45t"]
 [ext_resource type="PackedScene" uid="uid://ch4emonvtqsb7" path="res://scenes/prefab/podio.tscn" id="8_6wevv"]
-[ext_resource type="Texture2D" uid="uid://sjsv3bdxrynk" path="res://modelos/floor/floor_standardSurface1_BaseColor.png" id="9_e1cbu"]
-[ext_resource type="ArrayMesh" uid="uid://mul8p21m3sl1" path="res://modelos/floor/floor.obj" id="10_mngbo"]
+[ext_resource type="Texture2D" uid="uid://doloxfbo805st" path="res://modelos/floor/floor_standardSurface1_BaseColor.png" id="9_e1cbu"]
+[ext_resource type="ArrayMesh" uid="uid://bwvseekw5issd" path="res://modelos/floor/floor.obj" id="10_mngbo"]
 [ext_resource type="PackedScene" uid="uid://j8ow58o7lm52" path="res://Shader/Shader.tscn" id="11_e1cbu"]
 [ext_resource type="PackedScene" uid="uid://bot1cqoewjth3" path="res://scenes/prefab/plataforma_0,5x_2.tscn" id="12_r6p65"]
 [ext_resource type="PackedScene" uid="uid://ds61mgbyupgc3" path="res://scenes/prefab/rampa_1.5x1.tscn" id="13_si52b"]
@@ -153,7 +153,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(18.0098, 0, 0, 0, 15.7956, 0, 0, 0, 5.17756, -9.73629, -1.36425, -11.47)
 
 [node name="Plataforma_0_5M7" parent="ObjetosPochos/Plataforma_0_5M4" instance=ExtResource("12_r6p65")]
-transform = Transform3D(-1.94092e-05, 0, 45.5212, 0, 15.7956, 0, -444.032, 0, -1.9898e-06, 3.15455, -5.30691, -4.81644)
+transform = Transform3D(-2.59015e-05, 0, 53.2989, 0, 15.7956, 0, -592.559, 0, -2.32977e-06, 3.15455, -5.43531, -4.81644)
 
 [node name="Plataforma_0_5M5" parent="ObjetosPochos" instance=ExtResource("12_r6p65")]
 transform = Transform3D(7.61441, 0, 1.68433, 0, 32.4205, 0, -4.99507, 0, 2.56757, 12.3177, -5.57117, 12.0052)
@@ -180,10 +180,13 @@ text = "Play"
 font = ExtResource("3_r6p65")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.19598, 15.4951, -5.93455)
-light_color = Color(0.895869, 0.970995, 0.68501, 1)
-light_energy = 0.699
+transform = Transform3D(0.411498, -0.645689, 0.643237, 0.197032, 0.752094, 0.628914, -0.889858, -0.132058, 0.436707, 3.19598, 24.1239, -5.93455)
+light_color = Color(0.942686, 0.982259, 0.843341, 1)
+light_energy = 0.992
 light_indirect_energy = 1.962
+
+[node name="pared_Vertical4M2" parent="." instance=ExtResource("14_r6p65")]
+transform = Transform3D(9.53853, 0, 0, 0, 1, 0, 0, 0, 1, -14.3879, -3.28246, -24.0825)
 
 [connection signal="body_entered" from="MainMenuItem/Button/StartBtn" to="MainMenuItem/Button/StartBtn" method="_on_body_entered"]
 [connection signal="body_exited" from="MainMenuItem/Button/StartBtn" to="MainMenuItem/Button/StartBtn" method="_on_body_exited"]
