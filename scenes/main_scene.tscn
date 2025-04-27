@@ -1,17 +1,17 @@
 [gd_scene load_steps=17 format=3 uid="uid://xqcyrprsalfb"]
 
-[ext_resource type="Sky" uid="uid://dhi4nk2idpxe5" path="res://resources/game_sky.tres" id="1_ekxnf"]
-[ext_resource type="Script" uid="uid://dv7qcwhasnu3v" path="res://scripts/level.gd" id="1_oa1go"]
-[ext_resource type="Script" uid="uid://y14ikj3svbq" path="res://scripts/start_button.gd" id="2_bqqt6"]
-[ext_resource type="Script" uid="uid://dctyrqpjo11ni" path="res://Shader/water.gd" id="4_rtw2f"]
-[ext_resource type="PackedScene" uid="uid://crgimabarlgt7" path="res://Shader/Water.tscn" id="4_wu84c"]
-[ext_resource type="PackedScene" uid="uid://terr1jywx0ub" path="res://scenes/player/player.tscn" id="6_rtw2f"]
-[ext_resource type="PackedScene" uid="uid://c1q2xr4ja57qs" path="res://scenes/camera/spring_arm_3d.tscn" id="7_oa1go"]
+[ext_resource type="Script" uid="uid://dv7qcwhasnu3v" path="res://scripts/level.gd" id="1_c16ls"]
+[ext_resource type="Sky" uid="uid://dhi4nk2idpxe5" path="res://resources/game_sky.tres" id="2_18nlu"]
+[ext_resource type="Script" uid="uid://y14ikj3svbq" path="res://scripts/start_button.gd" id="3_c1pb6"]
+[ext_resource type="PackedScene" uid="uid://crgimabarlgt7" path="res://Shader/Water.tscn" id="4_6wevv"]
+[ext_resource type="Script" uid="uid://dctyrqpjo11ni" path="res://Shader/water.gd" id="5_e1cbu"]
+[ext_resource type="PackedScene" uid="uid://terr1jywx0ub" path="res://scenes/player/player.tscn" id="6_mngbo"]
+[ext_resource type="PackedScene" uid="uid://c1q2xr4ja57qs" path="res://scenes/camera/spring_arm_3d.tscn" id="7_4w45t"]
 
 [sub_resource type="Environment" id="Environment_bqqt6"]
 background_mode = 2
 background_energy_multiplier = 0.24
-sky = ExtResource("1_ekxnf")
+sky = ExtResource("2_18nlu")
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vue75"]
 
@@ -33,7 +33,7 @@ albedo_color = Color(2.16588e-07, 0.43475, 0.0711129, 1)
 [node name="MainScene" type="Node3D"]
 
 [node name="LevelChanger" type="Node" parent="."]
-script = ExtResource("1_oa1go")
+script = ExtResource("1_c16ls")
 
 [node name="Main" type="Node3D" parent="."]
 
@@ -97,7 +97,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ekxnf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.545485, 0)
 
 [node name="StartBtn" type="Area3D" parent="MainMenuItem/Button"]
-script = ExtResource("2_bqqt6")
+script = ExtResource("3_c1pb6")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="MainMenuItem/Button/StartBtn"]
 transform = Transform3D(2.585, 0, 0, 0, 2.585, 0, 0, 0, 2.585, 0, -1.36885, 0)
@@ -128,15 +128,15 @@ text = "Play"
 
 [node name="Shop Item" type="Node3D" parent="."]
 
-[node name="Water" parent="." instance=ExtResource("4_wu84c")]
+[node name="Water" parent="." instance=ExtResource("4_6wevv")]
 transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -0.00893366, -1.34331, -0.00075841)
 visible = false
-script = ExtResource("4_rtw2f")
+script = ExtResource("5_e1cbu")
 
-[node name="Player" parent="." instance=ExtResource("6_rtw2f")]
+[node name="Player" parent="." instance=ExtResource("6_mngbo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08677, 0.9977, 0)
 
-[node name="SpringArm3D" parent="." instance=ExtResource("7_oa1go")]
+[node name="SpringArm3D" parent="." instance=ExtResource("7_4w45t")]
 
 [connection signal="body_entered" from="MainMenuItem/Button/StartBtn" to="MainMenuItem/Button/StartBtn" method="_on_body_entered"]
 [connection signal="body_exited" from="MainMenuItem/Button/StartBtn" to="MainMenuItem/Button/StartBtn" method="_on_body_exited"]
