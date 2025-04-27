@@ -15,4 +15,4 @@ func _on_body_entered(body: Node3D) -> void:
 	var body_groups: Array = body.get_groups()
 
 	if body_groups.get(0) == "Player_Body":
-		print("Drowned")
+		print("_on_body_entered: Drowned")

@@ -30,7 +30,16 @@ func _load_new_level(first_run: bool, increase_level: bool) -> void:
 				print("Failed to find Water Item?")
 				return
 
-			water_node.show()
+			var water_str: String = "res://Shader/Water.tscn"
+			
+			var water_resource = load(water_str)
+
+			if water_resource:
+				var e = water_resource.instantiate()
+				e.name = "Water"
+				add_child(e)
+				print("Added water")
+
 			remove_child(inv_walls)
 			inv_walls.call_deferred("free")
 
