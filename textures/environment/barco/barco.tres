@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bb42cjofgcoe2"]
+
+[ext_resource type="Texture2D" uid="uid://blh5x0qj1ntmu" path="res://textures/environment/barco/barco_barco_BaseMap.png" id="1_cet65"]
+
+[resource]
+albedo_texture = ExtResource("1_cet65")
