@@ -1,5 +1,6 @@
 extends Area3D
 
+@export var canvas: CanvasLayer;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -15,4 +16,6 @@ func _on_body_entered(body: Node3D) -> void:
 	var body_groups: Array = body.get_groups()
 
 	if body_groups.get(0) == "Player_Body":
+		canvas.start_fade_out();
 		print("Drowned")
+		
