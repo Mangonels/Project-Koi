@@ -2,14 +2,14 @@ class_name collectible_trigger extends Node
 
 #definimos el tipo de objeto
 @export var type_consumible = "coin";
-var _player_logic;
+@export var _player_logic: PlayerLogic;
+@export var ruta: String;
 
 var enter: bool = false;
 #Definimos que objeto es y que jemos de hacer con el
 
 func _ready():
-	_player_logic = get_node("/root/Node3D/Player/PlayerLogic");
-	print(_player_logic)
+	_player_logic = get_node(ruta);
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 		if(body.is_in_group("Player_Body")): 	

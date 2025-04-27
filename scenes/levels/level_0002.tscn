@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bhqurev87diy4"]
+[gd_scene load_steps=15 format=3 uid="uid://bhqurev87diy4"]
 
 [ext_resource type="Environment" uid="uid://cg3qp1n5ul5rf" path="res://resources/game_environment.tres" id="1_8gxly"]
 [ext_resource type="PackedScene" uid="uid://dcii87dr1e6e0" path="res://scenes/prefab/platform_4m.tscn" id="1_rv1cp"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ch4emonvtqsb7" path="res://scenes/prefab/podio.tscn" id="3_e7k5g"]
 [ext_resource type="PackedScene" uid="uid://bys165e2lbsqg" path="res://scenes/prefab/plataforma_2x2.tscn" id="4_a4tsq"]
 [ext_resource type="PackedScene" uid="uid://dtjvn280crxlu" path="res://modelos/barco.glb" id="5_o7ge6"]
+[ext_resource type="PackedScene" uid="uid://by1um5wdmn624" path="res://scenes/prefab/consumables/botas.tscn" id="8_rv1cp"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_c6ba3"]
 
@@ -132,3 +133,7 @@ draw_pass_1 = SubResource("RibbonTrailMesh_0lsnu")
 
 [node name="Player" parent="Character" instance=ExtResource("2_o4h8b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.2956, 18.0559, -7.54951)
+
+[node name="Botas" parent="." instance=ExtResource("8_rv1cp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.516, 18.518, -0.92386)
+ruta = "/root/Level0002/Character/Player/PlayerLogic"
