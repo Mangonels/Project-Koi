@@ -155,8 +155,3 @@ trail_enabled = true
 trail_lifetime = 0.1
 process_material = SubResource("ParticleProcessMaterial_j0wqj")
 draw_pass_1 = SubResource("RibbonTrailMesh_0lsnu")
-
-[node name="Character" type="Node" parent="."]
-
-[node name="Player" parent="Character" instance=ExtResource("2_o4h8b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.2956, 18.0559, -7.54951)
