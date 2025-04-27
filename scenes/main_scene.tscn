@@ -11,9 +11,6 @@ background_mode = 2
 background_energy_multiplier = 0.24
 sky = ExtResource("2_18nlu")
 
-[ext_resource type="Environment" uid="uid://cg3qp1n5ul5rf" path="res://resources/game_environment.tres" id="7_18nlu"]
-[ext_resource type="AudioStream" uid="uid://b5p5afmowd6w2" path="res://resources/music/music/playa/musica_playa.wav" id="8_c1pb6"]
-
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vue75"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_l6cm7"]

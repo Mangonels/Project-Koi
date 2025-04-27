@@ -18,4 +18,3 @@ func _on_body_entered(body: Node3D) -> void:
 	if body_groups.get(0) == "Player_Body":
 		print("_on_body_entered: Drowned")
 		water.start_fade_out();
-		

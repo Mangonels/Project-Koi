@@ -16,7 +16,6 @@
 
 [node name="floor" type="MeshInstance3D" parent="level_0002/entorno"]
 transform = Transform3D(70, 0, 0, 0, 0.3, 0, 0, 0, 70, 0.226578, -0.0692085, -28.0224)
-mesh = SubResource("BoxMesh_c6ba3")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="level_0002/entorno/floor"]
@@ -28,7 +27,6 @@ shape = SubResource("ConcavePolygonShape3D_qo38u")
 [node name="wall" type="MeshInstance3D" parent="level_0002/entorno"]
 transform = Transform3D(69.9997, -0.000397411, -0.171253, 0.1713, 0.000150779, 69.9998, -0.0926428, -0.3, 0.0354084, 0.635224, 35.087, -16.9954)
 visible = false
-mesh = SubResource("BoxMesh_c6ba3")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="level_0002/entorno/wall"]
