@@ -70,9 +70,12 @@ func _horizontal():
 		# _horizontal_movement = _lowest_contact_normal.project(_horizontal_movement)
 		target_velocity = _horizontal_movement * ground_mobility
 		acceleration_rate = full_speed_rate_grounded
+		
+		sprite_animations.play("1_movement")
 	else:
 		target_velocity = _horizontal_movement * air_mobility
 		acceleration_rate = full_speed_rate_airbourne
+		sprite_animations.stop()
 	
 	# How far are we from achieving target_velocity?
 	var velocity_difference : Vector2 = target_velocity - Vector2(self.linear_velocity.x, self.linear_velocity.z)
@@ -91,8 +94,6 @@ func _horizontal():
 	# Apply the right precalculated amount of horizontal movement force
 	# to the protagonist entity	
 	add_force_at_center(movement_force)
-	
-	sprite_animations.play("1_movement")
 
 ## Basically a jump command
 func ascend() -> void:
@@ -104,7 +105,8 @@ func ascend() -> void:
 		
 		add_force_at_center(Vector3.UP, jump_strength)
 		
-		#sprite_animations.play("2_jump")
+		sprite_animations.stop()
+		#sprite_animations.play("2_jump_ascent")
 
 func ascend_cut():
 	if movement_locked:
