@@ -13,6 +13,7 @@ func _on_body_entered(body: Node3D) -> void:
 	var body_groups: Array = body.get_groups()
 
 	if body_groups.get(0) == "Player_Body":
+		body.position = Vector3(0,0,0)
 		Level._load_new_level(true, false)
 	pass
 
