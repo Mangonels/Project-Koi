@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://cr8sukwj5y534"]
+
+[ext_resource type="Material" uid="uid://c1bgkuuk1ysu6" path="res://textures/environment/barco/box.tres" id="1_aurf4"]
+[ext_resource type="ArrayMesh" uid="uid://dvwyai45kb71j" path="res://modelos/barco/box.obj" id="1_u5a17"]
+[ext_resource type="ArrayMesh" uid="uid://bkule6fj0nbe7" path="res://modelos/barco/concha.obj" id="2_141cf"]
+[ext_resource type="Material" uid="uid://bb1xyft4el3xn" path="res://textures/environment/barco/concha.tres" id="3_4jj0m"]
+[ext_resource type="ArrayMesh" uid="uid://ccyd3eba8pmv3" path="res://modelos/barco/flag.obj" id="3_rj1wb"]
+[ext_resource type="ArrayMesh" uid="uid://pcteuboubytq" path="res://modelos/barco/barco.obj" id="4_2sete"]
+[ext_resource type="Material" uid="uid://0gqphinfvtyb" path="res://textures/environment/barco/flag.tres" id="5_a0sfo"]
+[ext_resource type="Material" uid="uid://bb42cjofgcoe2" path="res://textures/environment/barco/barco.tres" id="7_m5okh"]
+
+[node name="BarcoPrefab" type="Node3D"]
+
+[node name="Box" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -7.61602, 0, 0)
+material_override = ExtResource("1_aurf4")
+mesh = ExtResource("1_u5a17")
+skeleton = NodePath("../..")
+
+[node name="Box2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0376443, 0, -0.0329075, 0, 0.05, 0, 0.0329075, 0, 0.0376443, -5.81854, 0, -6.31445)
+material_override = ExtResource("1_aurf4")
+mesh = ExtResource("1_u5a17")
+skeleton = NodePath("../..")
+
+[node name="Box3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0499719, 0, 0.00167608, 0, 0.05, 0, -0.00167608, 0, 0.0499719, -6.59075, 0, -1.38994)
+material_override = ExtResource("1_aurf4")
+mesh = ExtResource("1_u5a17")
+skeleton = NodePath("../..")
+
+[node name="Box4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0484889, 0, -0.0121994, 0, 0.05, 0, 0.0121994, 0, 0.0484889, -5.90215, 0.857828, -3.91105)
+material_override = ExtResource("1_aurf4")
+mesh = ExtResource("1_u5a17")
+skeleton = NodePath("../..")
+
+[node name="Concha" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.0290408, 0, 0)
+material_override = ExtResource("3_4jj0m")
+mesh = ExtResource("2_141cf")
+skeleton = NodePath("../..")
+
+[node name="Flag" type="MeshInstance3D" parent="Concha"]
+material_override = ExtResource("5_a0sfo")
+mesh = ExtResource("3_rj1wb")
+skeleton = NodePath("../../..")
+
+[node name="Barco" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.0646439, 0.0290408, 0, 0.696528)
+material_override = ExtResource("7_m5okh")
+mesh = ExtResource("4_2sete")
+skeleton = NodePath("../..")
