@@ -1,6 +1,6 @@
 extends Node
 
-var current_number = 0
+var current_number: int = 0
 
 func _ready() -> void:
 	pass
@@ -8,25 +8,39 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func _get_current_level() -> int:
+	return current_number
+
 func _load_new_level(first_run: bool) -> void:
 	var current_level: Node3D
 
 	if first_run:
 		current_level = get_node("/root/MainScene/MainMenuItem")
-		
+
 		if current_level:
+			var inv_walls = get_node("/root/MainScene/Invisible Walls")
+
+			if !inv_walls:
+				print("Failed to find Invisible Walls Item?")
+				return
+
 			var water_node = get_node("/root/MainScene/Water")
 
 			if !water_node:
 				print("Failed to find Water Item?")
 				return
-				
+
 			water_node.show()
+			remove_child(inv_walls)
+			inv_walls.call_deferred("free")
 
 			print("Found MainMenuItem")
 		else:
 			print("Didn't find MainMenuItem")
 			return
+	else:
+		var current_level_node: String = "/root/MainScene/level_" + str(current_number)
+		current_level = get_node(current_level_node)
 
 	remove_child(current_level)
 	current_level.call_deferred("free")

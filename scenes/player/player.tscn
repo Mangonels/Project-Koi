@@ -66,7 +66,7 @@ animation = &"1_movement"
 frame_progress = 0.513215
 
 [node name="Camera3D" type="Camera3D" parent="PlayerBody"]
-transform = Transform3D(1, 0, 0, 0, 0.735092, 0.677967, 0, -0.677967, 0.735092, 0, 2.28216, 3.00933)
+transform = Transform3D(1, 0, 0, 0, 0.735092, 0.677967, 0, -0.677967, 0.735092, 0, 3.98182, 5.19667)
 
 [node name="PinJoint3D" type="PinJoint3D" parent="."]
 node_a = NodePath("../PlayerBody")

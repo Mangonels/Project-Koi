@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bys165e2lbsqg"]
+[gd_scene load_steps=5 format=3 uid="uid://bys165e2lbsqg"]
 
 [ext_resource type="PackedScene" uid="uid://b6htlyeq6xwlk" path="res://modelos/blocking/Plataforma_2M.glb" id="1_4tkln"]
-[ext_resource type="PackedScene" uid="uid://ccnb3yj811tsn" path="res://modelos/plataforms/Plataforma_2M.glb" id="2_bl4uh"]
+[ext_resource type="Material" uid="uid://hnhoofuk8po1" path="res://textures/environment/plataformas/platform2M.tres" id="2_a5n55"]
+[ext_resource type="ArrayMesh" uid="uid://cigqcyyxlffbj" path="res://modelos/plataforms/platform_2M.obj" id="3_adh84"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bl4uh"]
 data = PackedVector3Array(-1, 0, -0.75, 1, 0.2, -0.75, -1, 0.2, -0.75, -1, 0, -0.75, 1, 0, -0.75, 1, 0.2, -0.75, 1, 0, -0.75, 1, 0.2, 0.75, 1, 0.2, -0.75, 1, 0, -0.75, 1, 0, 0.75, 1, 0.2, 0.75, 1, 0, 0.75, -1, 0.2, 0.75, 1, 0.2, 0.75, 1, 0, 0.75, -1, 0, 0.75, -1, 0.2, 0.75, -1, 0, 0.75, -1, 0.2, -0.75, -1, 0.2, 0.75, -1, 0, 0.75, -1, 0, -0.75, -1, 0.2, -0.75, 1, 0, -0.75, -1, 0, 0.75, 1, 0, 0.75, 1, 0, -0.75, -1, 0, -0.75, -1, 0, 0.75, 1, 0.2, 0.75, -1, 0.2, -0.75, 1, 0.2, -0.75, 1, 0.2, 0.75, -1, 0.2, 0.75, -1, 0.2, -0.75)
@@ -16,4 +17,7 @@ visible = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plataforma_2M/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_bl4uh")
 
-[node name="Plataforma_2M2" parent="." index="1" instance=ExtResource("2_bl4uh")]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+material_override = ExtResource("2_a5n55")
+mesh = ExtResource("3_adh84")
