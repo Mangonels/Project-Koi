@@ -10,7 +10,7 @@ subdivide_depth = 200
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ri1uk"]
 frequency = 0.0415
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_oswww"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_76i5k"]
 noise = SubResource("FastNoiseLite_ri1uk")
 
 [sub_resource type="Gradient" id="Gradient_76i5k"]
@@ -21,7 +21,7 @@ colors = PackedColorArray(1, 1, 1, 1, 0.179389, 0.179389, 0.179389, 1, 0, 0, 0, 
 noise_type = 2
 frequency = 0.0098
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ri1uk"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_oyfau"]
 seamless = true
 seamless_blend_skirt = 0.602
 as_normal_map = true
@@ -37,7 +37,7 @@ seed = 1
 frequency = 0.0045
 offset = Vector3(-30.1, -423.84, 0)
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_s5vl4"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ri1uk"]
 seamless = true
 seamless_blend_skirt = 0.134
 as_normal_map = true
@@ -52,11 +52,11 @@ shader_parameter/albedo = Color(0, 0.688302, 0.819566, 1)
 shader_parameter/albedo_fresnel = Color(0.555039, 0.725457, 1, 1)
 shader_parameter/metallic = 0.0
 shader_parameter/roughness = 0.0
-shader_parameter/normalmap = SubResource("NoiseTexture2D_ri1uk")
+shader_parameter/normalmap = SubResource("NoiseTexture2D_oyfau")
 shader_parameter/wave_direction = Vector2(2, 0)
-shader_parameter/normalmap_2 = SubResource("NoiseTexture2D_s5vl4")
+shader_parameter/normalmap_2 = SubResource("NoiseTexture2D_ri1uk")
 shader_parameter/wave_direction_2 = Vector2(2, 0)
-shader_parameter/noiseMap = SubResource("NoiseTexture2D_oswww")
+shader_parameter/noiseMap = SubResource("NoiseTexture2D_76i5k")
 shader_parameter/height_scale = 0.017
 shader_parameter/noise_scale = 7.975
 shader_parameter/time_scale = 0.0165
@@ -78,5 +78,3 @@ cast_shadow = 0
 gi_mode = 0
 mesh = SubResource("PlaneMesh_76i5k")
 surface_material_override/0 = SubResource("ShaderMaterial_ri1uk")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]

@@ -93,7 +93,7 @@ transform = Transform3D(0.879225, 0, -0.476407, 0, 1, 0, 0.476407, 0, 0.879225, 
 script = ExtResource("3_c1pb6")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="MainMenuItem/Button/StartBtn"]
-transform = Transform3D(2.585, 0, 0, 0, 2.585, 0, 0, 0, 2.585, -0.0789205, -0.776281, -1.18781)
+transform = Transform3D(2.585, 0, 0, 0, 2.585, 0, 0, 0, 2.585, 1.47269, -0.776281, -6.69735)
 shape = SubResource("CylinderShape3D_bqqt6")
 
 [node name="Shop Item" type="Node3D" parent="."]
@@ -174,27 +174,19 @@ transform = Transform3D(1.58361, 0, 2.21695, 0, 3.19569, 0, -3.4397, 0, 1.02067,
 transform = Transform3D(8.64473, 0, 0, 0, 1, 0, 0, 0, 1, 21.9637, -4.11365, -7.17279)
 
 [node name="Label3D" type="Label3D" parent="ObjetosPochos"]
-transform = Transform3D(1.61076, 0, 0.126232, 0, 1.24589, 0, -0.189104, 0, 1.07521, 1.58897, 2.85596, -6.8928)
+transform = Transform3D(1.46205, 0, -0.468557, 0, 1.24589, 0, 0.701943, 0, 0.975943, 6.34623, 2.85596, -6.53001)
 pixel_size = 0.06
 text = "Play"
 font = ExtResource("3_r6p65")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.411498, -0.645689, 0.643237, 0.197032, 0.752094, 0.628914, -0.889858, -0.132058, 0.436707, 3.19598, 24.1239, -5.93455)
-light_color = Color(1, 0.980392, 0.843137, 1)
-light_energy = 1.244
-light_volumetric_fog_energy = 1.05
-light_specular = 1.52
-sky_mode = 2
+[node name="pared_Vertical4M3" parent="ObjetosPochos" instance=ExtResource("14_r6p65")]
+transform = Transform3D(9.53853, 0, 0, 0, 1, 0, 0, 0, 1, -14.3879, -3.28246, -24.0825)
 
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.411512, -0.645637, 0.643282, 0.197003, 0.752139, 0.628869, -0.889858, -0.132058, 0.436707, 3.19598, 13.9569, -5.93455)
+transform = Transform3D(0.411512, -0.645637, 0.643281, 0.197003, 0.752139, 0.628869, -0.889858, -0.132059, 0.436707, 3.22073, 18.137, -6.81919)
 light_energy = 1.244
 light_volumetric_fog_energy = 1.05
 light_specular = 1.52
-
-[node name="pared_Vertical4M2" parent="." instance=ExtResource("14_r6p65")]
-transform = Transform3D(9.53853, 0, 0, 0, 1, 0, 0, 0, 1, -14.3879, -3.28246, -24.0825)
 
 [connection signal="body_entered" from="MainMenuItem/Button/StartBtn" to="MainMenuItem/Button/StartBtn" method="_on_body_entered"]
 [connection signal="body_exited" from="MainMenuItem/Button/StartBtn" to="MainMenuItem/Button/StartBtn" method="_on_body_exited"]

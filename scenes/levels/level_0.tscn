@@ -1,6 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://fyvbjeur0o5p"]
+[gd_scene load_steps=26 format=3 uid="uid://fyvbjeur0o5p"]
 
 [ext_resource type="PackedScene" uid="uid://dcii87dr1e6e0" path="res://scenes/prefab/platform_4m.tscn" id="1_jstec"]
+[ext_resource type="Material" uid="uid://dg73ppyeg3vyu" path="res://modelos/floor/material_floor.tres" id="1_p6rmu"]
+[ext_resource type="ArrayMesh" uid="uid://bwvseekw5issd" path="res://modelos/floor/floor.obj" id="2_34hum"]
 [ext_resource type="PackedScene" uid="uid://ds61mgbyupgc3" path="res://scenes/prefab/rampa_1.5x1.tscn" id="2_301yp"]
 [ext_resource type="PackedScene" uid="uid://bot1cqoewjth3" path="res://scenes/prefab/plataforma_0,5x_2.tscn" id="4_euv8e"]
 [ext_resource type="PackedScene" uid="uid://f22ka045f7tn" path="res://scenes/prefab/bridge_2.tscn" id="5_5fmco"]
@@ -8,16 +10,84 @@
 [ext_resource type="PackedScene" uid="uid://fakdbfckpi4c" path="res://scenes/prefab/rampa_2x0,5.tscn" id="7_4t5r3"]
 [ext_resource type="PackedScene" uid="uid://cr8sukwj5y534" path="res://scenes/prefab/barco/barco_prefab.tscn" id="8_6ayib"]
 [ext_resource type="Script" uid="uid://c24yqc61ycmtx" path="res://scripts/level_finish.gd" id="8_65guy"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_ycayy"]
+[ext_resource type="Shader" uid="uid://o4t4uu7bx0bh" path="res://Shader/water.gdshader" id="11_34hum"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bw6k5"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ycayy"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_lxttp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p6rmu"]
 size = Vector3(4.47607, 1.65924, 3.25146)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vhkxn"]
+size = Vector2(300, 300)
+subdivide_width = 200
+subdivide_depth = 200
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1q7iv"]
+frequency = 0.0415
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_oswww"]
+noise = SubResource("FastNoiseLite_1q7iv")
+
+[sub_resource type="Gradient" id="Gradient_gj3kh"]
+offsets = PackedFloat32Array(0, 0.332569, 0.555046, 0.873853)
+colors = PackedColorArray(1, 1, 1, 1, 0.179389, 0.179389, 0.179389, 1, 0, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_myogd"]
+noise_type = 2
+frequency = 0.0098
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ri1uk"]
+seamless = true
+seamless_blend_skirt = 0.602
+as_normal_map = true
+bump_strength = 13.6
+color_ramp = SubResource("Gradient_gj3kh")
+noise = SubResource("FastNoiseLite_myogd")
+
+[sub_resource type="Gradient" id="Gradient_s4l03"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ypncs"]
+noise_type = 2
+seed = 1
+frequency = 0.0045
+offset = Vector3(-30.1, -423.84, 0)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_s5vl4"]
+seamless = true
+seamless_blend_skirt = 0.134
+as_normal_map = true
+bump_strength = 0.0
+color_ramp = SubResource("Gradient_s4l03")
+noise = SubResource("FastNoiseLite_ypncs")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0qejo"]
+render_priority = 0
+shader = ExtResource("11_34hum")
+shader_parameter/albedo = Color(0, 0.688302, 0.819566, 1)
+shader_parameter/albedo_fresnel = Color(0.555039, 0.725457, 1, 1)
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/normalmap = SubResource("NoiseTexture2D_ri1uk")
+shader_parameter/wave_direction = Vector2(2, 0)
+shader_parameter/normalmap_2 = SubResource("NoiseTexture2D_s5vl4")
+shader_parameter/wave_direction_2 = Vector2(2, 0)
+shader_parameter/noiseMap = SubResource("NoiseTexture2D_oswww")
+shader_parameter/height_scale = 0.017
+shader_parameter/noise_scale = 7.975
+shader_parameter/time_scale = 0.0165
+shader_parameter/edge_scale = 0.255
+shader_parameter/near = 0.305
+shader_parameter/far = 13.185
+shader_parameter/edge_color = Color(1, 1, 1, 1)
+shader_parameter/color_deep = Color(2.98411e-06, 0.524776, 0.686765, 1)
+shader_parameter/color_shallow = Color(0.148988, 0.775527, 0.819924, 1)
+shader_parameter/beers_law = 2.11
+shader_parameter/depth_offset = 0.785
 
 [node name="GameScene" type="Node3D"]
 
@@ -26,8 +96,9 @@ size = Vector3(4.47607, 1.65924, 3.25146)
 [node name="Entorno" type="Node" parent="Level_0000"]
 
 [node name="floor" type="MeshInstance3D" parent="Level_0000/Entorno"]
-transform = Transform3D(70, 0, 0, 0, 0.3, 0, 0, 0, 70, 0, -0.15, -27.9496)
-mesh = SubResource("BoxMesh_ycayy")
+transform = Transform3D(0.0108009, 0, 0, 0, 0.0945435, 0, 0, 0, 0.0105486, 4.67736, -0.0328673, -5.62901)
+material_override = ExtResource("1_p6rmu")
+mesh = ExtResource("2_34hum")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Level_0000/Entorno/floor"]
@@ -134,5 +205,40 @@ script = ExtResource("8_65guy")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73804, 0.32962, -1.12573)
 shape = SubResource("BoxShape3D_p6rmu")
+
+[node name="Plataforma_0_5M7" parent="." instance=ExtResource("4_euv8e")]
+transform = Transform3D(-5.11271e-06, 0, 38.6847, 0, 15.7956, 0, -116.966, 0, -1.69096e-06, -22.7412, -6.96187, -4.81644)
+
+[node name="Plataforma_0_5M8" parent="." instance=ExtResource("4_euv8e")]
+transform = Transform3D(-5.11271e-06, 0, 38.6847, 0, 15.7956, 0, -116.966, 0, -1.69096e-06, -22.7412, -6.96187, 35.8886)
+
+[node name="Plataforma_0_5M9" parent="." instance=ExtResource("4_euv8e")]
+transform = Transform3D(-5.11271e-06, 0, 38.6847, 0, 15.7956, 0, -116.966, 0, -1.69096e-06, 34.4838, -6.96187, 35.8886)
+
+[node name="Plataforma_0_5M10" parent="." instance=ExtResource("4_euv8e")]
+transform = Transform3D(-5.11271e-06, 0, 38.6847, 0, 15.7956, 0, -116.966, 0, -1.69096e-06, 34.4838, -6.96187, -21.7856)
+
+[node name="Plataforma_0_5M11" parent="." instance=ExtResource("4_euv8e")]
+transform = Transform3D(-5.11271e-06, 0, 38.6847, 0, 15.7956, 0, -116.966, 0, -1.69096e-06, -26.8298, -6.96187, -61.3962)
+
+[node name="Plataforma_0_5M12" parent="." instance=ExtResource("4_euv8e")]
+transform = Transform3D(-5.11271e-06, 0, 38.6847, 0, 15.7956, 0, -116.966, 0, -1.69096e-06, 30.8182, -6.96187, -61.3962)
+
+[node name="Plataforma_0_5M13" parent="." instance=ExtResource("4_euv8e")]
+transform = Transform3D(-5.11271e-06, 0, 38.6847, 0, 15.7956, 0, -116.966, 0, -1.69096e-06, -79.9469, -6.96187, -61.3962)
+
+[node name="Plataforma_0_5M14" parent="." instance=ExtResource("4_euv8e")]
+transform = Transform3D(-5.11271e-06, 0, 38.6847, 0, 15.7956, 0, -116.966, 0, -1.69096e-06, -79.9469, -6.96187, -12.9883)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Plataforma_0_5M14"]
+transform = Transform3D(3.39838, 0, -3.55271e-15, 0, 3.39838, 0, 0, 0, 3.39838, -0.252598, 0.199748, -0.656339)
+visible = false
+cast_shadow = 0
+gi_mode = 0
+mesh = SubResource("PlaneMesh_vhkxn")
+surface_material_override/0 = SubResource("ShaderMaterial_0qejo")
+
+[node name="Plataforma_0_5M15" parent="." instance=ExtResource("4_euv8e")]
+transform = Transform3D(-5.11271e-06, 0, 38.6847, 0, 15.7956, 0, -116.966, 0, -1.69096e-06, -79.9469, -6.96187, 35.5004)
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
