@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://fyvbjeur0o5p"]
+[gd_scene load_steps=13 format=3 uid="uid://fyvbjeur0o5p"]
 
 [ext_resource type="PackedScene" uid="uid://dcii87dr1e6e0" path="res://scenes/prefab/platform_4m.tscn" id="1_jstec"]
 [ext_resource type="PackedScene" uid="uid://ds61mgbyupgc3" path="res://scenes/prefab/rampa_1.5x1.tscn" id="2_301yp"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dk6238nqycrt8" path="res://scenes/prefab/plataforma_cubo.tscn" id="6_43jhk"]
 [ext_resource type="PackedScene" uid="uid://fakdbfckpi4c" path="res://scenes/prefab/rampa_2x0,5.tscn" id="7_4t5r3"]
 [ext_resource type="PackedScene" uid="uid://cr8sukwj5y534" path="res://scenes/prefab/barco/barco_prefab.tscn" id="8_6ayib"]
+[ext_resource type="Script" uid="uid://c24yqc61ycmtx" path="res://scripts/level_finish.gd" id="8_65guy"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ycayy"]
 
@@ -14,6 +15,9 @@
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_lxttp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p6rmu"]
+size = Vector3(4.47607, 1.65924, 3.25146)
 
 [node name="GameScene" type="Node3D"]
 
@@ -122,3 +126,13 @@ transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -4.88015, -1.5313
 
 [node name="BarcoPrefab" parent="Level_0000/Props" instance=ExtResource("8_6ayib")]
 transform = Transform3D(0.865207, -0.00143747, 0.501413, 0.000725966, 0.999998, 0.00161414, -0.501414, -0.00103254, 0.865207, 8.29276, -0.0137426, -3.88493)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.6943, 11.9847, -14.2307)
+script = ExtResource("8_65guy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73804, 0.32962, -1.12573)
+shape = SubResource("BoxShape3D_p6rmu")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

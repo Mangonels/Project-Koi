@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://j8ow58o7lm52"]
+[gd_scene load_steps=12 format=3 uid="uid://j8ow58o7lm52"]
 
 [ext_resource type="Shader" uid="uid://o4t4uu7bx0bh" path="res://Shader/water.gdshader" id="1_76i5k"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_76i5k"]
+size = Vector2(300, 300)
 subdivide_width = 200
 subdivide_depth = 200
 
@@ -22,9 +23,9 @@ frequency = 0.0098
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ri1uk"]
 seamless = true
-seamless_blend_skirt = 0.152
+seamless_blend_skirt = 0.602
 as_normal_map = true
-bump_strength = 40.6
+bump_strength = 13.6
 color_ramp = SubResource("Gradient_76i5k")
 noise = SubResource("FastNoiseLite_oyfau")
 
@@ -38,9 +39,9 @@ offset = Vector3(-30.1, -423.84, 0)
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_s5vl4"]
 seamless = true
-seamless_blend_skirt = 0.069
+seamless_blend_skirt = 0.134
 as_normal_map = true
-bump_strength = 26.8
+bump_strength = 0.0
 color_ramp = SubResource("Gradient_oyfau")
 noise = SubResource("FastNoiseLite_3fofj")
 
@@ -48,7 +49,7 @@ noise = SubResource("FastNoiseLite_3fofj")
 render_priority = 0
 shader = ExtResource("1_76i5k")
 shader_parameter/albedo = Color(0, 0.688302, 0.819566, 1)
-shader_parameter/albedo_fresnel = Color(0.374308, 0.612294, 1, 1)
+shader_parameter/albedo_fresnel = Color(0.555039, 0.725457, 1, 1)
 shader_parameter/metallic = 0.0
 shader_parameter/roughness = 0.0
 shader_parameter/normalmap = SubResource("NoiseTexture2D_ri1uk")
@@ -57,18 +58,16 @@ shader_parameter/normalmap_2 = SubResource("NoiseTexture2D_s5vl4")
 shader_parameter/wave_direction_2 = Vector2(2, 0)
 shader_parameter/noiseMap = SubResource("NoiseTexture2D_oswww")
 shader_parameter/height_scale = 0.017
-shader_parameter/noise_scale = 11.0
-shader_parameter/time_scale = 0.051
-shader_parameter/edge_scale = 0.085
-shader_parameter/near = 0.48
-shader_parameter/far = 13.645
+shader_parameter/noise_scale = 7.975
+shader_parameter/time_scale = 0.0165
+shader_parameter/edge_scale = 0.255
+shader_parameter/near = 0.305
+shader_parameter/far = 13.185
 shader_parameter/edge_color = Color(1, 1, 1, 1)
-shader_parameter/color_deep = Color(0.531344, 0.476128, 0.461711, 1)
-shader_parameter/color_shallow = Color(0.84975, 0.918943, 0.890098, 1)
-shader_parameter/beers_law = 2.015
-shader_parameter/depth_offset = -0.625
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_76i5k"]
+shader_parameter/color_deep = Color(2.98411e-06, 0.524776, 0.686765, 1)
+shader_parameter/color_shallow = Color(0.148988, 0.775527, 0.819924, 1)
+shader_parameter/beers_law = 2.11
+shader_parameter/depth_offset = 0.785
 
 [node name="Shader" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00893366, 1.19209e-07, -0.00075841)
@@ -80,9 +79,4 @@ gi_mode = 0
 mesh = SubResource("PlaneMesh_76i5k")
 surface_material_override/0 = SubResource("ShaderMaterial_ri1uk")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.422056, -0.79544, -0.00671625)
-mesh = SubResource("CylinderMesh_76i5k")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.160532, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]

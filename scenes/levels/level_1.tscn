@@ -6,11 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://bys165e2lbsqg" path="res://scenes/prefab/plataforma_2x2.tscn" id="4_excbq"]
 [ext_resource type="PackedScene" uid="uid://f22ka045f7tn" path="res://scenes/prefab/bridge_2.tscn" id="5_iav0o"]
 [ext_resource type="PackedScene" uid="uid://dk6238nqycrt8" path="res://scenes/prefab/plataforma_cubo.tscn" id="6_dnkej"]
+[ext_resource type="Script" uid="uid://c24yqc61ycmtx" path="res://scripts/level_finish.gd" id="7_oc4kc"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_yor45"]
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_of648"]
-data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+[sub_resource type="BoxShape3D" id="BoxShape3D_s8va5"]
+size = Vector3(2.8291, 1.65924, 3.25146)
 
 [node name="Level0001" type="Node3D"]
 
@@ -20,26 +19,22 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 
 [node name="floor" type="MeshInstance3D" parent="level_0001/entorno"]
 transform = Transform3D(70, 0, 0, 0, 0.3, 0, 0, 0, 70, 0.226578, -0.0692085, -28.0224)
-mesh = SubResource("BoxMesh_yor45")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="level_0001/entorno/floor"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="level_0001/entorno/floor/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
-shape = SubResource("ConcavePolygonShape3D_of648")
 
 [node name="wall" type="MeshInstance3D" parent="level_0001/entorno"]
 transform = Transform3D(70, 0, 0, 0, -1.31134e-08, 70, 0, -0.3, -3.0598e-06, 1.95611, 34.7652, -16.5342)
 visible = false
-mesh = SubResource("BoxMesh_yor45")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="level_0001/entorno/wall"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="level_0001/entorno/wall/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
-shape = SubResource("ConcavePolygonShape3D_of648")
 
 [node name="props" type="Node" parent="level_0001"]
 
@@ -121,3 +116,13 @@ transform = Transform3D(1.30179, 0, 0, 0, 1, 0, 0, 0, 1.24942, -24.9721, 16.0078
 
 [node name="Plataforma_cubo3" parent="level_0001/props" instance=ExtResource("6_dnkej")]
 transform = Transform3D(1.319, 0, 0, 0, 1, 0, 0, 0, 1.26601, -14.0556, 12.029, 0.00711966)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.0735, 17.3939, 0.930956)
+script = ExtResource("7_oc4kc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.914551, 0.32962, -1.12573)
+shape = SubResource("BoxShape3D_s8va5")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]

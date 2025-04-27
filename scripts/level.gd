@@ -35,6 +35,21 @@ func _load_new_level(first_run: bool, increase_level: bool) -> void:
 				print("Failed to find Invisible Walls Item?")
 				return
 
+			remove_child(inv_walls)
+			inv_walls.call_deferred("free")
+			
+			var pochos_walls = get_node("/root/MainScene/ObjetosPochos")
+
+			if !pochos_walls:
+				print("Failed to find Invisible Walls Item?")
+				return
+			else:
+				print("Found it, removing all children")
+
+			for n in pochos_walls.get_children():
+				pochos_walls.remove_child(n)
+				n.queue_free()
+
 			var water_str: String = "res://Shader/Water.tscn"
 			
 			var water_resource = load(water_str)
@@ -46,8 +61,6 @@ func _load_new_level(first_run: bool, increase_level: bool) -> void:
 				e.show()
 				print("Added water")
 
-			remove_child(inv_walls)
-			inv_walls.call_deferred("free")
 
 			print("Found MainMenuItem")
 		else:

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2cqh16a3yd8h"]
+
+[ext_resource type="Material" uid="uid://b478u0h386ji" path="res://textures/environment/cartel/cartel1.tres" id="1_frsft"]
+[ext_resource type="ArrayMesh" uid="uid://c21n1ti35fjd8" path="res://modelos/cartel.obj" id="2_rhm7v"]
+
+[node name="CartelPrefab" type="Node3D"]
+
+[node name="Cartel" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.29483, 0, 2.05123)
+material_override = ExtResource("1_frsft")
+mesh = ExtResource("2_rhm7v")

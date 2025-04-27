@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dg73ppyeg3vyu"]
+
+[ext_resource type="Texture2D" uid="uid://doloxfbo805st" path="res://modelos/floor/floor_standardSurface1_BaseColor.png" id="1_epvd5"]
+
+[resource]
+albedo_texture = ExtResource("1_epvd5")
