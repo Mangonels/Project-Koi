@@ -13,7 +13,7 @@ var player_node_body;
 func _ready() -> void:
 	player_node_feet = get_node("/root/MainScene/Player/PlayerFeet")
 	player_node_body = get_node("/root/MainScene/Player/PlayerBody")
-
+	AudioPlayer.play_music(ResourceLoader.load("res://resources/music/music/menu/musica_menu.ogg", "AudioStream"), 0.5)
 	pass
 
 func _process(delta: float) -> void:
@@ -22,10 +22,14 @@ func _process(delta: float) -> void:
 func _get_current_level() -> int:
 	return current_number
 
+var curr_music_idx: int = 1
+
 func _load_new_level(first_run: bool, increase_level: bool) -> void:
 	var current_level: Node3D
 	
 	if first_run:
+		AudioPlayer.stop_music()
+	
 		current_level = get_node("/root/MainScene/MainMenuItem")
 
 		if current_level:
@@ -61,7 +65,8 @@ func _load_new_level(first_run: bool, increase_level: bool) -> void:
 				e.show()
 				print("Added water")
 
-
+			AudioPlayer.play_music(ResourceLoader.load("res://resources/music/music/tutorial/bien_musica_tutorial.ogg", "AudioStream"), 0.5, 0.0, true)
+	
 			print("Found MainMenuItem")
 		else:
 			print("Didn't find MainMenuItem")
@@ -69,6 +74,9 @@ func _load_new_level(first_run: bool, increase_level: bool) -> void:
 	else:
 		var current_level_node: String = "/root/MainScene/level_" + str(current_number)
 		current_level = get_node(current_level_node)
+
+	print("Stopping music")
+	AudioPlayer.stop_music()
 
 	if !increase_level:
 		remove_child(current_level)
@@ -122,6 +130,16 @@ func _load_new_level(first_run: bool, increase_level: bool) -> void:
 		print (initial_level_pos_body);
 
 		if increase_level:
+			print("Changing music: ", curr_music_idx)
+			match curr_music_idx:
+				2:
+					AudioPlayer.play_music(ResourceLoader.load("res://resources/music/music/playa/musica_playa.ogg", "AudioStream"), 0.5)
+				3:
+					AudioPlayer.play_music(ResourceLoader.load("res://resources/music/music/tienda/musica_tienda.ogg", "AudioStream"), 0.5)
+				_:
+					print("No music")
+
+			curr_music_idx += 1
 			current_number += 1
 	else:
 		print("Couldn't load new scene!")
