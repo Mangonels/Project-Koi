@@ -63,6 +63,7 @@ shape = SubResource("CapsuleShape3D_p47bc")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="PlayerBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.381229, 0)
+pixel_size = 0.0067
 sprite_frames = ExtResource("7_0owmy")
 animation = &"1_movement"
 frame_progress = 0.513215
