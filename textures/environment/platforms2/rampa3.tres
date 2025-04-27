@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cs070ugq83duf"]
+
+[ext_resource type="Texture2D" uid="uid://bhul8q6rt112p" path="res://textures/environment/platforms2/Rampa_3_5m (1)_BaseColor.Rampa_3_5m_sh.png" id="1_rxcwr"]
+[ext_resource type="Texture2D" uid="uid://bduhqdf3pj45d" path="res://textures/environment/plataformas/Bridge_Roughness.standardSurface1.png" id="2_5ooku"]
+
+[resource]
+albedo_texture = ExtResource("1_rxcwr")
+roughness_texture = ExtResource("2_5ooku")
+normal_enabled = true

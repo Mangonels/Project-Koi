@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://b0eg010kp0ac"]
+[gd_scene load_steps=16 format=3 uid="uid://b0eg010kp0ac"]
 
 [ext_resource type="Script" uid="uid://dv7qcwhasnu3v" path="res://scripts/level.gd" id="1_c16ls"]
 [ext_resource type="Sky" uid="uid://dhi4nk2idpxe5" path="res://resources/game_sky.tres" id="2_18nlu"]
 [ext_resource type="Script" uid="uid://y14ikj3svbq" path="res://scripts/start_button.gd" id="3_c1pb6"]
 [ext_resource type="PackedScene" uid="uid://terr1jywx0ub" path="res://scenes/player/player.tscn" id="6_mngbo"]
+[ext_resource type="Script" uid="uid://c1g5qylx5tfc5" path="res://scripts/ui/fade.gd" id="6_rt2n2"]
 [ext_resource type="PackedScene" uid="uid://c1q2xr4ja57qs" path="res://scenes/camera/spring_arm_3d.tscn" id="7_4w45t"]
 
 [sub_resource type="Environment" id="Environment_bqqt6"]
@@ -131,6 +132,17 @@ text = "Play"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08677, 0.9977, 0)
 
 [node name="SpringArm3D" parent="." instance=ExtResource("7_4w45t")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("6_rt2n2")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
 
 [connection signal="body_entered" from="MainMenuItem/Button/StartBtn" to="MainMenuItem/Button/StartBtn" method="_on_body_entered"]
 [connection signal="body_exited" from="MainMenuItem/Button/StartBtn" to="MainMenuItem/Button/StartBtn" method="_on_body_exited"]
