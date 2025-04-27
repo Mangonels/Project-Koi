@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cl6hog78qr3tw"]
+[gd_scene load_steps=12 format=3 uid="uid://tpl7k3xe4ht3"]
 
 [ext_resource type="Environment" uid="uid://cg3qp1n5ul5rf" path="res://resources/game_environment.tres" id="1_w5aja"]
 [ext_resource type="PackedScene" uid="uid://terr1jywx0ub" path="res://scenes/player/player.tscn" id="2_onqr8"]

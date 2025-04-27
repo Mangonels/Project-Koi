@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://cdmm801wc0ulw"]
+
+[ext_resource type="Texture2D" uid="uid://cpklmefu0bxtw" path="res://textures/environment/plataformas/pared_vertical_BaseColor.standardSurface1.png" id="1_7m1f6"]
+[ext_resource type="Texture2D" uid="uid://d0qk0y2soc4hh" path="res://textures/environment/plataformas/pared_vertical_Normal.standardSurface1.png" id="2_t5xtq"]
+[ext_resource type="Texture2D" uid="uid://cfv6c2h7orghl" path="res://textures/environment/plataformas/pared_vertical_Roughness.standardSurface1.png" id="3_ih5jh"]
+
+[resource]
+albedo_texture = ExtResource("1_7m1f6")
+roughness_texture = ExtResource("3_ih5jh")
+normal_enabled = true
+normal_texture = ExtResource("2_t5xtq")
