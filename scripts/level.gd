@@ -65,10 +65,29 @@ func _load_new_level(first_run: bool, increase_level: bool) -> void:
 	if first_run == true: 
 		current_level.call_deferred("free")
 	
-	if increase_level == false and !first_run:
+	if !increase_level and !first_run:
 		# reset level logic
 		player_node_feet.position = initial_level_pos_feet ;
 		player_node_body.position = initial_level_pos_body ;
+		var water_str: String = "res://Shader/Water.tscn"
+
+		var water_resource = load(water_str)
+
+		var wnode = get_node("/root/Level/Water")
+
+		if !wnode:
+			print("Wee woo wee woo")
+			return
+
+		remove_child(wnode)
+		wnode.call_deferred("free")
+
+		if water_resource:
+			var e = water_resource.instantiate()
+			e.name = "Water"
+			add_child(e)
+			e.show()
+			print("Re-added water")
 
 	var level_str: String = "res://scenes/levels/level_" + str(current_number) + ".tscn"
 
