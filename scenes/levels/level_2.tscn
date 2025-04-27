@@ -22,7 +22,6 @@ skeleton = NodePath("../../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="level_0002/entorno/floor/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
-shape = SubResource("ConcavePolygonShape3D_qo38u")
 
 [node name="wall" type="MeshInstance3D" parent="level_0002/entorno"]
 transform = Transform3D(69.9997, -0.000397411, -0.171253, 0.1713, 0.000150779, 69.9998, -0.0926428, -0.3, 0.0354084, 0.635224, 35.087, -16.9954)
@@ -33,7 +32,6 @@ skeleton = NodePath("../../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="level_0002/entorno/wall/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
-shape = SubResource("ConcavePolygonShape3D_qo38u")
 
 [node name="props" type="Node" parent="level_0002"]
 
