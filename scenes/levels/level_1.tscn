@@ -178,4 +178,4 @@ draw_pass_1 = SubResource("RibbonTrailMesh_o7ge6")
 [node name="Character" type="Node" parent="."]
 
 [node name="Player" parent="Character" instance=ExtResource("8_wtwp4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.594585, 17.5031, -0.321569)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.211, 12.8639, -14.4498)

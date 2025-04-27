@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://bhqurev87diy4"]
+[gd_scene load_steps=15 format=3 uid="uid://bhqurev87diy4"]
 
 [ext_resource type="PackedScene" uid="uid://dcii87dr1e6e0" path="res://scenes/prefab/platform_4m.tscn" id="1_ibugp"]
 [ext_resource type="PackedScene" uid="uid://bot1cqoewjth3" path="res://scenes/prefab/plataforma_0,5x_2.tscn" id="2_8qukl"]
 [ext_resource type="PackedScene" uid="uid://ch4emonvtqsb7" path="res://scenes/prefab/podio.tscn" id="3_3p04p"]
 [ext_resource type="PackedScene" uid="uid://bys165e2lbsqg" path="res://scenes/prefab/plataforma_2x2.tscn" id="4_qsp8v"]
 [ext_resource type="PackedScene" uid="uid://dtjvn280crxlu" path="res://modelos/barco.glb" id="5_nt80m"]
+[ext_resource type="PackedScene" uid="uid://dk6238nqycrt8" path="res://scenes/prefab/plataforma_cubo.tscn" id="6_8qukl"]
 [ext_resource type="Environment" uid="uid://cg3qp1n5ul5rf" path="res://resources/game_environment.tres" id="6_brxtv"]
 [ext_resource type="PackedScene" uid="uid://terr1jywx0ub" path="res://scenes/player/player.tscn" id="7_tv7cl"]
 
@@ -126,6 +127,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6814, 20.2517, -2.12281)
 
 [node name="barco" parent="level_0002/props" instance=ExtResource("5_nt80m")]
 transform = Transform3D(2.25998, 0, 0, 0, 2.37061, 0, 0, 0, 2.82154, -15.2136, 19.5515, 0.466038)
+
+[node name="Plataforma_cubo" parent="level_0002/props" instance=ExtResource("6_8qukl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5583, 20.0147, -2.16462)
+
+[node name="Plataforma_cubo2" parent="level_0002/props" instance=ExtResource("6_8qukl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5583, 20.0147, 3.24562)
 
 [node name="Lighting" type="Node" parent="."]
 

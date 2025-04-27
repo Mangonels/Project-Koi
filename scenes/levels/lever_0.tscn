@@ -77,6 +77,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
 shape = SubResource("ConcavePolygonShape3D_bw6k5")
 
 [node name="Sprite2D" type="Sprite2D" parent="Level_0000/Entorno/wall"]
+visible = false
 z_index = -10
 scale = Vector2(0.598437, 0.602778)
 texture = ExtResource("1_vny3n")
@@ -153,7 +154,7 @@ transform = Transform3D(-1.14714, 0, 1.00286e-07, 0, 1.14714, 0, -1.00286e-07, 0
 transform = Transform3D(-1.14714, 0, 1.00286e-07, 0, 1.14714, 0, -1.00286e-07, 0, -1.14714, -16.6821, 10.567, -14.7246)
 
 [node name="Plataforma_cubo6" parent="Level_0000/Props" instance=ExtResource("6_ggw3v")]
-transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -4.50519, -1.04685, 0)
+transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -4.50519, -0.747831, 0)
 
 [node name="Lighting" type="Node" parent="."]
 
