@@ -117,7 +117,7 @@ color = Color(0, 0, 0, 0)
 [node name="ObjetosPochos" type="Node3D" parent="."]
 
 [node name="Shader" parent="ObjetosPochos" instance=ExtResource("11_e1cbu")]
-transform = Transform3D(99.3208, 0, 0, 0, 1, 0, 0, 0, 132.188, 1.86021, 0.0669947, 8.53366)
+transform = Transform3D(99.3208, 0, 0, 0, 1, 0, 0, 0, 132.188, 1.86021, -0.0538168, 8.53366)
 
 [node name="Plataforma_0_5M2" parent="ObjetosPochos" instance=ExtResource("12_r6p65")]
 transform = Transform3D(2.78257, 0, 0, 0, 1.61003, -1.37715, 0, 1.14936, 1.92913, -21.4566, -0.318642, 12.6842)
@@ -181,9 +181,17 @@ font = ExtResource("3_r6p65")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.411498, -0.645689, 0.643237, 0.197032, 0.752094, 0.628914, -0.889858, -0.132058, 0.436707, 3.19598, 24.1239, -5.93455)
-light_color = Color(0.942686, 0.982259, 0.843341, 1)
-light_energy = 0.992
-light_indirect_energy = 1.962
+light_color = Color(1, 0.980392, 0.843137, 1)
+light_energy = 1.244
+light_volumetric_fog_energy = 1.05
+light_specular = 1.52
+sky_mode = 2
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.411512, -0.645637, 0.643282, 0.197003, 0.752139, 0.628869, -0.889858, -0.132058, 0.436707, 3.19598, 13.9569, -5.93455)
+light_energy = 1.244
+light_volumetric_fog_energy = 1.05
+light_specular = 1.52
 
 [node name="pared_Vertical4M2" parent="." instance=ExtResource("14_r6p65")]
 transform = Transform3D(9.53853, 0, 0, 0, 1, 0, 0, 0, 1, -14.3879, -3.28246, -24.0825)
