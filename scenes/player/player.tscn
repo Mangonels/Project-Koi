@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://s81joe7xlyqv" path="res://scripts/player_movement.gd" id="3_gmlin"]
 [ext_resource type="Script" uid="uid://dxfmfd3uv2xlp" path="res://scripts/contact_grounded_transmission_query.gd" id="3_lvxji"]
 [ext_resource type="PhysicsMaterial" uid="uid://cyemguak0k6xh" path="res://resources/player_body.tres" id="5_75vfm"]
-[ext_resource type="SpriteFrames" uid="uid://c002xn3i1grbf" path="res://resources/awawa_sprite_frames.tres" id="7_0owmy"]
+[ext_resource type="SpriteFrames" uid="uid://ce5f7qvyx6m8m" path="res://resources/awawa_sprite_frames.tres" id="7_0owmy"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_lvxji"]
 
@@ -66,7 +66,7 @@ animation = &"1_movement"
 frame_progress = 0.513215
 
 [node name="Camera3D" type="Camera3D" parent="PlayerBody"]
-transform = Transform3D(1, 0, 0, 0, 0.735092, 0.677967, 0, -0.677967, 0.735092, 0, 2.28216, 3.00933)
+transform = Transform3D(1, 0, 0, 0, 0.735092, 0.677967, 0, -0.677967, 0.735092, 0, 3.98182, 5.19667)
 
 [node name="PinJoint3D" type="PinJoint3D" parent="."]
 node_a = NodePath("../PlayerBody")

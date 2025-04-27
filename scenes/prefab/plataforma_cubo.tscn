@@ -1,19 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://dk6238nqycrt8"]
+[gd_scene load_steps=5 format=3 uid="uid://dk6238nqycrt8"]
 
 [ext_resource type="PackedScene" uid="uid://ctds2u6ro67t5" path="res://modelos/blocking/Plataforma_cubo.glb" id="1_2u3qt"]
-[ext_resource type="PackedScene" uid="uid://c6oj3qxiasrjk" path="res://modelos/plataforms/Plataforma_cubo.glb" id="2_svv3q"]
+[ext_resource type="Material" uid="uid://cjp4mxu7y6yym" path="res://textures/environment/plataformas/platformcubo.tres" id="2_wgxmj"]
+[ext_resource type="ArrayMesh" uid="uid://bv40xtqi1u5s7" path="res://modelos/plataforms/plataformaCubo.obj" id="3_kntr1"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_svv3q"]
 data = PackedVector3Array(-1, 0, 1, -1, 2, -1, -1, 2, 1, -1, 0, 1, -1, 0, -1, -1, 2, -1, -1, 0, -1, 1, 2, -1, -1, 2, -1, -1, 0, -1, 1, 0, -1, 1, 2, -1, 1, 0, -1, 1, 2, 1, 1, 2, -1, 1, 0, -1, 1, 0, 1, 1, 2, 1, 1, 0, 1, -1, 2, 1, 1, 2, 1, 1, 0, 1, -1, 0, 1, -1, 2, 1, -1, 0, -1, 1, 0, 1, 1, 0, -1, -1, 0, -1, -1, 0, 1, 1, 0, 1, 1, 2, -1, -1, 2, 1, -1, 2, -1, 1, 2, -1, 1, 2, 1, -1, 2, 1)
 
 [node name="Plataforma_cubo" instance=ExtResource("1_2u3qt")]
 
-[node name="Plataforma_cubo2" parent="." index="0" instance=ExtResource("2_svv3q")]
-
-[node name="plataformaCubo" parent="." index="1"]
+[node name="plataformaCubo" parent="." index="0"]
 visible = false
 
 [node name="StaticBody3D" type="StaticBody3D" parent="plataformaCubo" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="plataformaCubo/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_svv3q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+material_override = ExtResource("2_wgxmj")
+mesh = ExtResource("3_kntr1")

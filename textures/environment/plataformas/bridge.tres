@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://ci772m0mjk3mt"]
+
+[ext_resource type="Texture2D" uid="uid://prxdl22qj37q" path="res://textures/environment/plataformas/Bridge_BaseColor.standardSurface1.png" id="1_vt0bk"]
+[ext_resource type="Texture2D" uid="uid://bduhqdf3pj45d" path="res://textures/environment/plataformas/Bridge_Roughness.standardSurface1.png" id="2_d63o4"]
+
+[resource]
+albedo_texture = ExtResource("1_vt0bk")
+roughness_texture = ExtResource("2_d63o4")
