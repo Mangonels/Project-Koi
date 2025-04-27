@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://j8ow58o7lm52"]
+[gd_scene load_steps=12 format=3 uid="uid://j8ow58o7lm52"]
 
 [ext_resource type="Shader" uid="uid://o4t4uu7bx0bh" path="res://Shader/water.gdshader" id="1_76i5k"]
 
@@ -68,10 +68,12 @@ shader_parameter/color_shallow = Color(0.84975, 0.918943, 0.890098, 1)
 shader_parameter/beers_law = 2.015
 shader_parameter/depth_offset = -0.625
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_76i5k"]
-
 [node name="Shader" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00893366, 1.19209e-07, -0.00075841)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(3.39838, 0, 0, 0, 3.39838, 0, 0, 0, 3.39838, -0.252598, -0.258387, -0.656339)
@@ -79,10 +81,6 @@ cast_shadow = 0
 gi_mode = 0
 mesh = SubResource("PlaneMesh_76i5k")
 surface_material_override/0 = SubResource("ShaderMaterial_ri1uk")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.422056, -0.79544, -0.00671625)
-mesh = SubResource("CylinderMesh_76i5k")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.160532, 0)

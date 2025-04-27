@@ -1,5 +1,5 @@
 shader_type spatial;
-render_mode  specular_toon;
+render_mode  diffuse_toon,specular_toon;
 //render_mode specular_toon;
 uniform sampler2D DEPTH_TEXTURE : hint_depth_texture, filter_linear_mipmap;
 uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
