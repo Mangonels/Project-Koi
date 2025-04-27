@@ -140,3 +140,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08677, 0.9977, 0)
 
 [connection signal="body_entered" from="MainMenuItem/Button/StartBtn" to="MainMenuItem/Button/StartBtn" method="_on_body_entered"]
 [connection signal="body_exited" from="MainMenuItem/Button/StartBtn" to="MainMenuItem/Button/StartBtn" method="_on_body_exited"]
+[connection signal="body_entered" from="Water" to="Water" method="_on_body_entered"]
