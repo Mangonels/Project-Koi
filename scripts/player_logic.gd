@@ -8,11 +8,11 @@ var _grounded_previous_frame : bool = false
 #tiempo con el doble salto
 var canDoubleJump : bool = false;
 var number_jumps: int = 1;
-var jump_time: float = 10;
+@export var jump_time: float = 10;
 
 #tiempo con el doble salto
 var canPropulse : bool = false;
-var propulse_time: float = 10;
+@export var propulse_time: float = 10;
 
 @export var player_body : PlayerMovement
 @export var player_feet : RigidBody3D
@@ -58,7 +58,7 @@ func _physics_process(delta) -> void:
 	# Movement command check
 	var move_direction = Vector2.ZERO
 	move_direction = Input.get_vector("strafe_left", "strafe_right", "move_forward", "move_back", 0.005)
-
+	
 	movement_command_updated.emit(move_direction)
 	
 	if Input.is_action_just_pressed("jump"):

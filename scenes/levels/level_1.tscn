@@ -99,10 +99,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.0279, 12.472, -11.1829)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.0279, 12.472, -9.69344)
 
 [node name="platform_4M5" parent="level_0001/props" instance=ExtResource("1_s8va5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.674563, 17.0169, -0.17202)
+transform = Transform3D(1.12083, 0, 0, 0, 1, 0, 0, 0, 1.11033, -0.674563, 17.0169, -0.0944473)
 
 [node name="platform_4M6" parent="level_0001/props" instance=ExtResource("1_s8va5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.674563, 17.0169, -7.47698)
+transform = Transform3D(1.08395, 0, 0, 0, 1, 0, 0, 0, 1.21317, -0.674563, 17.0169, -7.47698)
 
 [node name="Plataforma_0_5M20" parent="level_0001/props" instance=ExtResource("2_dga24")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.834014, 17.2648, -5.34178)
@@ -127,31 +127,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.7225, 12.1709, -14.5907)
 visible = false
 
 [node name="Plataforma_2M2" parent="level_0001/props" instance=ExtResource("4_excbq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.1504, 13.0064, -7.5232)
+transform = Transform3D(1.38602, 0, 0, 0, 1, 0, 0, 0, 1.65168, -26.5503, 13.0064, -7.5232)
 
 [node name="Plataforma_2M3" parent="level_0001/props" instance=ExtResource("4_excbq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.1035, 14.0021, -7.5232)
+transform = Transform3D(1.34716, 0, 0, 0, 1, 0, 0, 0, 1.6181, -22.1035, 14.0021, -7.5232)
+
+[node name="Plataforma_2M4" parent="level_0001/props" instance=ExtResource("4_excbq")]
+transform = Transform3D(1.44165, 0, 0, 0, 1, 0, 0, 0, 1.79432, -11.9921, 15.7726, -7.5556)
 
 [node name="bridge2" parent="level_0001/props" instance=ExtResource("5_iav0o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1159, 15.0072, -7.53181)
+transform = Transform3D(1.13996, 0, 0, 0, 1, 0, 0, 0, 1.27611, -17.1159, 15.0072, -7.53181)
 
 [node name="Plataforma_cubo" parent="level_0001/props" instance=ExtResource("6_dnkej")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.97991, 14.0423, -7.54745)
-
-[node name="rampa_2Mx0_5M2" parent="level_0001/props" instance=ExtResource("3_qxy0u")]
-transform = Transform3D(-1, 0, -8.9407e-08, 0, 1, 0, 8.9407e-08, 0, -1, -11.7023, 14.0555, -7.52964)
+transform = Transform3D(1.50791, 0, 0, 0, 1, 0, 0, 0, 1.22894, -6.97991, 14.0423, -7.54745)
 
 [node name="Plataforma_cubo2" parent="level_0001/props" instance=ExtResource("6_dnkej")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.42155, 14.0423, 0.00711966)
+transform = Transform3D(1.45306, 0, 0, 0, 1, 0, 0, 0, 1.26986, -8.42155, 14.0423, 0.00711966)
 
 [node name="Plataforma_cubo4" parent="level_0001/props" instance=ExtResource("6_dnkej")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.0601, 14.0423, 0.00711966)
+transform = Transform3D(1.30401, 0, 0, 0, 1, 0, 0, 0, 1.24523, -19.0601, 14.0423, 0.00711966)
 
 [node name="Plataforma_cubo5" parent="level_0001/props" instance=ExtResource("6_dnkej")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.9721, 16.0078, -0.0845494)
+transform = Transform3D(1.30179, 0, 0, 0, 1, 0, 0, 0, 1.24942, -24.9721, 16.0078, -0.0845494)
 
 [node name="Plataforma_cubo3" parent="level_0001/props" instance=ExtResource("6_dnkej")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0556, 12.029, 0.00711966)
+transform = Transform3D(1.319, 0, 0, 0, 1, 0, 0, 0, 1.26601, -14.0556, 12.029, 0.00711966)
 
 [node name="Lighting" type="Node" parent="."]
 
@@ -177,5 +177,5 @@ draw_pass_1 = SubResource("RibbonTrailMesh_o7ge6")
 
 [node name="Character" type="Node" parent="."]
 
-[node name="Player" parent="Character" instance=ExtResource("8_wtwp4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.211, 12.8639, -14.4498)
+[node name="Player" parent="." instance=ExtResource("8_wtwp4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.1713, 12.6897, -15.2745)
