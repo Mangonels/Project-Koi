@@ -1,0 +1,159 @@
+[gd_scene load_steps=15 format=3 uid="uid://bhqurev87diy4"]
+
+[ext_resource type="Environment" uid="uid://cg3qp1n5ul5rf" path="res://resources/game_environment.tres" id="1_8gxly"]
+[ext_resource type="PackedScene" uid="uid://dcii87dr1e6e0" path="res://scenes/prefab/platform_4m.tscn" id="1_rv1cp"]
+[ext_resource type="PackedScene" uid="uid://bot1cqoewjth3" path="res://scenes/prefab/plataforma_0,5x_2.tscn" id="2_06vuu"]
+[ext_resource type="PackedScene" uid="uid://terr1jywx0ub" path="res://scenes/player/player.tscn" id="2_o4h8b"]
+[ext_resource type="PackedScene" uid="uid://ch4emonvtqsb7" path="res://scenes/prefab/podio.tscn" id="3_e7k5g"]
+[ext_resource type="PackedScene" uid="uid://bys165e2lbsqg" path="res://scenes/prefab/plataforma_2x2.tscn" id="4_a4tsq"]
+[ext_resource type="PackedScene" uid="uid://dtjvn280crxlu" path="res://modelos/barco.glb" id="5_o7ge6"]
+[ext_resource type="PackedScene" uid="uid://by1um5wdmn624" path="res://scenes/prefab/consumables/botas.tscn" id="6_rv1cp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_c6ba3"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qo38u"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_j0wqj"]
+emission_shape_scale = Vector3(5, 5, 5)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+direction = Vector3(0, -1, 0)
+spread = 5.0
+initial_velocity_min = 15.0
+initial_velocity_max = 15.0
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[sub_resource type="Curve" id="Curve_rurhu"]
+_limits = [0.0, 0.1, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0754717, 0.0655738), 0.319896, 0.319896, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kk2rg"]
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.74902, 1, 1, 1)
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_0lsnu"]
+material = SubResource("StandardMaterial3D_kk2rg")
+curve = SubResource("Curve_rurhu")
+
+[node name="Level0002" type="Node3D"]
+
+[node name="level_0002" type="Node" parent="."]
+
+[node name="entorno" type="Node" parent="level_0002"]
+
+[node name="floor" type="MeshInstance3D" parent="level_0002/entorno"]
+transform = Transform3D(70, 0, 0, 0, 0.3, 0, 0, 0, 70, 0.226578, -0.0692085, -28.0224)
+mesh = SubResource("BoxMesh_c6ba3")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="level_0002/entorno/floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="level_0002/entorno/floor/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+shape = SubResource("ConcavePolygonShape3D_qo38u")
+
+[node name="wall" type="MeshInstance3D" parent="level_0002/entorno"]
+transform = Transform3D(70, 0, 0, 0, -1.31134e-08, 70, 0, -0.3, -3.0598e-06, 0.226578, 34.9839, -16.5238)
+mesh = SubResource("BoxMesh_c6ba3")
+skeleton = NodePath("../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="level_0002/entorno/wall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="level_0002/entorno/wall/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+shape = SubResource("ConcavePolygonShape3D_qo38u")
+
+[node name="props" type="Node" parent="level_0002"]
+
+[node name="platform_4M7" parent="level_0002/props" instance=ExtResource("1_rv1cp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.257, 17.5696, -0.198836)
+
+[node name="platform_4M8" parent="level_0002/props" instance=ExtResource("1_rv1cp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.257, 17.5696, -7.5038)
+
+[node name="Plataforma_0_5M26" parent="level_0002/props" instance=ExtResource("2_06vuu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.4164, 17.8175, -5.3686)
+
+[node name="Plataforma_0_5M27" parent="level_0002/props" instance=ExtResource("2_06vuu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.4164, 17.8175, -3.8718)
+
+[node name="Plataforma_0_5M28" parent="level_0002/props" instance=ExtResource("2_06vuu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.4164, 17.8175, -2.38234)
+
+[node name="Plataforma_0_5M29" parent="level_0002/props" instance=ExtResource("2_06vuu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.9232, 17.8175, -5.3686)
+
+[node name="Plataforma_0_5M30" parent="level_0002/props" instance=ExtResource("2_06vuu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.9232, 17.8175, -3.8718)
+
+[node name="Plataforma_0_5M31" parent="level_0002/props" instance=ExtResource("2_06vuu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.9232, 17.8175, -2.38234)
+
+[node name="Plataforma_0_5M32" parent="level_0002/props" instance=ExtResource("2_06vuu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9013, 20.2747, -6.19467)
+
+[node name="Plataforma_0_5M33" parent="level_0002/props" instance=ExtResource("2_06vuu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9013, 20.2747, -4.69787)
+
+[node name="Plataforma_0_5M34" parent="level_0002/props" instance=ExtResource("2_06vuu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9013, 20.2747, -3.20841)
+
+[node name="Plataforma_0_5M35" parent="level_0002/props" instance=ExtResource("2_06vuu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4081, 20.2747, -6.19467)
+
+[node name="Plataforma_0_5M36" parent="level_0002/props" instance=ExtResource("2_06vuu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4081, 20.2747, -4.69787)
+
+[node name="Plataforma_0_5M37" parent="level_0002/props" instance=ExtResource("2_06vuu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4081, 20.2747, -3.20841)
+
+[node name="Plataforma_T2" parent="level_0002/props" instance=ExtResource("3_e7k5g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.4243, 18.475, -7.48482)
+
+[node name="Plataforma_2M2" parent="level_0002/props" instance=ExtResource("4_a4tsq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6814, 20.2517, -7.52096)
+
+[node name="Plataforma_2M3" parent="level_0002/props" instance=ExtResource("4_a4tsq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6814, 20.2517, -2.12281)
+
+[node name="barco" parent="level_0002/props" instance=ExtResource("5_o7ge6")]
+transform = Transform3D(2.25998, 0, 0, 0, 2.37061, 0, 0, 0, 2.82154, -15.2136, 19.5515, 0.466038)
+
+[node name="Botas" parent="level_0002/props" instance=ExtResource("6_rv1cp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.1953, 18.518, -0.769983)
+
+[node name="Lighting" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
+environment = ExtResource("1_8gxly")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(0.930048, 0.366877, -0.020288, -0.279335, 0.741838, 0.60963, 0.23871, -0.561319, 0.792426, 0, 3.45969, 0)
+
+[node name="VFX" type="Node" parent="."]
+
+[node name="Rain_VFX" type="GPUParticles3D" parent="VFX"]
+transform = Transform3D(4.65988, 0, 0, 0, 0.994338, 0, 0, 0, 4.88862, 0.0128145, 4.82571, 0.022974)
+visible = false
+amount = 100
+lifetime = 2.0
+randomness = 0.89
+visibility_aabb = AABB(-7.35, 0, -5, 27.7, 8, 13.6)
+trail_enabled = true
+trail_lifetime = 0.1
+process_material = SubResource("ParticleProcessMaterial_j0wqj")
+draw_pass_1 = SubResource("RibbonTrailMesh_0lsnu")
+
+[node name="Character" type="Node" parent="."]
+
+[node name="Player" parent="Character" instance=ExtResource("2_o4h8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.2956, 18.0559, -7.54951)

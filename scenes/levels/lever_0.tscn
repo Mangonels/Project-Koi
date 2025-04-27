@@ -1,14 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://fyvbjeur0o5p"]
+[gd_scene load_steps=18 format=3 uid="uid://xqbtud4ish4o"]
 
-[ext_resource type="PackedScene" uid="uid://dcii87dr1e6e0" path="res://scenes/prefab/platform_4m.tscn" id="1_jstec"]
-[ext_resource type="PackedScene" uid="uid://ds61mgbyupgc3" path="res://scenes/prefab/rampa_1.5x1.tscn" id="2_301yp"]
-[ext_resource type="PackedScene" uid="uid://bot1cqoewjth3" path="res://scenes/prefab/plataforma_0,5x_2.tscn" id="4_euv8e"]
-[ext_resource type="PackedScene" uid="uid://f22ka045f7tn" path="res://scenes/prefab/bridge_2.tscn" id="5_5fmco"]
-[ext_resource type="PackedScene" uid="uid://dk6238nqycrt8" path="res://scenes/prefab/plataforma_cubo.tscn" id="6_43jhk"]
-[ext_resource type="PackedScene" uid="uid://fakdbfckpi4c" path="res://scenes/prefab/rampa_2x0,5.tscn" id="7_4t5r3"]
-[ext_resource type="Environment" uid="uid://cg3qp1n5ul5rf" path="res://resources/game_environment.tres" id="8_yk7ho"]
-[ext_resource type="AudioStream" uid="uid://di7q2r6yj671g" path="res://resources/music/music/playa/musica_playa.wav" id="9_jstec"]
-[ext_resource type="PackedScene" uid="uid://terr1jywx0ub" path="res://scenes/player/player.tscn" id="9_kg0xf"]
+[ext_resource type="Texture2D" uid="uid://505b1irmyrh2" path="res://resources/fondito_paredes.jpg" id="1_vny3n"]
+[ext_resource type="PackedScene" uid="uid://dcii87dr1e6e0" path="res://scenes/prefab/platform_4m.tscn" id="2_xk55i"]
+[ext_resource type="PackedScene" uid="uid://ds61mgbyupgc3" path="res://scenes/prefab/rampa_1.5x1.tscn" id="3_461my"]
+[ext_resource type="PackedScene" uid="uid://bot1cqoewjth3" path="res://scenes/prefab/plataforma_0,5x_2.tscn" id="4_1htgb"]
+[ext_resource type="PackedScene" uid="uid://f22ka045f7tn" path="res://scenes/prefab/bridge_2.tscn" id="5_w5ci1"]
+[ext_resource type="PackedScene" uid="uid://dk6238nqycrt8" path="res://scenes/prefab/plataforma_cubo.tscn" id="6_ggw3v"]
+[ext_resource type="PackedScene" uid="uid://fakdbfckpi4c" path="res://scenes/prefab/rampa_2x0,5.tscn" id="7_bxsul"]
+[ext_resource type="Environment" uid="uid://cg3qp1n5ul5rf" path="res://resources/game_environment.tres" id="8_o1m0e"]
+[ext_resource type="PackedScene" uid="uid://terr1jywx0ub" path="res://scenes/player/player.tscn" id="9_t7ihc"]
+[ext_resource type="AudioStream" uid="uid://di7q2r6yj671g" path="res://resources/music/music/playa/musica_playa.wav" id="10_jcp8x"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ycayy"]
 
@@ -75,6 +76,12 @@ skeleton = NodePath("../../..")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
 shape = SubResource("ConcavePolygonShape3D_bw6k5")
 
+[node name="Sprite2D" type="Sprite2D" parent="Level_0000/Entorno/wall"]
+z_index = -10
+scale = Vector2(0.598437, 0.602778)
+texture = ExtResource("1_vny3n")
+centered = false
+
 [node name="StaticBody3D (provisional floor)" type="StaticBody3D" parent="Level_0000/Entorno"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Level_0000/Entorno/StaticBody3D (provisional floor)"]
@@ -82,76 +89,76 @@ shape = SubResource("WorldBoundaryShape3D_lxttp")
 
 [node name="Props" type="Node" parent="Level_0000"]
 
-[node name="platform_4M" parent="Level_0000/Props" instance=ExtResource("1_jstec")]
+[node name="platform_4M" parent="Level_0000/Props" instance=ExtResource("2_xk55i")]
 transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.4, -23.0168, 5.24416, -0.0910583)
 
-[node name="platform_4M2" parent="Level_0000/Props" instance=ExtResource("1_jstec")]
+[node name="platform_4M2" parent="Level_0000/Props" instance=ExtResource("2_xk55i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0168, 5.38369, -7.28604)
 
-[node name="platform_4M6" parent="Level_0000/Props" instance=ExtResource("1_jstec")]
-transform = Transform3D(-1.61867, 0, 0.0284171, 0, 1.411, 0, -0.0326061, 0, -1.41071, -14.3156, 3.90682, 0.69077)
+[node name="platform_4M6" parent="Level_0000/Props" instance=ExtResource("2_xk55i")]
+transform = Transform3D(-1.61867, 0, 0.0284171, 0, 1.411, 0, -0.0326061, 0, -1.41071, -14.3156, 3.90682, 0.0654059)
 
-[node name="rampa_1_5Mx1M" parent="Level_0000/Props" instance=ExtResource("2_301yp")]
-transform = Transform3D(1.575, 0, 0, 0, 2.1087, 0, 0, 0, 2.201, -9.42827, 2.19983, 0.640201)
+[node name="rampa_1_5Mx1M" parent="Level_0000/Props" instance=ExtResource("3_461my")]
+transform = Transform3D(1.575, 0, 0, 0, 2.1087, 0, 0, 0, 2.201, -9.42827, 2.39728, 0.171286)
 
-[node name="Plataforma_0_5M9" parent="Level_0000/Props" instance=ExtResource("4_euv8e")]
+[node name="Plataforma_0_5M9" parent="Level_0000/Props" instance=ExtResource("4_1htgb")]
 transform = Transform3D(2.17, 0, 0, 0, 2.17, 0, 0, 0, 2.17, -23.1763, 5.37614, -4.00409)
 
-[node name="Plataforma_0_5M10" parent="Level_0000/Props" instance=ExtResource("4_euv8e")]
+[node name="Plataforma_0_5M10" parent="Level_0000/Props" instance=ExtResource("4_1htgb")]
 transform = Transform3D(2.17, 0, 0, 0, 2.17, 0, 0, 0, 2.17, -2.20338, 9.69814, -11.2761)
 
-[node name="platform_4M3" parent="Level_0000/Props" instance=ExtResource("1_jstec")]
+[node name="platform_4M3" parent="Level_0000/Props" instance=ExtResource("2_xk55i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.35527, 9.58579, -7.96668)
 
-[node name="platform_4M4" parent="Level_0000/Props" instance=ExtResource("1_jstec")]
+[node name="platform_4M4" parent="Level_0000/Props" instance=ExtResource("2_xk55i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.939052, 9.58579, -14.4901)
 
-[node name="platform_4M7" parent="Level_0000/Props" instance=ExtResource("1_jstec")]
+[node name="platform_4M7" parent="Level_0000/Props" instance=ExtResource("2_xk55i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.95822, 9.58579, -14.8149)
 
-[node name="platform_4M5" parent="Level_0000/Props" instance=ExtResource("1_jstec")]
+[node name="platform_4M5" parent="Level_0000/Props" instance=ExtResource("2_xk55i")]
 transform = Transform3D(1.48, 0, 0, 0, 1.48, 0, 0, 0, 1.48, -23.4047, 11.23, -13.9725)
 
-[node name="bridge2" parent="Level_0000/Props" instance=ExtResource("5_5fmco")]
+[node name="bridge2" parent="Level_0000/Props" instance=ExtResource("5_w5ci1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.3217, 7.9762, -7.31757)
 
-[node name="bridge3" parent="Level_0000/Props" instance=ExtResource("5_5fmco")]
+[node name="bridge3" parent="Level_0000/Props" instance=ExtResource("5_w5ci1")]
 transform = Transform3D(1.23, 0, 0, 0, 1.23, 0, 0, 0, 1.23, -13.438, 12.5164, -14.9344)
 
-[node name="Plataforma_cubo" parent="Level_0000/Props" instance=ExtResource("6_43jhk")]
+[node name="Plataforma_cubo" parent="Level_0000/Props" instance=ExtResource("6_ggw3v")]
 transform = Transform3D(1.0587, 0, 0, 0, 1.0587, 0, 0, 0, 1.0587, -17.4547, 5.63902, -7.30576)
 
-[node name="Plataforma_cubo7" parent="Level_0000/Props" instance=ExtResource("6_43jhk")]
+[node name="Plataforma_cubo7" parent="Level_0000/Props" instance=ExtResource("6_ggw3v")]
 transform = Transform3D(1.0587, 0, 0, 0, 1.0587, 0, 0, 0, 1.0587, -11.4228, 5.89323, -7.30576)
 
-[node name="rampa_2Mx0_5M2" parent="Level_0000/Props" instance=ExtResource("7_4t5r3")]
+[node name="rampa_2Mx0_5M2" parent="Level_0000/Props" instance=ExtResource("7_bxsul")]
 transform = Transform3D(-2.97388, 0, 8.83149e-08, 0, 4.23574, 0, -2.59985e-07, 0, -1.0102, -6.53161, 7.90298, -7.27518)
 
-[node name="rampa_2Mx0_5M3" parent="Level_0000/Props" instance=ExtResource("7_4t5r3")]
+[node name="rampa_2Mx0_5M3" parent="Level_0000/Props" instance=ExtResource("7_bxsul")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.7505, 11.6775, -14.5907)
 
-[node name="rampa_2Mx0_5M4" parent="Level_0000/Props" instance=ExtResource("7_4t5r3")]
+[node name="rampa_2Mx0_5M4" parent="Level_0000/Props" instance=ExtResource("7_bxsul")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.7225, 12.1709, -14.5907)
 
-[node name="Plataforma_cubo2" parent="Level_0000/Props" instance=ExtResource("6_43jhk")]
+[node name="Plataforma_cubo2" parent="Level_0000/Props" instance=ExtResource("6_ggw3v")]
 transform = Transform3D(1.14714, 0, 0, 0, 1.14714, 0, 0, 0, 1.14714, -8.00356, 9.41511, -14.722)
 
-[node name="Plataforma_cubo3" parent="Level_0000/Props" instance=ExtResource("6_43jhk")]
+[node name="Plataforma_cubo3" parent="Level_0000/Props" instance=ExtResource("6_ggw3v")]
 transform = Transform3D(1.14714, 0, 0, 0, 1.14714, 0, 0, 0, 1.14714, -10.3319, 10.567, -14.722)
 
-[node name="Plataforma_cubo4" parent="Level_0000/Props" instance=ExtResource("6_43jhk")]
+[node name="Plataforma_cubo4" parent="Level_0000/Props" instance=ExtResource("6_ggw3v")]
 transform = Transform3D(-1.14714, 0, 1.00286e-07, 0, 1.14714, 0, -1.00286e-07, 0, -1.14714, -18.9926, 9.41511, -14.722)
 
-[node name="Plataforma_cubo5" parent="Level_0000/Props" instance=ExtResource("6_43jhk")]
+[node name="Plataforma_cubo5" parent="Level_0000/Props" instance=ExtResource("6_ggw3v")]
 transform = Transform3D(-1.14714, 0, 1.00286e-07, 0, 1.14714, 0, -1.00286e-07, 0, -1.14714, -16.6821, 10.567, -14.7246)
 
-[node name="Plataforma_cubo6" parent="Level_0000/Props" instance=ExtResource("6_43jhk")]
-transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -5.64425, -1.04685, 0)
+[node name="Plataforma_cubo6" parent="Level_0000/Props" instance=ExtResource("6_ggw3v")]
+transform = Transform3D(1.645, 0, 0, 0, 1.645, 0, 0, 0, 1.645, -4.50519, -1.04685, 0)
 
 [node name="Lighting" type="Node" parent="."]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
-environment = ExtResource("8_yk7ho")
+environment = ExtResource("8_o1m0e")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
 transform = Transform3D(0.930048, 0.366877, -0.020288, -0.279335, 0.741838, 0.60963, 0.23871, -0.561319, 0.792426, 0, 3.45969, 0)
@@ -172,9 +179,9 @@ draw_pass_1 = SubResource("RibbonTrailMesh_b5spy")
 
 [node name="Character" type="Node" parent="."]
 
-[node name="Player" parent="Character" instance=ExtResource("9_kg0xf")]
+[node name="Player" parent="Character" instance=ExtResource("9_t7ihc")]
 transform = Transform3D(0.671005, 0, 0, 0, 0.671005, 0, 0, 0, 0.671005, 0, 0, 0)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("9_jstec")
+stream = ExtResource("10_jcp8x")
 autoplay = true
