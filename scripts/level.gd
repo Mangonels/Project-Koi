@@ -1,12 +1,15 @@
 extends Node
 
-var current_number = 0
+var current_number: int = 0
 
 func _ready() -> void:
 	pass
 
 func _process(delta: float) -> void:
 	pass
+
+func _get_current_level() -> int:
+	return current_number
 
 func _load_new_level(first_run: bool) -> void:
 	var current_level: Node3D
