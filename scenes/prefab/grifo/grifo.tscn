@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://sg7qd8p84y3m"]
 
 [ext_resource type="Material" uid="uid://cklwdaqfechoj" path="res://textures/environment/grifo/grifo.tres" id="1_nxat5"]
-[ext_resource type="ArrayMesh" uid="uid://bgwrj1v3ep3km" path="res://modelos/grifo.obj" id="2_mi6w6"]
+[ext_resource type="ArrayMesh" uid="uid://bax2wmookkg1" path="res://modelos/grifo.obj" id="2_mi6w6"]
 
 [node name="Grifo" type="MeshInstance3D"]
 material_override = ExtResource("1_nxat5")

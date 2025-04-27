@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bhqurev87diy4"]
+[gd_scene load_steps=18 format=3 uid="uid://bhqurev87diy4"]
 
 [ext_resource type="PackedScene" uid="uid://dcii87dr1e6e0" path="res://scenes/prefab/platform_4m.tscn" id="1_ibugp"]
 [ext_resource type="PackedScene" uid="uid://bot1cqoewjth3" path="res://scenes/prefab/plataforma_0,5x_2.tscn" id="2_8qukl"]
@@ -6,12 +6,27 @@
 [ext_resource type="PackedScene" uid="uid://bys165e2lbsqg" path="res://scenes/prefab/plataforma_2x2.tscn" id="4_qsp8v"]
 [ext_resource type="PackedScene" uid="uid://by1um5wdmn624" path="res://scenes/prefab/consumables/botas.tscn" id="6_3p04p"]
 [ext_resource type="PackedScene" uid="uid://dk6238nqycrt8" path="res://scenes/prefab/plataforma_cubo.tscn" id="6_8qukl"]
+[ext_resource type="PackedScene" uid="uid://sg7qd8p84y3m" path="res://scenes/prefab/grifo/grifo.tscn" id="8_3p04p"]
 [ext_resource type="PackedScene" uid="uid://cr8sukwj5y534" path="res://scenes/prefab/barco/barco_prefab.tscn" id="8_8qukl"]
+[ext_resource type="Script" uid="uid://b7upn7gkjbe7y" path="res://scenes/levels/trigger_escenafinal.gd" id="10_qsp8v"]
+[ext_resource type="Texture2D" uid="uid://bq500ld65yadd" path="res://materials/textures/IMG_5771.jpg" id="11_nt80m"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_c6ba3"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_qo38u"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3p04p"]
+albedo_color = Color(0, 0.643137, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_nt80m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nt80m"]
+albedo_color = Color(1, 0.733333, 0.113725, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nt80m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_brxtv"]
 
 [node name="Level0002" type="Node3D"]
 
@@ -130,10 +145,51 @@ transform = Transform3D(1.64503, 0, 0, 0, 1, 0, 0, 0, 1.66627, -17.7281, 27.4763
 
 [node name="Botas" parent="level_0002/props" instance=ExtResource("6_3p04p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5716, 22.5147, 3.52428)
-ruta = "/root/Level0002/Character/Player/PlayerLogic"
+ruta = "/root/Level0002/Player/PlayerLogic"
 
 [node name="platform_4M" parent="level_0002/props" instance=ExtResource("1_ibugp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6316, 29.1351, -13.5523)
 
+[node name="platform_4M2" parent="level_0002/props" instance=ExtResource("1_ibugp")]
+transform = Transform3D(2.93202, 0, 0, 0, 2.93202, 0, 0, 0, 2.93202, 7.68417, 22.9856, -39.6439)
+
+[node name="Grifo" parent="level_0002/props" instance=ExtResource("8_3p04p")]
+transform = Transform3D(-2.16528e-09, 0, -0.0495357, 0, 0.0495357, 0, 0.0495357, 0, -2.16528e-09, 6.11446, 24.8823, -40.1449)
+skeleton = NodePath("../../..")
+
 [node name="BarcoPrefab" parent="level_0002" instance=ExtResource("8_8qukl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1813, 27.4151, -17.9461)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -11.7717, 27.4151, -11.852)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="level_0002"]
+transform = Transform3D(1, 0, 0, 0, 36.7585, 0, 0, 0, 1, -0.264012, -8.03535, -40.0772)
+material_override = SubResource("StandardMaterial3D_3p04p")
+mesh = SubResource("CylinderMesh_nt80m")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="level_0002/MeshInstance3D"]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="level_0002" node_paths=PackedStringArray("texture_rect")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -12.1813, 30.1912, -17.092)
+material_override = SubResource("StandardMaterial3D_nt80m")
+mesh = SubResource("BoxMesh_nt80m")
+skeleton = NodePath("../..")
+script = ExtResource("10_qsp8v")
+texture_rect = NodePath("../TextureRect")
+
+[node name="Area3D" type="Area3D" parent="level_0002/MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="level_0002/MeshInstance3D2/Area3D"]
+shape = SubResource("BoxShape3D_brxtv")
+
+[node name="TextureRect" type="TextureRect" parent="level_0002"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_nt80m")
+expand_mode = 3
+stretch_mode = 4
+
+[connection signal="body_entered" from="level_0002/MeshInstance3D2/Area3D" to="level_0002/MeshInstance3D2" method="_on_area_3d_body_entered"]

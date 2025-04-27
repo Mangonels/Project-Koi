@@ -8,11 +8,11 @@ var _grounded_previous_frame : bool = false
 #tiempo con el doble salto
 var canDoubleJump : bool = false;
 var number_jumps: int = 1;
-@export var jump_time: float = 10;
+@export var jump_time: float = 15;
 
 #tiempo con el doble salto
 var canPropulse : bool = false;
-@export var propulse_time: float = 10;
+@export var propulse_time: float = 15;
 
 @export var player_body : PlayerMovement
 @export var player_feet : RigidBody3D
