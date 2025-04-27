@@ -5,3 +5,4 @@ builds/
 export_presets.cfg
 
 *.tmp
+*.import
