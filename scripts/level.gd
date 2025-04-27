@@ -35,13 +35,17 @@ func _load_new_level(first_run: bool, increase_level: bool) -> void:
 				print("Failed to find Invisible Walls Item?")
 				return
 
-			var water_node = get_node("/root/MainScene/Water")
+			var water_str: String = "res://Shader/Water.tscn"
+			
+			var water_resource = load(water_str)
 
-			if !water_node:
-				print("Failed to find Water Item?")
-				return
+			if water_resource:
+				var e = water_resource.instantiate()
+				e.name = "Water"
+				add_child(e)
+				e.show()
+				print("Added water")
 
-			water_node.show()
 			remove_child(inv_walls)
 			inv_walls.call_deferred("free")
 
@@ -53,7 +57,8 @@ func _load_new_level(first_run: bool, increase_level: bool) -> void:
 		var current_level_node: String = "/root/MainScene/level_" + str(current_number)
 		current_level = get_node(current_level_node)
 
-	remove_child(current_level)
+	if !increase_level:
+		remove_child(current_level)
 	
 	print("increase_level: ", increase_level)
 	print("first_run: ", first_run)
@@ -66,7 +71,9 @@ func _load_new_level(first_run: bool, increase_level: bool) -> void:
 		player_node_body.position = initial_level_pos_body ;
 
 	var level_str: String = "res://scenes/levels/level_" + str(current_number) + ".tscn"
-	
+
+	print("Trying to load: ", level_str)
+
 	var next_level_resource = load(level_str)
 
 	if next_level_resource:

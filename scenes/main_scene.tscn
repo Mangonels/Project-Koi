@@ -1,13 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://xqcyrprsalfb"]
+[gd_scene load_steps=15 format=3 uid="uid://b0eg010kp0ac"]
 
 [ext_resource type="Script" uid="uid://dv7qcwhasnu3v" path="res://scripts/level.gd" id="1_c16ls"]
 [ext_resource type="Sky" uid="uid://dhi4nk2idpxe5" path="res://resources/game_sky.tres" id="2_18nlu"]
 [ext_resource type="Script" uid="uid://y14ikj3svbq" path="res://scripts/start_button.gd" id="3_c1pb6"]
-[ext_resource type="PackedScene" uid="uid://crgimabarlgt7" path="res://Shader/Water.tscn" id="4_6wevv"]
-[ext_resource type="Script" uid="uid://dctyrqpjo11ni" path="res://Shader/water.gd" id="5_e1cbu"]
 [ext_resource type="PackedScene" uid="uid://terr1jywx0ub" path="res://scenes/player/player.tscn" id="6_mngbo"]
 [ext_resource type="PackedScene" uid="uid://c1q2xr4ja57qs" path="res://scenes/camera/spring_arm_3d.tscn" id="7_4w45t"]
-[ext_resource type="Script" uid="uid://c1g5qylx5tfc5" path="res://scripts/ui/fade.gd" id="8_18nlu"]
 
 [sub_resource type="Environment" id="Environment_bqqt6"]
 background_mode = 2
@@ -24,6 +21,7 @@ albedo_color = Color(2.16588e-07, 0.43475, 0.0711129, 1)
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_bqqt6"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_wu84c"]
+height = 0.778687
 
 [sub_resource type="SphereMesh" id="SphereMesh_8ln24"]
 
@@ -105,7 +103,7 @@ transform = Transform3D(2.585, 0, 0, 0, 2.585, 0, 0, 0, 2.585, 0, -1.36885, 0)
 shape = SubResource("CylinderShape3D_bqqt6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MainMenuItem/Button"]
-transform = Transform3D(2.53, 0, 0, 0, 2.53, 0, 0, 0, 2.53, 0, -1.36195, 0)
+transform = Transform3D(2.53, 0, 0, 0, 2.53, 0, 0, 0, 2.53, 0, 0.748802, 0)
 shape = SubResource("CylinderShape3D_wu84c")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="MainMenuItem/Button"]
@@ -129,28 +127,10 @@ text = "Play"
 
 [node name="Shop Item" type="Node3D" parent="."]
 
-[node name="Water" parent="." node_paths=PackedStringArray("canvas") instance=ExtResource("4_6wevv")]
-transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, -0.00893366, -1.34331, -0.00075841)
-visible = false
-script = ExtResource("5_e1cbu")
-canvas = NodePath("../CanvasLayer")
-
 [node name="Player" parent="." instance=ExtResource("6_mngbo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08677, 0.9977, 0)
 
 [node name="SpringArm3D" parent="." instance=ExtResource("7_4w45t")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-script = ExtResource("8_18nlu")
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(1, 1, 1, 0)
-
 [connection signal="body_entered" from="MainMenuItem/Button/StartBtn" to="MainMenuItem/Button/StartBtn" method="_on_body_entered"]
 [connection signal="body_exited" from="MainMenuItem/Button/StartBtn" to="MainMenuItem/Button/StartBtn" method="_on_body_exited"]
-[connection signal="body_entered" from="Water" to="Water" method="_on_body_entered"]

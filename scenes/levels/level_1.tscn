@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bfa547j3bxwhn"]
+[gd_scene load_steps=9 format=3 uid="uid://bfa547j3bxwhn"]
 
 [ext_resource type="PackedScene" uid="uid://dcii87dr1e6e0" path="res://scenes/prefab/platform_4m.tscn" id="1_s8va5"]
 [ext_resource type="PackedScene" uid="uid://bot1cqoewjth3" path="res://scenes/prefab/plataforma_0,5x_2.tscn" id="2_dga24"]
@@ -6,71 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://bys165e2lbsqg" path="res://scenes/prefab/plataforma_2x2.tscn" id="4_excbq"]
 [ext_resource type="PackedScene" uid="uid://f22ka045f7tn" path="res://scenes/prefab/bridge_2.tscn" id="5_iav0o"]
 [ext_resource type="PackedScene" uid="uid://dk6238nqycrt8" path="res://scenes/prefab/plataforma_cubo.tscn" id="6_dnkej"]
-[ext_resource type="Environment" uid="uid://cg3qp1n5ul5rf" path="res://resources/game_environment.tres" id="7_mm8aj"]
-[ext_resource type="PackedScene" uid="uid://terr1jywx0ub" path="res://scenes/player/player.tscn" id="8_wtwp4"]
+[ext_resource type="Script" uid="uid://chf5hkp8dio8w" path="res://scenes/levels/level_finish.gd" id="7_oc4kc"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_yor45"]
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_of648"]
-data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5soic"]
-emission_shape_scale = Vector3(5, 5, 5)
-emission_shape = 3
-emission_box_extents = Vector3(1, 1, 1)
-angle_min = 1.07288e-05
-angle_max = 1.07288e-05
-direction = Vector3(0, -1, 0)
-spread = 5.0
-initial_velocity_min = 15.0
-initial_velocity_max = 15.0
-collision_mode = 1
-collision_friction = 0.0
-collision_bounce = 0.0
-
-[sub_resource type="Curve" id="Curve_3y2a2"]
-_limits = [0.0, 0.1, 0.0, 1.0]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0754717, 0.0655738), 0.319896, 0.319896, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvs8u"]
-cull_mode = 2
-shading_mode = 0
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.74902, 1, 1, 1)
-use_particle_trails = true
-
-[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_o7ge6"]
-material = SubResource("StandardMaterial3D_uvs8u")
-curve = SubResource("Curve_3y2a2")
+[sub_resource type="BoxShape3D" id="BoxShape3D_sk5k4"]
+size = Vector3(2.60791, 2.34998, 2.25427)
 
 [node name="Level0001" type="Node3D"]
 
 [node name="level_0001" type="Node" parent="."]
 
 [node name="entorno" type="Node" parent="level_0001"]
-
-[node name="floor" type="MeshInstance3D" parent="level_0001/entorno"]
-transform = Transform3D(70, 0, 0, 0, 0.3, 0, 0, 0, 70, 0.226578, -0.0692085, -28.0224)
-mesh = SubResource("BoxMesh_yor45")
-skeleton = NodePath("../../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="level_0001/entorno/floor"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="level_0001/entorno/floor/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
-shape = SubResource("ConcavePolygonShape3D_of648")
-
-[node name="wall" type="MeshInstance3D" parent="level_0001/entorno"]
-transform = Transform3D(70, 0, 0, 0, -1.31134e-08, 70, 0, -0.3, -3.0598e-06, 0.226578, 34.9839, -16.5238)
-mesh = SubResource("BoxMesh_yor45")
-skeleton = NodePath("../../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="level_0001/entorno/wall"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="level_0001/entorno/wall/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
-shape = SubResource("ConcavePolygonShape3D_of648")
 
 [node name="props" type="Node" parent="level_0001"]
 
@@ -153,29 +98,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.9721, 16.0078, -0.0845494
 [node name="Plataforma_cubo3" parent="level_0001/props" instance=ExtResource("6_dnkej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0556, 12.029, 0.00711966)
 
-[node name="Lighting" type="Node" parent="."]
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.2329, 17.6424, -0.275518)
+script = ExtResource("7_oc4kc")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Lighting"]
-environment = ExtResource("7_mm8aj")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lighting"]
-transform = Transform3D(0.930048, 0.366877, -0.020288, -0.279335, 0.741838, 0.60963, 0.23871, -0.561319, 0.792426, 0, 3.45969, 0)
-
-[node name="VFX" type="Node" parent="."]
-
-[node name="Rain_VFX" type="GPUParticles3D" parent="VFX"]
-transform = Transform3D(4.65988, 0, 0, 0, 0.994338, 0, 0, 0, 4.88862, 0.0128145, 4.82571, 0.022974)
-visible = false
-amount = 100
-lifetime = 2.0
-randomness = 0.89
-visibility_aabb = AABB(-7.35, 0, -5, 27.7, 8, 13.6)
-trail_enabled = true
-trail_lifetime = 0.1
-process_material = SubResource("ParticleProcessMaterial_5soic")
-draw_pass_1 = SubResource("RibbonTrailMesh_o7ge6")
-
-[node name="Character" type="Node" parent="."]
-
-[node name="Player" parent="Character" instance=ExtResource("8_wtwp4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.211, 12.8639, -14.4498)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.803955, 0.129089, 0.168274)
+shape = SubResource("BoxShape3D_sk5k4")
