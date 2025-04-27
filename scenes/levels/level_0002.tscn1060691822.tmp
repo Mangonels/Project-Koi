@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ch4emonvtqsb7" path="res://scenes/prefab/podio.tscn" id="3_e7k5g"]
 [ext_resource type="PackedScene" uid="uid://bys165e2lbsqg" path="res://scenes/prefab/plataforma_2x2.tscn" id="4_a4tsq"]
 [ext_resource type="PackedScene" uid="uid://dtjvn280crxlu" path="res://modelos/barco.glb" id="5_o7ge6"]
-[ext_resource type="PackedScene" uid="uid://by1um5wdmn624" path="res://scenes/prefab/consumables/botas.tscn" id="6_rv1cp"]
+[ext_resource type="PackedScene" uid="uid://by1um5wdmn624" path="res://scenes/prefab/consumables/botas.tscn" id="8_rv1cp"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_c6ba3"]
 
@@ -98,38 +98,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.9232, 17.8175, -3.8718)
 [node name="Plataforma_0_5M31" parent="level_0002/props" instance=ExtResource("2_06vuu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.9232, 17.8175, -2.38234)
 
-[node name="Plataforma_0_5M32" parent="level_0002/props" instance=ExtResource("2_06vuu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9013, 20.2747, -6.19467)
-
-[node name="Plataforma_0_5M33" parent="level_0002/props" instance=ExtResource("2_06vuu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9013, 20.2747, -4.69787)
-
-[node name="Plataforma_0_5M34" parent="level_0002/props" instance=ExtResource("2_06vuu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.9013, 20.2747, -3.20841)
-
-[node name="Plataforma_0_5M35" parent="level_0002/props" instance=ExtResource("2_06vuu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4081, 20.2747, -6.19467)
-
-[node name="Plataforma_0_5M36" parent="level_0002/props" instance=ExtResource("2_06vuu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4081, 20.2747, -4.69787)
-
-[node name="Plataforma_0_5M37" parent="level_0002/props" instance=ExtResource("2_06vuu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4081, 20.2747, -3.20841)
-
 [node name="Plataforma_T2" parent="level_0002/props" instance=ExtResource("3_e7k5g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.4243, 18.475, -7.48482)
 
 [node name="Plataforma_2M2" parent="level_0002/props" instance=ExtResource("4_a4tsq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6814, 20.2517, -7.52096)
 
-[node name="Plataforma_2M3" parent="level_0002/props" instance=ExtResource("4_a4tsq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6814, 20.2517, -2.12281)
-
 [node name="barco" parent="level_0002/props" instance=ExtResource("5_o7ge6")]
 transform = Transform3D(2.25998, 0, 0, 0, 2.37061, 0, 0, 0, 2.82154, -15.2136, 19.5515, 0.466038)
-
-[node name="Botas" parent="level_0002/props" instance=ExtResource("6_rv1cp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.1953, 18.518, -0.769983)
 
 [node name="Lighting" type="Node" parent="."]
 
@@ -157,3 +133,7 @@ draw_pass_1 = SubResource("RibbonTrailMesh_0lsnu")
 
 [node name="Player" parent="Character" instance=ExtResource("2_o4h8b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.2956, 18.0559, -7.54951)
+
+[node name="Botas" parent="." instance=ExtResource("8_rv1cp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.516, 18.518, -0.92386)
+ruta = "/root/Level0002/Character/Player/PlayerLogic"
