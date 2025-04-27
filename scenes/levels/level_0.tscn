@@ -2,14 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://dcii87dr1e6e0" path="res://scenes/prefab/platform_4m.tscn" id="1_jstec"]
 [ext_resource type="Material" uid="uid://dg73ppyeg3vyu" path="res://modelos/floor/material_floor.tres" id="1_p6rmu"]
-[ext_resource type="ArrayMesh" uid="uid://bwvseekw5issd" path="res://modelos/floor/floor.obj" id="2_34hum"]
+[ext_resource type="ArrayMesh" uid="uid://c3famfvbe6ubs" path="res://modelos/floor/floor.obj" id="2_34hum"]
 [ext_resource type="PackedScene" uid="uid://ds61mgbyupgc3" path="res://scenes/prefab/rampa_1.5x1.tscn" id="2_301yp"]
 [ext_resource type="PackedScene" uid="uid://bot1cqoewjth3" path="res://scenes/prefab/plataforma_0,5x_2.tscn" id="4_euv8e"]
 [ext_resource type="PackedScene" uid="uid://f22ka045f7tn" path="res://scenes/prefab/bridge_2.tscn" id="5_5fmco"]
 [ext_resource type="PackedScene" uid="uid://dk6238nqycrt8" path="res://scenes/prefab/plataforma_cubo.tscn" id="6_43jhk"]
 [ext_resource type="PackedScene" uid="uid://fakdbfckpi4c" path="res://scenes/prefab/rampa_2x0,5.tscn" id="7_4t5r3"]
 [ext_resource type="PackedScene" uid="uid://cr8sukwj5y534" path="res://scenes/prefab/barco/barco_prefab.tscn" id="8_6ayib"]
-[ext_resource type="Script" uid="uid://c24yqc61ycmtx" path="res://scripts/level_finish.gd" id="8_65guy"]
+[ext_resource type="Script" path="res://scripts/level_finish.gd" id="8_65guy"]
 [ext_resource type="Shader" uid="uid://o4t4uu7bx0bh" path="res://Shader/water.gdshader" id="11_34hum"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bw6k5"]

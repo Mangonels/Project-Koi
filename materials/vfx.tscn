@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cy3bpeut8mo56"]
+[gd_scene load_steps=5 format=3 uid="uid://c541soh0l0k5e"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y3j0m"]
 emission_shape_scale = Vector3(5, 5, 5)
@@ -30,11 +30,10 @@ use_particle_trails = true
 material = SubResource("StandardMaterial3D_301yp")
 curve = SubResource("Curve_jstec")
 
-[node name="VFX" type="Node"]
+[node name="VFX" type="Node3D"]
 
 [node name="Rain_VFX" type="GPUParticles3D" parent="."]
 transform = Transform3D(4.65988, 0, 0, 0, 0.994338, 0, 0, 0, 4.88862, 0.0128145, 4.82571, 0.022974)
-visible = false
 amount = 100
 lifetime = 2.0
 randomness = 0.89

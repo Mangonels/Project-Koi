@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bys165e2lbsqg" path="res://scenes/prefab/plataforma_2x2.tscn" id="4_excbq"]
 [ext_resource type="PackedScene" uid="uid://f22ka045f7tn" path="res://scenes/prefab/bridge_2.tscn" id="5_iav0o"]
 [ext_resource type="PackedScene" uid="uid://dk6238nqycrt8" path="res://scenes/prefab/plataforma_cubo.tscn" id="6_dnkej"]
-[ext_resource type="Script" uid="uid://c24yqc61ycmtx" path="res://scripts/level_finish.gd" id="7_oc4kc"]
+[ext_resource type="Script" path="res://scripts/level_finish.gd" id="7_oc4kc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s8va5"]
 size = Vector3(2.8291, 1.65924, 3.25146)
