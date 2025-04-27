@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void: 
 	if body.name == "PlayerFeet":
-		Level._load_new_level(true)
+		Level._load_new_level(true, false)
 	pass
 
 func _on_body_exited(body: Node3D) -> void:

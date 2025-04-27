@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 func _get_current_level() -> int:
 	return current_number
 
-func _load_new_level(first_run: bool) -> void:
+func _load_new_level(first_run: bool, increase_level: bool) -> void:
 	var current_level: Node3D
 
 	if first_run:
@@ -54,6 +54,8 @@ func _load_new_level(first_run: bool) -> void:
 		e.name = "Level" + str(current_number)
 		add_child(e)
 		print("Loaded new level: ", e.name)
+		if increase_level:
+			current_number += 1
 	else:
 		print("Couldn't load new scene!")
 		return
