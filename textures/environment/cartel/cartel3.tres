@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://lfhwpfa6476f"]
+
+[ext_resource type="Texture2D" uid="uid://h55wvyd064ku" path="res://textures/environment/cartel/Cartel_03_sh_Base_color.png" id="1_r1a8o"]
+[ext_resource type="Texture2D" uid="uid://o0odkf4ty2mu" path="res://textures/environment/grifo/grifo_Normal.DefaultMaterial.png" id="3_g1xew"]
+
+[resource]
+albedo_texture = ExtResource("1_r1a8o")
+normal_enabled = true
+normal_texture = ExtResource("3_g1xew")
