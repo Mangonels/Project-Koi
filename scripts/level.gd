@@ -46,11 +46,15 @@ func _load_new_level(first_run: bool, increase_level: bool) -> void:
 		var current_level_node: String = "/root/MainScene/level_" + str(current_number)
 		current_level = get_node(current_level_node)
 
-	remove_child(current_level)
+	if !increase_level:
+		remove_child(current_level)
+
 	if first_run == true: current_level.call_deferred("free")
 
 	var level_str: String = "res://scenes/levels/level_" + str(current_number) + ".tscn"
-	
+
+	print("Trying to load: ", level_str)
+
 	var next_level_resource = load(level_str)
 
 	if next_level_resource:

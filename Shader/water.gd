@@ -7,7 +7,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	global_position.y += 0.005
+	global_position.y += 0.001
 	pass
 
 func _on_body_entered(body: Node3D) -> void:
