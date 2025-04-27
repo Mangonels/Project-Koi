@@ -17,6 +17,8 @@ height = 2.2
 
 [node name="PlayerLogic" type="Node" parent="." node_paths=PackedStringArray("player_body", "player_feet", "grounded_query", "sprite_animations")]
 script = ExtResource("1_8afob")
+jump_time = 15.0
+propulse_time = 15.0
 player_body = NodePath("../PlayerBody")
 player_feet = NodePath("../PlayerFeet")
 grounded_query = NodePath("../PlayerFeet/Contact_Grounded_Transmission_Query")
