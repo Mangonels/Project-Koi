@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://wbi5y0vi027g"]
+
+[ext_resource type="PackedScene" uid="uid://bu0ofmff8a454" path="res://modelos/blocking/rampa_1.5Mx1M.glb" id="1_31auw"]
+
+[node name="rampa_1,5x1" type="StaticBody3D"]
+disable_mode = 1
+
+[node name="rampa_1_5Mx1M" parent="." instance=ExtResource("1_31auw")]
